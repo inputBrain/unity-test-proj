@@ -1,0 +1,974 @@
+﻿[
+  {
+    "country": "Canada",
+    "color": {
+      "R": 135,
+      "G": 199,
+      "B": 99
+    },
+    "capital": "Ottawa"
+  },
+  {
+    "country": "USA",
+    "color": {
+      "R": 212,
+      "G": 222,
+      "B": 89
+    },
+    "capital": "Washington D.C."
+  },
+  {
+    "country": "Mexico",
+    "color": {
+      "R": 255,
+      "G": 204,
+      "B": 76
+    },
+    "capital": "Mexico City"
+  },
+  {
+    "country": "Greenland",
+    "color": {
+      "R": 153,
+      "G": 212,
+      "B": 191
+    },
+    "capital": "Nuuk"
+  },
+  {
+    "country": "Guatemala",
+    "color": {
+      "R": 56,
+      "G": 186,
+      "B": 156
+    },
+    "capital": "Guatemala City"
+  },
+  {
+    "country": "El Salvador",
+    "color": {
+      "R": 222,
+      "G": 127,
+      "B": 115
+    },
+    "capital": "San Salvador"
+  },
+  {
+    "country": "Belize",
+    "color": {
+      "R": 255,
+      "G": 245,
+      "B": 153
+    },
+    "capital": "Belmopan"
+  },
+  {
+    "country": "Honduras",
+    "color": {
+      "R": 253,
+      "G": 217,
+      "B": 179
+    },
+    "capital": "Tegucigalpa"
+  },
+  {
+    "country": "Nicaragua",
+    "color": {
+      "R": 184,
+      "G": 151,
+      "B": 127
+    },
+    "capital": "Managua"
+  },
+  {
+    "country": "Costa Rica",
+    "color": {
+      "R": 135,
+      "G": 199,
+      "B": 99
+    },
+    "capital": "San Jose"
+  },
+  {
+    "country": "Panama",
+    "color": {
+      "R": 255,
+      "G": 199,
+      "B": 86
+    },
+    "capital": "Panama City"
+  },
+  {
+    "country": "Cuba",
+    "color": {
+      "R": 245,
+      "G": 176,
+      "B": 140
+    },
+    "capital": "Havana"
+  },
+  {
+    "country": "Jamaica",
+    "color": {
+      "R": 212,
+      "G": 184,
+      "B": 138
+    },
+    "capital": "Kingston"
+  },
+  {
+    "country": "Port-au-Prince",
+    "color": {
+      "R": 106,
+      "G": 199,
+      "B": 107
+    },
+    "capital": "Port-au-Prince"
+  },
+  {
+    "country": "Dominican Republic",
+    "color": {
+      "R": 255,
+      "G": 231,
+      "B": 148
+    },
+    "capital": "Santo Domingo"
+  },
+  {
+    "country": "Puerto Rico",
+    "color": {
+      "R": 212,
+      "G": 222,
+      "B": 89
+    },
+    "capital": "San Juan"
+  },
+  {
+    "country": "Colombia",
+    "color": {
+      "R": 187,
+      "G": 224,
+      "B": 105
+    },
+    "capital": "Bogota"
+  },
+  {
+    "country": "Venezuela",
+    "color": {
+      "R": 250,
+      "G": 179,
+      "B": 145
+    },
+    "capital": "Caracas"
+  },
+  {
+    "country": "Guyana",
+    "color": {
+      "R": 222,
+      "G": 127,
+      "B": 115
+    },
+    "capital": "Georgetown"
+  },
+  {
+    "country": "Suriname",
+    "color": {
+      "R": 56,
+      "G": 186,
+      "B": 156
+    },
+    "capital": "Paramaribo"
+  },
+  {
+    "country": "French Gulana",
+    "color": {
+      "R": 186,
+      "G": 181,
+      "B": 87
+    },
+    "capital": "Cayenne"
+  },
+  {
+    "country": "Brazil",
+    "color": {
+      "R": 255,
+      "G": 245,
+      "B": 160
+    },
+    "capital": "Brasilia"
+  },
+  {
+    "country": "Uruguay",
+    "color": {
+      "R": 212,
+      "G": 184,
+      "B": 138
+    },
+    "capital": "Montevideo"
+  },
+  {
+    "country": "Argentina",
+    "color": {
+      "R": 153,
+      "G": 212,
+      "B": 191
+    },
+    "capital": "Buenos Aires"
+  },
+  {
+    "country": "Chile",
+    "color": {
+      "R": 184,
+      "G": 151,
+      "B": 127
+    },
+    "capital": "Santiago"
+  },
+  {
+    "country": "Paraguay",
+    "color": {
+      "R": 140,
+      "G": 199,
+      "B": 110
+    },
+    "capital": "Asuncion"
+  },
+  {
+    "country": "Bolivia",
+    "color": {
+      "R": 255,
+      "G": 204,
+      "B": 76
+    },
+    "capital": "Sucre"
+  },
+  {
+    "country": "Peru",
+    "color": {
+      "R": 186,
+      "G": 181,
+      "B": 87
+    },
+    "capital": "Lima"
+  },
+  {
+    "country": "Ecuador",
+    "color": {
+      "R": 140,
+      "G": 186,
+      "B": 207
+    },
+    "capital": "Quito"
+  },
+  {
+    "country": "Morocco",
+    "color": {
+      "R": 183,
+      "G": 150,
+      "B": 124
+    },
+    "capital": "Rabat"
+  },
+  {
+    "country": "Algeria",
+    "color": {
+      "R": 255,
+      "G": 206,
+      "B": 80
+    },
+    "capital": "Algiers"
+  },
+  {
+    "country": "Tunisia",
+    "color": {
+      "R": 119,
+      "G": 199,
+      "B": 102
+    },
+    "capital": "Tunis"
+  },
+  {
+    "country": "Libya",
+    "color": {
+      "R": 188,
+      "G": 184,
+      "B": 90
+    },
+    "capital": "Tripoli"
+  },
+  {
+    "country": "Egypt",
+    "color": {
+      "R": 128,
+      "G": 199,
+      "B": 102
+    },
+    "capital": "Cairo"
+  },
+  {
+    "country": "Sudan",
+    "color": {
+      "R": 208,
+      "G": 224,
+      "B": 90
+    },
+    "capital": "Khartoum"
+  },
+  {
+    "country": "Eritrea",
+    "color": {
+      "R": 142,
+      "G": 182,
+      "B": 208
+    },
+    "capital": "Asmara"
+  },
+  {
+    "country": "Ethiopia",
+    "color": {
+      "R": 153,
+      "G": 214,
+      "B": 197
+    },
+    "capital": "Addis Ababa"
+  },
+  {
+    "country": "Djibouti",
+    "color": {
+      "R": 225,
+      "G": 128,
+      "B": 112
+    },
+    "capital": "Djibouti"
+  },
+  {
+    "country": "Somalia",
+    "color": {
+      "R": 255,
+      "G": 244,
+      "B": 156
+    },
+    "capital": "Mogadishu"
+  },
+  {
+    "country": "Kenya",
+    "color": {
+      "R": 255,
+      "G": 206,
+      "B": 78
+    },
+    "capital": "Nairobi"
+  },
+  {
+    "country": "Tanzania",
+    "color": {
+      "R": 122,
+      "G": 199,
+      "B": 104
+    },
+    "capital": "Dodoma"
+  },
+  {
+    "country": "Mozambique",
+    "color": {
+      "R": 250,
+      "G": 175,
+      "B": 142
+    },
+    "capital": "Maputo"
+  },
+  {
+    "country": "Madagascar",
+    "color": {
+      "R": 255,
+      "G": 206,
+      "B": 80
+    },
+    "capital": "Antananarivo"
+  },
+  {
+    "country": "South Africa",
+    "color": {
+      "R": 132,
+      "G": 198,
+      "B": 103
+    },
+    "capital": "Pretoria"
+  },
+  {
+    "country": "Lesotho",
+    "color": {
+      "R": 224,
+      "G": 130,
+      "B": 116
+    },
+    "capital": "Maseru"
+  },
+  {
+    "country": "Swaziland",
+    "color": {
+      "R": 253,
+      "G": 216,
+      "B": 177
+    },
+    "capital": "Mbabane"
+  },
+  {
+    "country": "Namibia",
+    "color": {
+      "R": 255,
+      "G": 244,
+      "B": 151
+    },
+    "capital": "Windhoek"
+  },
+  {
+    "country": "Botswana",
+    "color": {
+      "R": 255,
+      "G": 204,
+      "B": 77
+    },
+    "capital": "Gaborone"
+  },
+  {
+    "country": "Zimbabwe",
+    "color": {
+      "R": 184,
+      "G": 151,
+      "B": 128
+    },
+    "capital": "Harare"
+  },
+  {
+    "country": "Malawi",
+    "color": {
+      "R": 253,
+      "G": 216,
+      "B": 177
+    },
+    "capital": "Lilongwe"
+  },
+  {
+    "country": "Zambia",
+    "color": {
+      "R": 156,
+      "G": 214,
+      "B": 190
+    },
+    "capital": "Lusaka"
+  },
+  {
+    "country": "Angola",
+    "color": {
+      "R": 208,
+      "G": 224,
+      "B": 90
+    },
+    "capital": "Luanda"
+  },
+  {
+    "country": "Democratic Republic of the Congo",
+    "color": {
+      "R": 255,
+      "G": 231,
+      "B": 142
+    },
+    "capital": "Kinshasa"
+  },
+  {
+    "country": "Burundi",
+    "color": {
+      "R": 223,
+      "G": 128,
+      "B": 114
+    },
+    "capital": "Bujumbura"
+  },
+  {
+    "country": "Rwanda",
+    "color": {
+      "R": 215,
+      "G": 181,
+      "B": 141
+    },
+    "capital": "Kigali"
+  },
+  {
+    "country": "Uganda",
+    "color": {
+      "R": 250,
+      "G": 176,
+      "B": 141
+    },
+    "capital": "Kampala"
+  },
+  {
+    "country": "South Sudan",
+    "color": {
+      "R": 255,
+      "G": 202,
+      "B": 166
+    },
+    "capital": "Juba"
+  },
+  {
+    "country": "Central African Republic",
+    "color": {
+      "R": 183,
+      "G": 139,
+      "B": 118
+    },
+    "capital": "Bangui"
+  },
+  {
+    "country": "Republic of the Congo",
+    "color": {
+      "R": 215,
+      "G": 182,
+      "B": 138
+    },
+    "capital": "Brazzaville"
+  },
+  {
+    "country": "Gabon",
+    "color": {
+      "R": 253,
+      "G": 215,
+      "B": 175
+    },
+    "capital": "Libreville"
+  },
+  {
+    "country": "Cameroon",
+    "color": {
+      "R": 255,
+      "G": 199,
+      "B": 76
+    },
+    "capital": "Yaounde"
+  },
+  {
+    "country": "Chad",
+    "color": {
+      "R": 56,
+      "G": 186,
+      "B": 156
+    },
+    "capital": "N'Djamena"
+  },
+  {
+    "country": "Niger",
+    "color": {
+      "R": 153,
+      "G": 213,
+      "B": 199
+    },
+    "capital": "Niamey"
+  },
+  {
+    "country": "Nigeria",
+    "color": {
+      "R": 126,
+      "G": 199,
+      "B": 103
+    },
+    "capital": "Abuja"
+  },
+  {
+    "country": "Benin",
+    "color": {
+      "R": 140,
+      "G": 186,
+      "B": 207
+    },
+    "capital": "Porto-Novo"
+  },
+  {
+    "country": "Togo",
+    "color": {
+      "R": 255,
+      "G": 213,
+      "B": 191
+    },
+    "capital": "Lome"
+  },
+  {
+    "country": "Ghana",
+    "color": {
+      "R": 250,
+      "G": 178,
+      "B": 142
+    },
+    "capital": "Accra"
+  },
+  {
+    "country": "Ivory Coast",
+    "color": {
+      "R": 255,
+      "G": 211,
+      "B": 81
+    },
+    "capital": "Yamoussoukro"
+  },
+  {
+    "country": "Liberia",
+    "color": {
+      "R": 183,
+      "G": 148,
+      "B": 119
+    },
+    "capital": "Monrovia"
+  },
+  {
+    "country": "Sierra Leone",
+    "color": {
+      "R": 255,
+      "G": 241,
+      "B": 154
+    },
+    "capital": "Freetown"
+  },
+  {
+    "country": "Guinea",
+    "color": {
+      "R": 124,
+      "G": 199,
+      "B": 103
+    },
+    "capital": "Conakry"
+  },
+  {
+    "country": "Guine-Bissau",
+    "color": {
+      "R": 250,
+      "G": 178,
+      "B": 142
+    },
+    "capital": "Bissau"
+  },
+  {
+    "country": "Senegal",
+    "color": {
+      "R": 255,
+      "G": 205,
+      "B": 168
+    },
+    "capital": "Dakar"
+  },
+  {
+    "country": "The Gambia",
+    "color": {
+      "R": 225,
+      "G": 113,
+      "B": 109
+    },
+    "capital": "Banjul"
+  },
+  {
+    "country": "Mauritania",
+    "color": {
+      "R": 224,
+      "G": 222,
+      "B": 97
+    },
+    "capital": "Nouakchott"
+  },
+  {
+    "country": "Mali",
+    "color": {
+      "R": 255,
+      "G": 241,
+      "B": 153
+    },
+    "capital": "Bamako"
+  },
+  {
+    "country": "Burkina Faso",
+    "color": {
+      "R": 189,
+      "G": 182,
+      "B": 92
+    },
+    "capital": "Ouagadougou"
+  },
+  {
+    "country": "Equatorial Guinea",
+    "color": {
+      "R": 223,
+      "G": 131,
+      "B": 115
+    },
+    "capital": "Malabo"
+  },
+  {
+    "country": "Portugal",
+    "color": {
+      "R": 250,
+      "G": 176,
+      "B": 141
+    },
+    "capital": "Lisbon"
+  },
+  {
+    "country": "Spain",
+    "color": {
+      "R": 255,
+      "G": 207,
+      "B": 171
+    },
+    "capital": "Madrid"
+  },
+  {
+    "country": "France",
+    "color": {
+      "R": 189,
+      "G": 182,
+      "B": 92
+    },
+    "capital": "Paris"
+  },
+  {
+    "country": "Italy",
+    "color": {
+      "R": 255,
+      "G": 240,
+      "B": 163
+    },
+    "capital": "Rome"
+  },
+  {
+    "country": "Germany",
+    "color": {
+      "R": 206,
+      "G": 224,
+      "B": 93
+    },
+    "capital": "Berlin"
+  },
+  {
+    "country": "Poland",
+    "color": {
+      "R": 123,
+      "G": 199,
+      "B": 100
+    },
+    "capital": "Warsaw"
+  },
+  {
+    "country": "Ukraine",
+    "color": {
+      "R": 255,
+      "G": 197,
+      "B": 68
+    },
+    "capital": "Kyiv"
+  },
+  {
+    "country": "Belarus",
+    "color": {
+      "R": 188,
+      "G": 185,
+      "B": 96
+    },
+    "capital": "Minsk"
+  },
+  {
+    "country": "Russia",
+    "color": {
+      "R": 255,
+      "G": 235,
+      "B": 142
+    },
+    "capital": "Moscow"
+  },
+  {
+    "country": "Finland",
+    "color": {
+      "R": 58,
+      "G": 189,
+      "B": 157
+    },
+    "capital": "Helsinki"
+  },
+  {
+    "country": "Sweden",
+    "color": {
+      "R": 250,
+      "G": 176,
+      "B": 143
+    },
+    "capital": "Stockholm"
+  },
+  {
+    "country": "Norway",
+    "color": {
+      "R": 141,
+      "G": 181,
+      "B": 209
+    },
+    "capital": "Oslo"
+  },
+  {
+    "country": "Denmark",
+    "color": {
+      "R": 151,
+      "G": 214,
+      "B": 198
+    },
+    "capital": "Copenhagen"
+  },
+  {
+    "country": "Nederland",
+    "color": {
+      "R": 184,
+      "G": 144,
+      "B": 119
+    },
+    "capital": "Amsterdam"
+  },
+  {
+    "country": "United Kingdom",
+    "color": {
+      "R": 255,
+      "G": 198,
+      "B": 74
+    },
+    "capital": "London"
+  },
+  {
+    "country": "Ireland",
+    "color": {
+      "R": 125,
+      "G": 198,
+      "B": 98
+    },
+    "capital": "Dublin"
+  },
+  {
+    "country": "Belgium",
+    "color": {
+      "R": 223,
+      "G": 127,
+      "B": 115
+    },
+    "capital": "Brussels"
+  },
+  {
+    "country": "Schweiz",
+    "color": {
+      "R": 255,
+      "G": 202,
+      "B": 76
+    },
+    "capital": "Bern"
+  },
+  {
+    "country": "Czech Republic",
+    "color": {
+      "R": 58,
+      "G": 189,
+      "B": 165
+    },
+    "capital": "Prague"
+  },
+  {
+    "country": "Austria",
+    "color": {
+      "R": 250,
+      "G": 167,
+      "B": 131
+    },
+    "capital": "Vienna"
+  },
+  {
+    "country": "Hungary",
+    "color": {
+      "R": 253,
+      "G": 213,
+      "B": 176
+    },
+    "capital": "Budapest"
+  },
+  {
+    "country": "Romania",
+    "color": {
+      "R": 152,
+      "G": 214,
+      "B": 201
+    },
+    "capital": "Bucharest"
+  },
+  {
+    "country": "Moldova",
+    "color": {
+      "R": 143,
+      "G": 189,
+      "B": 209
+    },
+    "capital": "Chisinau"
+  },
+  {
+    "country": "Bulragia",
+    "color": {
+      "R": 223,
+      "G": 124,
+      "B": 112
+    },
+    "capital": "Sofia"
+  },
+  {
+    "country": "Turkey",
+    "color": {
+      "R": 250,
+      "G": 170,
+      "B": 131
+    },
+    "capital": "Ankara"
+  },
+  {
+    "country": "Lietuva",
+    "color": {
+      "R": 184,
+      "G": 150,
+      "B": 122
+    },
+    "capital": "Vilnius"
+  },
+  {
+    "country": "Latvija",
+    "color": {
+      "R": 145,
+      "G": 214,
+      "B": 172
+    },
+    "capital": "Riga"
+  },
+  {
+    "country": "Eesti",
+    "color": {
+      "R": 215,
+      "G": 179,
+      "B": 132
+    },
+    "capital": "Tallinn"
+  },
+  {
+    "country": "Finland",
+    "color": {
+      "R": 205,
+      "G": 222,
+      "B": 89
+    },
+    "capital": "Helsinki"
+  },
+  {
+    "country": "Poland",
+    "color": {
+      "R": 135,
+      "G": 200,
+      "B": 100
+    },
+    "capital": "Warsaw"
+  }
+]
