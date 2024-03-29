@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using Models;
+using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using Newtonsoft.Json;
 
 public class GetTileInfo : MonoBehaviour
 {
@@ -64,6 +64,7 @@ public class GetTileInfo : MonoBehaviour
         
         for (int x = 0; x < countCellsByX; x++)
         {
+            continue;
             for (int y = 0; y < countCellsByY; y++)
             {
                 var pos = new Vector3Int(y - offsetY, x - offsetX, 0);
@@ -88,7 +89,6 @@ public class GetTileInfo : MonoBehaviour
                     tilemap.SetTransformMatrix(pos, Matrix4x4.Scale(new Vector3(scaledSizeX, scaledSizeY, 1)));
                     
                     TilesDict.Add(pos, tileInfo);
-                    Debug.Log($"Create | X Y: {pos}, country: {country}, color: {color}");
                 }
             }
         }
@@ -127,6 +127,17 @@ public class GetTileInfo : MonoBehaviour
             {
                 Debug.Log("No tile found at position: " + gridPos);
             }
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+           Vector3 pos = camera.ScreenToViewportPoint(Input.mousePosition);
+           
+           Ray ray = camera.ScreenPointToRay(pos);
+           
+           Debug.Log(pos);
+            
+            
         }
     }
     
