@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Models;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Newtonsoft.Json;
 
 public class GetTileInfo : MonoBehaviour
 {
@@ -14,8 +16,12 @@ public class GetTileInfo : MonoBehaviour
     public float globalCellSize;
     
     private Dictionary<Vector3, TileInfo> TilesDict = new ();
-    private Dictionary<Color, string> CountryDict = new ();
-        
+
+    private readonly Dictionary<Color32, string> CountryDict = new Dictionary<Color32, string>();
+    
+    [SerializeField]
+    public TextAsset countriesJson;
+  
     [Serializable]
     public class TileInfo
     {
@@ -25,7 +31,10 @@ public class GetTileInfo : MonoBehaviour
 
     private void Start()
     {
-        CountryDict.Add(new Color(0.101960786f, 0.545098066f, 0.443137258f, 1.000f), "USA");
+        LoadCountryColorsFromJson();
+        // CountryDict.Add(new Color32(212, 222, 89, 255), "USA");
+        // CountryDict.Add(new Color32(255, 240, 163, 255), "Italy");
+        // CountryDict.Add(new Color32(255, 197, 68, 255), "Ukraine");
         CalculateOccupiedCells();
     }
 
@@ -37,8 +46,11 @@ public class GetTileInfo : MonoBehaviour
         //cellSize.x *= globalCellSize;
         //cellSize.y *= globalCellSize;
         
-        var spriteWidthInCells = spriteBounds.size.x / (cellSize.x * 0.8659766f);
-        var spriteHeightInCells = spriteBounds.size.y / (cellSize.y * 0.8659766f);
+        //TODO:
+        // var spriteWidthInCells = spriteBounds.size.x / (cellSize.x * 0.8659766f);
+        // var spriteHeightInCells = spriteBounds.size.y / (cellSize.y * 0.8659766f);
+        var spriteWidthInCells = spriteBounds.size.x / (cellSize.x * 0.1262882f);
+        var spriteHeightInCells = spriteBounds.size.y / (cellSize.y * 0.1458333f);
         
 
         int countCellsByX = Mathf.CeilToInt(spriteWidthInCells);
@@ -115,6 +127,17 @@ public class GetTileInfo : MonoBehaviour
             {
                 Debug.Log("No tile found at position: " + gridPos);
             }
+        }
+    }
+    
+    
+    void LoadCountryColorsFromJson()
+    {
+        List<CountryJsonModel> countries = JsonConvert.DeserializeObject<List<CountryJsonModel>>(countriesJson.text);
+        foreach (var country in countries)
+        {
+            Color32 color = new Color32((byte)country.color.R, (byte)country.color.G, (byte)country.color.B, 255);
+            CountryDict[color] = country.country;
         }
     }
 }
