@@ -1,0 +1,42 @@
+﻿[
+  {
+    "country": "Canada",
+    "color": {
+      "R": 135,
+      "G": 199,
+      "B": 99,
+      "A": 255
+    },
+    "capital": "Ottawa"
+  },
+  {
+    "country": "USA",
+    "color": {
+      "R": 212,
+      "G": 222,
+      "B": 89,
+      "A": 255
+    },
+    "capital": "Washington D.C."
+  },
+  {
+    "country": "Mexico",
+    "color": {
+      "R": 255,
+      "G": 204,
+      "B": 76,
+      "A": 255
+    },
+    "capital": "Mexico City"
+  },
+  {
+    "country": "Greenland",
+    "color": {
+      "R": 153,
+      "G": 212,
+      "B": 191,
+      "A": 255
+    },
+    "capital": "Nuuk"
+  }
+]

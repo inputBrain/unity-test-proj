@@ -1,9 +1,11 @@
+using UnityEngine;
+
 namespace Models
 {
     public class CountryJsonModel
     {
-        public string country;
-        public RGBColor color;
-        public string capital;
+        public string Country;
+        public Color32 Color;
+        public string Capital;
     }
 }
