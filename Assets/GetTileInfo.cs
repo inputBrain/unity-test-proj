@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using JetBrains.Annotations;
 using Models;
 using Newtonsoft.Json;
@@ -12,7 +13,6 @@ public class GetTileInfo : MonoBehaviour
     public Camera camera;
     public SpriteRenderer spriteRenderer;
     public Tile tile;
-
     public float globalCellSize;
     
     private Dictionary<Vector3, TileInfo> TilesDict = new ();
@@ -32,9 +32,7 @@ public class GetTileInfo : MonoBehaviour
     private void Start()
     {
         LoadCountryColorsFromJson();
-        // CountryDict.Add(new Color32(212, 222, 89, 255), "USA");
-        // CountryDict.Add(new Color32(255, 240, 163, 255), "Italy");
-        // CountryDict.Add(new Color32(255, 197, 68, 255), "Ukraine");
+   
         CalculateOccupiedCells();
     }
 
@@ -64,14 +62,12 @@ public class GetTileInfo : MonoBehaviour
         
         for (int x = 0; x < countCellsByX; x++)
         {
-            continue;
             for (int y = 0; y < countCellsByY; y++)
             {
                 var pos = new Vector3Int(y - offsetY, x - offsetX, 0);
                 Vector3 tileWorldPos = tilemap.GetCellCenterWorld(pos);
-                var color = TakeColorUnderTile(spriteBounds, tileWorldPos, spriteRenderer.sprite);
                 
-                var country = GetCountryByColor(color);
+                var country = TryGetCountry(spriteBounds, tileWorldPos);
 
                 if (country != null)
                 {
@@ -86,21 +82,108 @@ public class GetTileInfo : MonoBehaviour
                     float reductionScalePercentage = 0.05f; // 5%
                     float scaledSizeX = (cellSize.x / 0.86f) * (1f - reductionScalePercentage);
                     float scaledSizeY = cellSize.y * (1f - reductionScalePercentage);
-                    tilemap.SetTransformMatrix(pos, Matrix4x4.Scale(new Vector3(scaledSizeX, scaledSizeY, 1)));
                     
+                    tilemap.SetTransformMatrix(pos, Matrix4x4.Scale(new Vector3(scaledSizeX, scaledSizeY, 1)));
                     TilesDict.Add(pos, tileInfo);
                 }
             }
         }
     }
+    
+    private string TryGetCountry(Bounds spriteBounds, Vector3 tileWorldPos)
+    {
+        var color = TakeColorUnderTile(spriteBounds, tileWorldPos, spriteRenderer.sprite);
+
+        var emptyColor = new Color32(0, 0, 0,0);
+        if (color != emptyColor)
+        {
+            var country = GetCountryByColor(color);
+
+            if (country != null)
+                return country;
+        
+            var borderColors = TakeColorsUnderTileByBorders(spriteBounds, tileWorldPos, spriteRenderer.sprite);
+            var mostFreqColor = GetMostFrequentColor(borderColors);
+        
+            country = GetCountryByColor(mostFreqColor);
+            return country;
+        }
+
+        return null;
+    }
+    
+    private Color GetMostFrequentColor(List<Color> colors)
+    {
+        Dictionary<Color, int> colorCounts = new Dictionary<Color, int>();
+
+        // Подсчитываем количество вхождений каждого цвета
+        foreach (Color color in colors)
+        {
+            if (!colorCounts.TryAdd(color, 1))
+            {
+                colorCounts[color]++;
+            }
+        }
+
+        // Находим максимальное количество вхождений
+        int maxCount = colorCounts.Values.Max();
+
+        // Получаем все цвета с максимальным количеством вхождений
+        var mostFrequentColors = colorCounts.Where(kvp => kvp.Value == maxCount)
+            .Select(kvp => kvp.Key).ToList();
+
+        // Если есть несколько цветов с максимальным количеством вхождений, выбираем случайный из них
+        Color mostFrequentColor;
+        if (mostFrequentColors.Count > 1)
+        {
+            mostFrequentColor = mostFrequentColors[UnityEngine.Random.Range(0, mostFrequentColors.Count)];
+        }
+        else
+        {
+            mostFrequentColor = mostFrequentColors.FirstOrDefault();
+        }
+
+        return mostFrequentColor;
+    }
+    
 
     private Color TakeColorUnderTile(Bounds bounds, Vector3 position, Sprite map)
     {
-        Vector2Int pixelCoord = new Vector2Int(
-            (int)((position.x - bounds.min.x) / bounds.size.x * map.texture.width),
-            (int)((position.y - bounds.min.y) / bounds.size.y * map.texture.height));
-                
+        var pixelCoord = WorldToPixelCoords(bounds, position, map);
         return map.texture.GetPixel(pixelCoord.x, pixelCoord.y);
+    }
+    
+    private List<Color> TakeColorsUnderTileByBorders(Bounds bounds, Vector3 position, Sprite map)
+    {
+        Vector2Int[] pixelCoords = new Vector2Int[6];
+        List<Color> colors = new List<Color>();
+
+        // Рассчитываем координаты пикселей для каждой из шести граней, только не понятно, почему делим на 8 ))0)0
+        float halfWidth = bounds.size.x / 8f;
+        float halfHeight = bounds.size.y / 8f;
+        float xOffset = halfWidth / 8f;
+        float yOffset = halfHeight * Mathf.Sqrt(3) / 8f;
+
+        pixelCoords[0] = WorldToPixelCoords(bounds, position + new Vector3(-halfWidth, 0f, 0f), map);
+        pixelCoords[1] = WorldToPixelCoords(bounds, position + new Vector3(-xOffset, yOffset, 0f), map);
+        pixelCoords[2] = WorldToPixelCoords(bounds, position + new Vector3(xOffset, yOffset, 0f), map);
+        pixelCoords[3] = WorldToPixelCoords(bounds, position + new Vector3(halfWidth, 0f, 0f), map);
+        pixelCoords[4] = WorldToPixelCoords(bounds, position + new Vector3(xOffset, -yOffset, 0f), map);
+        pixelCoords[5] = WorldToPixelCoords(bounds, position + new Vector3(-xOffset, -yOffset, 0f), map);
+        
+        for (var i = 0; i < 6; i++)
+        {
+            colors.Add(map.texture.GetPixel(pixelCoords[i].x, pixelCoords[i].y));
+        }
+        return colors;
+    }
+
+    private Vector2Int WorldToPixelCoords(Bounds bounds, Vector3 position, Sprite map)
+    {
+        return new Vector2Int(
+            Mathf.Clamp(Mathf.RoundToInt((position.x - bounds.min.x) / bounds.size.x * map.texture.width), 0, map.texture.width - 1),
+            Mathf.Clamp(Mathf.RoundToInt((position.y - bounds.min.y) / bounds.size.y * map.texture.height), 0, map.texture.height - 1)
+        );
     }
     
     [CanBeNull]
@@ -128,27 +211,14 @@ public class GetTileInfo : MonoBehaviour
                 Debug.Log("No tile found at position: " + gridPos);
             }
         }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-           Vector3 pos = camera.ScreenToViewportPoint(Input.mousePosition);
-           
-           Ray ray = camera.ScreenPointToRay(pos);
-           
-           Debug.Log(pos);
-            
-            
-        }
     }
-    
-    
     void LoadCountryColorsFromJson()
     {
         List<CountryJsonModel> countries = JsonConvert.DeserializeObject<List<CountryJsonModel>>(countriesJson.text);
+        
         foreach (var country in countries)
         {
-            Color32 color = new Color32((byte)country.color.R, (byte)country.color.G, (byte)country.color.B, 255);
-            CountryDict[color] = country.country;
+            CountryDict.Add(country.Color, country.Country);
         }
     }
 }

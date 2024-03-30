@@ -83,7 +83,7 @@
   {
     "country": "Costa Rica",
     "color": {
-      "R": 135,
+      "R": 136, //Old 135
       "G": 199,
       "B": 99
     },
@@ -138,7 +138,7 @@
     "country": "Puerto Rico",
     "color": {
       "R": 212,
-      "G": 222,
+      "G": 221,//old 222
       "B": 89
     },
     "capital": "San Juan"
@@ -200,7 +200,7 @@
   {
     "country": "Uruguay",
     "color": {
-      "R": 212,
+      "R": 213,//old 212
       "G": 184,
       "B": 138
     },
