@@ -92,29 +92,33 @@ public class GetTileInfo : MonoBehaviour
     
     private string TryGetCountry(Bounds spriteBounds, Vector3 tileWorldPos)
     {
+      
         var color = TakeColorUnderTile(spriteBounds, tileWorldPos, spriteRenderer.sprite);
 
-        var emptyColor = new Color32(0, 0, 0,0);
+        var emptyColor = new Color32(0, 0, 0, 0);
         if (color != emptyColor)
-        {
+        { 
             var country = GetCountryByColor(color);
-
             if (country != null)
                 return country;
-        
-            var borderColors = TakeColorsUnderTileByBorders(spriteBounds, tileWorldPos, spriteRenderer.sprite);
-            var mostFreqColor = GetMostFrequentColor(borderColors);
-        
-            country = GetCountryByColor(mostFreqColor);
-            return country;
+
+            var borderColors = TakeColorsUnderTileByBorders(tileWorldPos, spriteRenderer.sprite);
+                
+            if(borderColors.Count > 0)
+            {
+                Color32 mostFreqColor = GetMostFrequentColor(borderColors);
+
+                   country = GetCountryByColor(mostFreqColor);
+                return country;
+            }
         }
 
         return null;
     }
     
-    private Color GetMostFrequentColor(List<Color> colors)
+    private Color GetMostFrequentColor(List<Color32> colors)
     {
-        Dictionary<Color, int> colorCounts = new Dictionary<Color, int>();
+        Dictionary<Color32, int> colorCounts = new Dictionary<Color32, int>();
 
         // Подсчитываем количество вхождений каждого цвета
         foreach (Color color in colors)
@@ -153,28 +157,33 @@ public class GetTileInfo : MonoBehaviour
         return map.texture.GetPixel(pixelCoord.x, pixelCoord.y);
     }
     
-    private List<Color> TakeColorsUnderTileByBorders(Bounds bounds, Vector3 position, Sprite map)
+    private List<Color32> TakeColorsUnderTileByBorders(Vector3 position, Sprite map)
     {
-        Vector2Int[] pixelCoords = new Vector2Int[6];
-        List<Color> colors = new List<Color>();
-
-        // Рассчитываем координаты пикселей для каждой из шести граней, только не понятно, почему делим на 8 ))0)0
-        float halfWidth = bounds.size.x / 8f;
-        float halfHeight = bounds.size.y / 8f;
-        float xOffset = halfWidth / 8f;
-        float yOffset = halfHeight * Mathf.Sqrt(3) / 8f;
-
-        pixelCoords[0] = WorldToPixelCoords(bounds, position + new Vector3(-halfWidth, 0f, 0f), map);
-        pixelCoords[1] = WorldToPixelCoords(bounds, position + new Vector3(-xOffset, yOffset, 0f), map);
-        pixelCoords[2] = WorldToPixelCoords(bounds, position + new Vector3(xOffset, yOffset, 0f), map);
-        pixelCoords[3] = WorldToPixelCoords(bounds, position + new Vector3(halfWidth, 0f, 0f), map);
-        pixelCoords[4] = WorldToPixelCoords(bounds, position + new Vector3(xOffset, -yOffset, 0f), map);
-        pixelCoords[5] = WorldToPixelCoords(bounds, position + new Vector3(-xOffset, -yOffset, 0f), map);
+        List<Color32> colors = new List<Color32>();
         
-        for (var i = 0; i < 6; i++)
+        // Рассчитываем координаты пикселей для каждой из шести граней
+        float halfWidth = position.x / 2f;
+        float halfHeight = position.y / 2f;
+
+        Vector3[] directions = new Vector3[]
         {
-            colors.Add(map.texture.GetPixel(pixelCoords[i].x, pixelCoords[i].y));
+            new Vector3(-halfWidth, 0f, 0f),
+            new Vector3(-halfWidth / 2f, halfHeight * Mathf.Sqrt(3) / 2f, 0f),
+            new Vector3(halfWidth / 2f, halfHeight * Mathf.Sqrt(3) / 2f, 0f),
+            new Vector3(halfWidth, 0f, 0f),
+            new Vector3(halfWidth / 2f, -halfHeight * Mathf.Sqrt(3) / 2f, 0f),
+            new Vector3(-halfWidth / 2f, -halfHeight * Mathf.Sqrt(3) / 2f, 0f)
+        };
+
+        for (int i = 0; i < 6; i++)
+        {
+            var color = map.texture.GetPixel((int)directions[i].x, (int)directions[i].y);
+            if (color != new Color32(0, 0, 0, 0))
+            {
+                colors.Add(color);
+            }
         }
+
         return colors;
     }
 
@@ -187,7 +196,7 @@ public class GetTileInfo : MonoBehaviour
     }
     
     [CanBeNull]
-    private string GetCountryByColor(Color color)
+    private string GetCountryByColor(Color32 color)
     {
          CountryDict.TryGetValue(color, out var country);
          return country;
