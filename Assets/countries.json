@@ -970,5 +970,446 @@
       "B": 100
     },
     "capital": "Warsaw"
+  },
+  {
+    "country": "China",
+    "color": {
+      "R": 255,
+      "G": 187,
+      "B": 107
+    },
+    "capital": "Peking"
+  },
+  {
+    "country": "Mongolia",
+    "color": {
+      "R": 56,
+      "G": 188,
+      "B": 150
+    },
+    "capital": "Ulaanbaatar"
+  },
+  {
+    "country": "India",
+    "color": {
+      "R": 119,
+      "G": 199,
+      "B": 103
+    },
+    "capital": "New Delhi"
+  },
+  {
+    "country": "Japan",
+    "color": {
+      "R": 249,
+      "G": 160,
+      "B": 130
+    },
+    "capital": "Tokio"
+  },
+  {
+    "country": "Pakistan",
+    "color": {
+      "R": 184,
+      "G": 189,
+      "B": 107
+    },
+    "capital": "Islamabad"
+  },
+  {
+    "country": "Afghanistan",
+    "color": {
+      "R": 255,
+      "G": 244,
+      "B": 156
+    },
+    "capital": "Kabul"
+  },
+  {
+    "country": "Iran",
+    "color": {
+      "R": 150,
+      "G": 214,
+      "B": 202
+    },
+    "capital": "Tehran"
+  },
+  {
+    "country": "Turkmenistan",
+    "color": {
+      "R": 184,
+      "G": 145,
+      "B": 127
+    },
+    "capital": "Ashgabat"
+  },
+  {
+    "country": "Kazakhstan",
+    "color": {
+      "R": 225,
+      "G": 223,
+      "B": 101
+    },
+    "capital": "Astana"
+  },
+  {
+    "country": "Uzbekistan",
+    "color": {
+      "R": 250,
+      "G": 161,
+      "B": 138
+    },
+    "capital": "Tashkent"
+  },
+  {
+    "country": "Kyrgyzstan",
+    "color": {
+      "R": 63,
+      "G": 189,
+      "B": 161
+    },
+    "capital": "Bishkek"
+  },
+  {
+    "country": "Georgia",
+    "color": {
+      "R": 121,
+      "G": 199,
+      "B": 102
+    },
+    "capital": "Tbilisi"
+  },
+  {
+    "country": "Armenia",
+    "color": {
+      "R": 214,
+      "G": 179,
+      "B": 137
+    },
+    "capital": "Yerevan"
+  },
+  {
+    "country": "Azerbaijan",
+    "color": {
+      "R": 224,
+      "G": 127,
+      "B": 109
+    },
+    "capital": "Baku"
+  },
+  {
+    "country": "Iraq",
+    "color": {
+      "R": 211,
+      "G": 223,
+      "B": 93
+    },
+    "capital": "Baghdad"
+  },
+  {
+    "country": "Syria",
+    "color": {
+      "R": 47,
+      "G": 189,
+      "B": 153
+    },
+    "capital": "Damascus"
+  },
+  {
+    "country": "Jordan",
+    "color": {
+      "R": 255,
+      "G": 200,
+      "B": 75
+    },
+    "capital": "Amman"
+  },
+  {
+    "country": "Lebanon",
+    "color": {
+      "R": 140,
+      "G": 182,
+      "B": 207
+    },
+    "capital": "Beirut"
+  },
+  {
+    "country": "Israel",
+    "color": {
+      "R": 184,
+      "G": 149,
+      "B": 124
+    },
+    "capital": "Jerusalem"
+  },
+  {
+    "country": "Greece",
+    "color": {
+      "R": 184,
+      "G": 151,
+      "B": 123
+    },
+    "capital": "Athens"
+  },
+  {
+    "country": "Kosovo",
+    "color": {
+      "R": 176,
+      "G": 189,
+      "B": 78
+    },
+    "capital": "Pristina"
+  },
+  {
+    "country": "Macedonia",
+    "color": {
+      "R": 255,
+      "G": 210,
+      "B": 69
+    },
+    "capital": "Skopje"
+  },
+  {
+    "country": "Albania",
+    "color": {
+      "R": 60,
+      "G": 189,
+      "B": 163
+    },
+    "capital": "Tirana"
+  },
+  {
+    "country": "Montenegro",
+    "color": {
+      "R": 255,
+      "G": 195,
+      "B": 183
+    },
+    "capital": "Podgorica"
+  },
+  {
+    "country": "Saudi Arabia",
+    "color": {
+      "R": 255,
+      "G": 240,
+      "B": 170
+    },
+    "capital": "Riyadh"
+  },
+  {
+    "country": "Oman",
+    "color": {
+      "R": 62,
+      "G": 188,
+      "B": 156
+    },
+    "capital": "Muscat"
+  },
+  {
+    "country": "Yemen",
+    "color": {
+      "R": 188,
+      "G": 179,
+      "B": 90
+    },
+    "capital": "Sanaa"
+  },
+  {
+    "country": "Bahrain",
+    "color": {
+      "R": 250,
+      "G": 152,
+      "B": 128
+    },
+    "capital": "Manama"
+  },
+  {
+    "country": "Kuwait",
+    "color": {
+      "R": 145,
+      "G": 199,
+      "B": 112
+    },
+    "capital": "Kuwait City"
+  },
+  {
+    "country": "Croatia",
+    "color": {
+      "R": 199,
+      "G": 224,
+      "B": 93
+    },
+    "capital": "Zagreb"
+  },
+  {
+    "country": "Bosnia and Herzegovina",
+    "color": {
+      "R": 132,
+      "G": 199,
+      "B": 99
+    },
+    "capital": "Sarajevo"
+  },
+  {
+    "country": "Luxembourg",
+    "color": {
+      "R": 255,
+      "G": 235,
+      "B": 142
+    },
+    "capital": "Luxembourg"
+  },
+  {
+    "country": "Philippines",
+    "color": {
+      "R": 224,
+      "G": 99,
+      "B": 95
+    },
+    "capital": "Manila"
+  },
+  {
+    "country": "Malaysia",
+    "color": {
+      "R": 61,
+      "G": 188,
+      "B": 153
+    },
+    "capital": "Kuala Lumpur"
+  },
+  {
+    "country": "Brunei",
+    "color": {
+      "R": 131,
+      "G": 164,
+      "B": 209
+    },
+    "capital": "Bandar Seri Begawan"
+  },
+  {
+    "country": "Indonesia",
+    "color": {
+      "R": 189,
+      "G": 182,
+      "B": 97
+    },
+    "capital": "Jakarta"
+  },
+  {
+    "country": "Timor-Leste",
+    "color": {
+      "R": 255,
+      "G": 206,
+      "B": 93
+    },
+    "capital": "Dili"
+  },
+  {
+    "country": "Papua New Guinea",
+    "color": {
+      "R": 216,
+      "G": 224,
+      "B": 96
+    },
+    "capital": "Port Moresby"
+  },
+  {
+    "country": "Australia",
+    "color": {
+      "R": 255,
+      "G": 254,
+      "B": 142
+    },
+    "capital": "Canberra"
+  },
+  {
+    "country": "New Zealand",
+    "color": {
+      "R": 250,
+      "G": 155,
+      "B": 116
+    },
+    "capital": "Wellington"
+  },
+  {
+    "country": "Sri-Lanka",
+    "color": {
+      "R": 184,
+      "G": 135,
+      "B": 116
+    },
+    "capital": "Colombo"
+  },
+  {
+    "country": "Bangladesh",
+    "color": {
+      "R": 255,
+      "G": 249,
+      "B": 179
+    },
+    "capital": "Dhaka"
+  },
+  {
+    "country": "Nepal",
+    "color": {
+      "R": 136,
+      "G": 169,
+      "B": 209
+    },
+    "capital": "Kathmandu"
+  },
+  {
+    "country": "Bhutan",
+    "color": {
+      "R": 225,
+      "G": 138,
+      "B": 120
+    },
+    "capital": "Thimphu"
+  },
+  {
+    "country": "Myanmar",
+    "color": {
+      "R": 124,
+      "G": 215,
+      "B": 203
+    },
+    "capital": "Naypyidaw"
+  },
+  {
+    "country": "Laos",
+    "color": {
+      "R": 164,
+      "G": 129,
+      "B": 109
+    },
+    "capital": "Vientiane"
+  },
+  {
+    "country": "Thailand",
+    "color": {
+      "R": 212,
+      "G": 224,
+      "B": 96
+    },
+    "capital": "Bangkok"
+  },
+  {
+    "country": "Cambodia",
+    "color": {
+      "R": 255,
+      "G": 205,
+      "B": 161
+    },
+    "capital": "Phnom Penh"
+  },
+  {
+    "country": "Vietnam",
+    "color": {
+      "R": 250,
+      "G": 164,
+      "B": 141
+    },
+    "capital": "Hanoi"
   }
 ]
