@@ -11,6 +11,7 @@ public class GetTileInfo : MonoBehaviour
 {
     public Tilemap tilemap;
     public Camera camera;
+    public Color32[] color;
     public SpriteRenderer spriteRenderer;
     public Tile tile;
     public float globalCellSize;
