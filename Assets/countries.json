@@ -1411,5 +1411,68 @@
       "B": 141
     },
     "capital": "Hanoi"
+  },
+  {
+    "country": "North Korea",
+    "color": {
+      "R": 183,
+      "G": 149,
+      "B": 123
+    },
+    "capital": "Pyongyang"
+  },
+  {
+    "country": "South Korea",
+    "color": {
+      "R": 255,
+      "G": 215,
+      "B": 185
+    },
+    "capital": "Seoul"
+  },
+  {
+    "country": "Taiwan",
+    "color": {
+      "R": 255,
+      "G": 230,
+      "B": 91
+    },
+    "capital": "Taipei"
+  },
+  {
+    "country": "United Arab Emirates",
+    "color": {
+      "R": 255,
+      "G": 192,
+      "B": 74
+    },
+    "capital": "Abu Dhabi"
+  },
+  {
+    "country": "Slovakia",
+    "color": {
+      "R": 184,
+      "G": 136,
+      "B": 110
+    },
+    "capital": "Bratislava"
+  },
+  {
+    "country": "Serbia",
+    "color": {
+      "R": 214,
+      "G": 178,
+      "B": 136
+    },
+    "capital": "Belgrade"
+  },
+  {
+    "country": "Slovenija",
+    "color": {
+      "R": 139,
+      "G": 188,
+      "B": 209
+    },
+    "capital": "Ljubljana"
   }
 ]
