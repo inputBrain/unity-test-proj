@@ -19,8 +19,7 @@ public class GetTileInfo : MonoBehaviour
     private Dictionary<Vector3, TileInfo> TilesDict = new ();
 
     private readonly Dictionary<Color32, string> CountryDict = new Dictionary<Color32, string>();
-    
-    [SerializeField]
+    //212, 184, 138
     public TextAsset countriesJson;
   
     [Serializable]

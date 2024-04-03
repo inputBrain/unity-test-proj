@@ -362,7 +362,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 62febfb5e8793cb4bbb2c3f0c9997de6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 314d09e2a28baea4a849cbdb276ea630, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -580,18 +580,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1287254387}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7997a6acbfc61b34e9d920835987a5e9, type: 3}
+  m_Script: {fileID: 11500000, guid: a14d9b3c21263ac459f61bc6e24b11db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 287997579}
   camera: {fileID: 519420031}
-  color:
-  - serializedVersion: 2
-    rgba: 4284079828
+  color: []
   spriteRenderer: {fileID: 324424377}
-  tile: {fileID: 11400000, guid: 8f9eb952a5f76ab47b795df140a04d8d, type: 2}
+  tile: {fileID: 11400000, guid: 057c4c9ce8114cc4e89a2e0cc86cdd05, type: 2}
   globalCellSize: 0
-  countriesJson: {fileID: 4900000, guid: 87ffe02b4117423fa9098af2288f62a9, type: 3}
+  countriesJson: {fileID: 4900000, guid: d2d09be55a7365c43a1d5a9498986ce4, type: 3}
 --- !u!1 &1528708294
 GameObject:
   m_ObjectHideFlags: 0
