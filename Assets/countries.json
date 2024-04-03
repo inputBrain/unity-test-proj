@@ -1628,5 +1628,25 @@
       "A": 255
     },
     "capital": "Ljubljana"
+  },
+  {
+    "country": "Tajikistan",
+    "color": {
+      "R": 253,
+      "G": 205,
+      "B": 173,
+      "A": 255
+    },
+    "capital": "Dushanbe"
+  },
+  {
+    "country": "Cyprus",
+    "color": {
+      "R": 255,
+      "G": 242,
+      "B": 176,
+      "A": 255
+    },
+    "capital": "Nicosia"
   }
 ]
