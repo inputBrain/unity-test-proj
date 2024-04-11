@@ -7,7 +7,12 @@
       "B": 99,
       "A": 255
     },
-    "capital": "Ottawa"
+    "capital": "Ottawa",
+    "capitalTilePosition" : {
+      "x" : 69,
+      "y" : -146,
+      "z" : 0
+    }
   },
   {
     "country": "USA",
@@ -17,7 +22,12 @@
       "B": 89,
       "A": 255
     },
-    "capital": "Washington D.C."
+    "capital": "Washington D.C.",
+    "capitalTilePosition" : {
+      "x" : 56,
+      "y" : -152,
+      "z" : 0
+    }
   },
   {
     "country": "Mexico",
@@ -27,7 +37,12 @@
       "B": 76,
       "A": 255
     },
-    "capital": "Mexico City"
+    "capital": "Mexico City",
+    "capitalTilePosition" : {
+      "x" : 16,
+      "y" : -207,
+      "z" : 0
+    }
   },
   {
     "country": "Greenland",
@@ -37,7 +52,12 @@
       "B": 191,
       "A": 255
     },
-    "capital": "Nuuk"
+    "capital": "Nuuk",
+    "capitalTilePosition" : {
+      "x" : 108,
+      "y" : -88,
+      "z" : 0
+    }
   },
   {
     "country": "Guatemala",
@@ -47,7 +67,27 @@
       "B": 159,
       "A": 255
     },
-    "capital": "Guatemala City"
+    "capital": "Guatemala City",
+    "capitalTilePosition" : {
+      "x" : 6,
+      "y" : -191,
+      "z" : 0
+    }
+  },
+  {
+    "country": "Iceland",
+    "color": {
+      "R": 83,
+      "G": 151,
+      "B": 200,
+      "A": 255
+    },
+    "capital": "Reykjavik",
+    "capitalTilePosition" : {
+      "x" : 108,
+      "y" : -88,
+      "z" : 0
+    }
   },
   {
     "country": "El Salvador",
@@ -57,7 +97,12 @@
       "B": 72,
       "A": 255
     },
-    "capital": "San Salvador"
+    "capital": "San Salvador",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Belize",
@@ -67,7 +112,12 @@
       "B": 153,
       "A": 255
     },
-    "capital": "Belmopan"
+    "capital": "Belmopan",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Honduras",
@@ -77,7 +127,12 @@
       "B": 179,
       "A": 255
     },
-    "capital": "Tegucigalpa"
+    "capital": "Tegucigalpa",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Nicaragua",
@@ -87,7 +142,12 @@
       "B": 127,
       "A": 255
     },
-    "capital": "Managua"
+    "capital": "Managua",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Costa Rica",
@@ -97,7 +157,12 @@
       "B": 60,
       "A": 255
     },
-    "capital": "San Jose"
+    "capital": "San Jose",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Panama",
@@ -107,7 +172,12 @@
       "B": 86,
       "A": 255
     },
-    "capital": "Panama City"
+    "capital": "Panama City",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Cuba",
@@ -117,7 +187,12 @@
       "B": 140,
       "A": 255
     },
-    "capital": "Havana"
+    "capital": "Havana",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Jamaica",
@@ -127,7 +202,12 @@
       "B": 139,
       "A": 255
     },
-    "capital": "Kingston"
+    "capital": "Kingston",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Port-au-Prince",
@@ -137,7 +217,12 @@
       "B": 107,
       "A": 255
     },
-    "capital": "Port-au-Prince"
+    "capital": "Port-au-Prince",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Dominican Republic",
@@ -147,7 +232,12 @@
       "B": 148,
       "A": 255
     },
-    "capital": "Santo Domingo"
+    "capital": "Santo Domingo",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Colombia",
@@ -157,7 +247,12 @@
       "B": 105,
       "A": 255
     },
-    "capital": "Bogota"
+    "capital": "Bogota",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Venezuela",
@@ -167,7 +262,12 @@
       "B": 145,
       "A": 255
     },
-    "capital": "Caracas"
+    "capital": "Caracas",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Guyana",
@@ -177,7 +277,12 @@
       "B": 115,
       "A": 255
     },
-    "capital": "Georgetown"
+    "capital": "Georgetown",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Suriname",
@@ -187,7 +292,12 @@
       "B": 156,
       "A": 255
     },
-    "capital": "Paramaribo"
+    "capital": "Paramaribo",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "French Gulana",
@@ -197,7 +307,12 @@
       "B": 87,
       "A": 255
     },
-    "capital": "Cayenne"
+    "capital": "Cayenne",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Brazil",
@@ -207,7 +322,12 @@
       "B": 160,
       "A": 255
     },
-    "capital": "Brasilia"
+    "capital": "Brasilia",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Uruguay",
@@ -217,7 +337,12 @@
       "B": 138,
       "A": 255
     },
-    "capital": "Montevideo"
+    "capital": "Montevideo",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Argentina",
@@ -227,7 +352,12 @@
       "B": 185,
       "A": 255
     },
-    "capital": "Buenos Aires"
+    "capital": "Buenos Aires",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Chile",
@@ -237,7 +367,12 @@
       "B": 129,
       "A": 255
     },
-    "capital": "Santiago"
+    "capital": "Santiago",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Paraguay",
@@ -247,7 +382,12 @@
       "B": 110,
       "A": 255
     },
-    "capital": "Asuncion"
+    "capital": "Asuncion",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Bolivia",
@@ -257,7 +397,12 @@
       "B": 68,
       "A": 255
     },
-    "capital": "Sucre"
+    "capital": "Sucre",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Peru",
@@ -267,7 +412,12 @@
       "B": 88,
       "A": 255
     },
-    "capital": "Lima"
+    "capital": "Lima",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Ecuador",
@@ -277,7 +427,12 @@
       "B": 210,
       "A": 255
     },
-    "capital": "Quito"
+    "capital": "Quito",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Morocco",
@@ -287,7 +442,12 @@
       "B": 124,
       "A": 255
     },
-    "capital": "Rabat"
+    "capital": "Rabat",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Algeria",
@@ -297,7 +457,12 @@
       "B": 80,
       "A": 255
     },
-    "capital": "Algiers"
+    "capital": "Algiers",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Tunisia",
@@ -307,7 +472,12 @@
       "B": 102,
       "A": 255
     },
-    "capital": "Tunis"
+    "capital": "Tunis",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Libya",
@@ -317,7 +487,12 @@
       "B": 90,
       "A": 255
     },
-    "capital": "Tripoli"
+    "capital": "Tripoli",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Egypt",
@@ -327,7 +502,12 @@
       "B": 102,
       "A": 255
     },
-    "capital": "Cairo"
+    "capital": "Cairo",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Sudan",
@@ -337,7 +517,12 @@
       "B": 91,
       "A": 255
     },
-    "capital": "Khartoum"
+    "capital": "Khartoum",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Eritrea",
@@ -347,7 +532,12 @@
       "B": 208,
       "A": 255
     },
-    "capital": "Asmara"
+    "capital": "Asmara",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Ethiopia",
@@ -357,7 +547,12 @@
       "B": 197,
       "A": 255
     },
-    "capital": "Addis Ababa"
+    "capital": "Addis Ababa",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Djibouti",
@@ -367,7 +562,12 @@
       "B": 112,
       "A": 255
     },
-    "capital": "Djibouti"
+    "capital": "Djibouti",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Somalia",
@@ -377,7 +577,12 @@
       "B": 133,
       "A": 255
     },
-    "capital": "Mogadishu"
+    "capital": "Mogadishu",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Kenya",
@@ -387,7 +592,12 @@
       "B": 78,
       "A": 255
     },
-    "capital": "Nairobi"
+    "capital": "Nairobi",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Tanzania",
@@ -397,7 +607,12 @@
       "B": 104,
       "A": 255
     },
-    "capital": "Dodoma"
+    "capital": "Dodoma",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Mozambique",
@@ -407,7 +622,12 @@
       "B": 142,
       "A": 255
     },
-    "capital": "Maputo"
+    "capital": "Maputo",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Madagascar",
@@ -417,7 +637,12 @@
       "B": 61,
       "A": 255
     },
-    "capital": "Antananarivo"
+    "capital": "Antananarivo",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "South Africa",
@@ -427,7 +652,12 @@
       "B": 103,
       "A": 255
     },
-    "capital": "Pretoria"
+    "capital": "Pretoria",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Lesotho",
@@ -437,7 +667,12 @@
       "B": 116,
       "A": 255
     },
-    "capital": "Maseru"
+    "capital": "Maseru",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Swaziland",
@@ -447,7 +682,12 @@
       "B": 129,
       "A": 255
     },
-    "capital": "Mbabane"
+    "capital": "Mbabane",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Namibia",
@@ -457,7 +697,12 @@
       "B": 151,
       "A": 255
     },
-    "capital": "Windhoek"
+    "capital": "Windhoek",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Botswana",
@@ -467,7 +712,12 @@
       "B": 77,
       "A": 255
     },
-    "capital": "Gaborone"
+    "capital": "Gaborone",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Zimbabwe",
@@ -477,7 +727,12 @@
       "B": 128,
       "A": 255
     },
-    "capital": "Harare"
+    "capital": "Harare",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Malawi",
@@ -487,7 +742,12 @@
       "B": 177,
       "A": 255
     },
-    "capital": "Lilongwe"
+    "capital": "Lilongwe",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Zambia",
@@ -497,7 +757,12 @@
       "B": 190,
       "A": 255
     },
-    "capital": "Lusaka"
+    "capital": "Lusaka",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Angola",
@@ -507,7 +772,12 @@
       "B": 90,
       "A": 255
     },
-    "capital": "Luanda"
+    "capital": "Luanda",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Democratic Republic of the Congo",
@@ -517,7 +787,12 @@
       "B": 142,
       "A": 255
     },
-    "capital": "Kinshasa"
+    "capital": "Kinshasa",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Burundi",
@@ -527,7 +802,12 @@
       "B": 114,
       "A": 255
     },
-    "capital": "Bujumbura"
+    "capital": "Bujumbura",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Rwanda",
@@ -537,7 +817,12 @@
       "B": 141,
       "A": 255
     },
-    "capital": "Kigali"
+    "capital": "Kigali",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Uganda",
@@ -547,7 +832,12 @@
       "B": 141,
       "A": 255
     },
-    "capital": "Kampala"
+    "capital": "Kampala",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "South Sudan",
@@ -557,7 +847,12 @@
       "B": 166,
       "A": 255
     },
-    "capital": "Juba"
+    "capital": "Juba",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Central African Republic",
@@ -567,7 +862,12 @@
       "B": 118,
       "A": 255
     },
-    "capital": "Bangui"
+    "capital": "Bangui",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Republic of the Congo",
@@ -577,7 +877,12 @@
       "B": 138,
       "A": 255
     },
-    "capital": "Brazzaville"
+    "capital": "Brazzaville",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Gabon",
@@ -587,7 +892,12 @@
       "B": 175,
       "A": 255
     },
-    "capital": "Libreville"
+    "capital": "Libreville",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Cameroon",
@@ -597,7 +907,12 @@
       "B": 76,
       "A": 255
     },
-    "capital": "Yaounde"
+    "capital": "Yaounde",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Chad",
@@ -607,7 +922,12 @@
       "B": 165,
       "A": 255
     },
-    "capital": "N'Djamena"
+    "capital": "N'Djamena",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Niger",
@@ -617,7 +937,12 @@
       "B": 199,
       "A": 255
     },
-    "capital": "Niamey"
+    "capital": "Niamey",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Nigeria",
@@ -627,7 +952,12 @@
       "B": 103,
       "A": 255
     },
-    "capital": "Abuja"
+    "capital": "Abuja",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Benin",
@@ -637,7 +967,12 @@
       "B": 207,
       "A": 255
     },
-    "capital": "Porto-Novo"
+    "capital": "Porto-Novo",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Togo",
@@ -647,7 +982,12 @@
       "B": 191,
       "A": 255
     },
-    "capital": "Lome"
+    "capital": "Lome",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Ghana",
@@ -657,7 +997,12 @@
       "B": 147,
       "A": 255
     },
-    "capital": "Accra"
+    "capital": "Accra",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Ivory Coast",
@@ -667,7 +1012,12 @@
       "B": 81,
       "A": 255
     },
-    "capital": "Yamoussoukro"
+    "capital": "Yamoussoukro",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Liberia",
@@ -677,7 +1027,12 @@
       "B": 119,
       "A": 255
     },
-    "capital": "Monrovia"
+    "capital": "Monrovia",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Sierra Leone",
@@ -687,7 +1042,12 @@
       "B": 154,
       "A": 255
     },
-    "capital": "Freetown"
+    "capital": "Freetown",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Guinea",
@@ -697,7 +1057,12 @@
       "B": 103,
       "A": 255
     },
-    "capital": "Conakry"
+    "capital": "Conakry",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Guine-Bissau",
@@ -707,7 +1072,12 @@
       "B": 142,
       "A": 255
     },
-    "capital": "Bissau"
+    "capital": "Bissau",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Senegal",
@@ -717,7 +1087,12 @@
       "B": 168,
       "A": 255
     },
-    "capital": "Dakar"
+    "capital": "Dakar",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "The Gambia",
@@ -727,7 +1102,12 @@
       "B": 109,
       "A": 255
     },
-    "capital": "Banjul"
+    "capital": "Banjul",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Mauritania",
@@ -737,7 +1117,12 @@
       "B": 97,
       "A": 255
     },
-    "capital": "Nouakchott"
+    "capital": "Nouakchott",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Mali",
@@ -747,7 +1132,12 @@
       "B": 153,
       "A": 255
     },
-    "capital": "Bamako"
+    "capital": "Bamako",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Burkina Faso",
@@ -757,7 +1147,12 @@
       "B": 92,
       "A": 255
     },
-    "capital": "Ouagadougou"
+    "capital": "Ouagadougou",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Equatorial Guinea",
@@ -767,7 +1162,12 @@
       "B": 115,
       "A": 255
     },
-    "capital": "Malabo"
+    "capital": "Malabo",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Portugal",
@@ -777,7 +1177,12 @@
       "B": 130,
       "A": 255
     },
-    "capital": "Lisbon"
+    "capital": "Lisbon",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Spain",
@@ -787,7 +1192,12 @@
       "B": 171,
       "A": 255
     },
-    "capital": "Madrid"
+    "capital": "Madrid",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "France",
@@ -797,7 +1207,12 @@
       "B": 61,
       "A": 255
     },
-    "capital": "Paris"
+    "capital": "Paris",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Italy",
@@ -807,7 +1222,12 @@
       "B": 163,
       "A": 255
     },
-    "capital": "Rome"
+    "capital": "Rome",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Germany",
@@ -817,7 +1237,12 @@
       "B": 93,
       "A": 255
     },
-    "capital": "Berlin"
+    "capital": "Berlin",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Poland",
@@ -827,7 +1252,12 @@
       "B": 100,
       "A": 255
     },
-    "capital": "Warsaw"
+    "capital": "Warsaw",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Ukraine",
@@ -837,7 +1267,12 @@
       "B": 68,
       "A": 255
     },
-    "capital": "Kyiv"
+    "capital": "Kyiv",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Belarus",
@@ -847,7 +1282,12 @@
       "B": 96,
       "A": 255
     },
-    "capital": "Minsk"
+    "capital": "Minsk",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Russia",
@@ -857,7 +1297,12 @@
       "B": 144,
       "A": 255
     },
-    "capital": "Moscow"
+    "capital": "Moscow",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Finland",
@@ -867,7 +1312,12 @@
       "B": 157,
       "A": 255
     },
-    "capital": "Helsinki"
+    "capital": "Helsinki",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Sweden",
@@ -877,7 +1327,12 @@
       "B": 143,
       "A": 255
     },
-    "capital": "Stockholm"
+    "capital": "Stockholm",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Norway",
@@ -887,7 +1342,12 @@
       "B": 209,
       "A": 255
     },
-    "capital": "Oslo"
+    "capital": "Oslo",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Denmark",
@@ -897,7 +1357,12 @@
       "B": 198,
       "A": 255
     },
-    "capital": "Copenhagen"
+    "capital": "Copenhagen",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Nederland",
@@ -907,7 +1372,12 @@
       "B": 119,
       "A": 255
     },
-    "capital": "Amsterdam"
+    "capital": "Amsterdam",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "United Kingdom",
@@ -917,7 +1387,12 @@
       "B": 74,
       "A": 255
     },
-    "capital": "London"
+    "capital": "London",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Ireland",
@@ -927,7 +1402,12 @@
       "B": 98,
       "A": 255
     },
-    "capital": "Dublin"
+    "capital": "Dublin",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Belgium",
@@ -937,7 +1417,12 @@
       "B": 115,
       "A": 255
     },
-    "capital": "Brussels"
+    "capital": "Brussels",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Schweiz",
@@ -947,7 +1432,12 @@
       "B": 76,
       "A": 255
     },
-    "capital": "Bern"
+    "capital": "Bern",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Czech Republic",
@@ -957,7 +1447,12 @@
       "B": 165,
       "A": 255
     },
-    "capital": "Prague"
+    "capital": "Prague",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Austria",
@@ -967,7 +1462,12 @@
       "B": 131,
       "A": 255
     },
-    "capital": "Vienna"
+    "capital": "Vienna",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Hungary",
@@ -977,7 +1477,12 @@
       "B": 176,
       "A": 255
     },
-    "capital": "Budapest"
+    "capital": "Budapest",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Romania",
@@ -987,7 +1492,12 @@
       "B": 201,
       "A": 255
     },
-    "capital": "Bucharest"
+    "capital": "Bucharest",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Moldova",
@@ -997,7 +1507,12 @@
       "B": 209,
       "A": 255
     },
-    "capital": "Chisinau"
+    "capital": "Chisinau",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Bulragia",
@@ -1007,7 +1522,12 @@
       "B": 112,
       "A": 255
     },
-    "capital": "Sofia"
+    "capital": "Sofia",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Turkey",
@@ -1017,7 +1537,12 @@
       "B": 131,
       "A": 255
     },
-    "capital": "Ankara"
+    "capital": "Ankara",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Lietuva",
@@ -1027,7 +1552,12 @@
       "B": 122,
       "A": 255
     },
-    "capital": "Vilnius"
+    "capital": "Vilnius",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Latvija",
@@ -1037,7 +1567,12 @@
       "B": 172,
       "A": 255
     },
-    "capital": "Riga"
+    "capital": "Riga",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Eesti",
@@ -1047,7 +1582,12 @@
       "B": 132,
       "A": 255
     },
-    "capital": "Tallinn"
+    "capital": "Tallinn",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Finland",
@@ -1057,7 +1597,12 @@
       "B": 89,
       "A": 255
     },
-    "capital": "Helsinki"
+    "capital": "Helsinki",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Poland",
@@ -1067,7 +1612,12 @@
       "B": 100,
       "A": 255
     },
-    "capital": "Warsaw"
+    "capital": "Warsaw",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "China",
@@ -1077,7 +1627,12 @@
       "B": 107,
       "A": 255
     },
-    "capital": "Peking"
+    "capital": "Peking",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Mongolia",
@@ -1087,7 +1642,12 @@
       "B": 150,
       "A": 255
     },
-    "capital": "Ulaanbaatar"
+    "capital": "Ulaanbaatar",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "India",
@@ -1097,7 +1657,12 @@
       "B": 103,
       "A": 255
     },
-    "capital": "New Delhi"
+    "capital": "New Delhi",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Japan",
@@ -1107,7 +1672,12 @@
       "B": 130,
       "A": 255
     },
-    "capital": "Tokio"
+    "capital": "Tokio",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Pakistan",
@@ -1117,7 +1687,12 @@
       "B": 107,
       "A": 255
     },
-    "capital": "Islamabad"
+    "capital": "Islamabad",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Afghanistan",
@@ -1127,7 +1702,12 @@
       "B": 156,
       "A": 255
     },
-    "capital": "Kabul"
+    "capital": "Kabul",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Iran",
@@ -1137,7 +1717,12 @@
       "B": 202,
       "A": 255
     },
-    "capital": "Tehran"
+    "capital": "Tehran",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Turkmenistan",
@@ -1147,7 +1732,12 @@
       "B": 127,
       "A": 255
     },
-    "capital": "Ashgabat"
+    "capital": "Ashgabat",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Kazakhstan",
@@ -1157,7 +1747,12 @@
       "B": 101,
       "A": 255
     },
-    "capital": "Astana"
+    "capital": "Astana",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Uzbekistan",
@@ -1167,7 +1762,12 @@
       "B": 138,
       "A": 255
     },
-    "capital": "Tashkent"
+    "capital": "Tashkent",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Kyrgyzstan",
@@ -1177,7 +1777,12 @@
       "B": 161,
       "A": 255
     },
-    "capital": "Bishkek"
+    "capital": "Bishkek",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Georgia",
@@ -1187,7 +1792,12 @@
       "B": 102,
       "A": 255
     },
-    "capital": "Tbilisi"
+    "capital": "Tbilisi",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Armenia",
@@ -1197,7 +1807,12 @@
       "B": 137,
       "A": 255
     },
-    "capital": "Yerevan"
+    "capital": "Yerevan",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Azerbaijan",
@@ -1207,7 +1822,12 @@
       "B": 109,
       "A": 255
     },
-    "capital": "Baku"
+    "capital": "Baku",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Iraq",
@@ -1217,7 +1837,12 @@
       "B": 93,
       "A": 255
     },
-    "capital": "Baghdad"
+    "capital": "Baghdad",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Syria",
@@ -1227,7 +1852,12 @@
       "B": 153,
       "A": 255
     },
-    "capital": "Damascus"
+    "capital": "Damascus",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Jordan",
@@ -1237,7 +1867,12 @@
       "B": 75,
       "A": 255
     },
-    "capital": "Amman"
+    "capital": "Amman",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Lebanon",
@@ -1247,7 +1882,12 @@
       "B": 207,
       "A": 255
     },
-    "capital": "Beirut"
+    "capital": "Beirut",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Israel",
@@ -1257,7 +1897,12 @@
       "B": 124,
       "A": 255
     },
-    "capital": "Jerusalem"
+    "capital": "Jerusalem",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Greece",
@@ -1267,7 +1912,12 @@
       "B": 123,
       "A": 255
     },
-    "capital": "Athens"
+    "capital": "Athens",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Kosovo",
@@ -1277,7 +1927,12 @@
       "B": 78,
       "A": 255
     },
-    "capital": "Pristina"
+    "capital": "Pristina",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Macedonia",
@@ -1287,7 +1942,12 @@
       "B": 69,
       "A": 255
     },
-    "capital": "Skopje"
+    "capital": "Skopje",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Albania",
@@ -1297,7 +1957,12 @@
       "B": 163,
       "A": 255
     },
-    "capital": "Tirana"
+    "capital": "Tirana",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Montenegro",
@@ -1307,7 +1972,12 @@
       "B": 183,
       "A": 255
     },
-    "capital": "Podgorica"
+    "capital": "Podgorica",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Saudi Arabia",
@@ -1317,7 +1987,12 @@
       "B": 170,
       "A": 255
     },
-    "capital": "Riyadh"
+    "capital": "Riyadh",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Oman",
@@ -1327,7 +2002,12 @@
       "B": 156,
       "A": 255
     },
-    "capital": "Muscat"
+    "capital": "Muscat",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Yemen",
@@ -1337,7 +2017,12 @@
       "B": 90,
       "A": 255
     },
-    "capital": "Sanaa"
+    "capital": "Sanaa",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Bahrain",
@@ -1347,7 +2032,12 @@
       "B": 128,
       "A": 255
     },
-    "capital": "Manama"
+    "capital": "Manama",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Kuwait",
@@ -1357,7 +2047,12 @@
       "B": 112,
       "A": 255
     },
-    "capital": "Kuwait City"
+    "capital": "Kuwait City",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Croatia",
@@ -1367,7 +2062,12 @@
       "B": 93,
       "A": 255
     },
-    "capital": "Zagreb"
+    "capital": "Zagreb",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Bosnia and Herzegovina",
@@ -1377,7 +2077,12 @@
       "B": 99,
       "A": 255
     },
-    "capital": "Sarajevo"
+    "capital": "Sarajevo",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Luxembourg",
@@ -1387,7 +2092,12 @@
       "B": 142,
       "A": 255
     },
-    "capital": "Luxembourg"
+    "capital": "Luxembourg",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Philippines",
@@ -1397,7 +2107,12 @@
       "B": 95,
       "A": 255
     },
-    "capital": "Manila"
+    "capital": "Manila",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Malaysia",
@@ -1407,7 +2122,12 @@
       "B": 153,
       "A": 255
     },
-    "capital": "Kuala Lumpur"
+    "capital": "Kuala Lumpur",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Brunei",
@@ -1417,7 +2137,12 @@
       "B": 209,
       "A": 255
     },
-    "capital": "Bandar Seri Begawan"
+    "capital": "Bandar Seri Begawan",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Indonesia",
@@ -1427,7 +2152,12 @@
       "B": 97,
       "A": 255
     },
-    "capital": "Jakarta"
+    "capital": "Jakarta",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Timor-Leste",
@@ -1437,7 +2167,12 @@
       "B": 93,
       "A": 255
     },
-    "capital": "Dili"
+    "capital": "Dili",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Papua New Guinea",
@@ -1447,7 +2182,12 @@
       "B": 96,
       "A": 255
     },
-    "capital": "Port Moresby"
+    "capital": "Port Moresby",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Australia",
@@ -1457,7 +2197,12 @@
       "B": 142,
       "A": 255
     },
-    "capital": "Canberra"
+    "capital": "Canberra",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "New Zealand",
@@ -1467,7 +2212,12 @@
       "B": 116,
       "A": 255
     },
-    "capital": "Wellington"
+    "capital": "Wellington",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Sri-Lanka",
@@ -1477,7 +2227,12 @@
       "B": 116,
       "A": 255
     },
-    "capital": "Colombo"
+    "capital": "Colombo",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Bangladesh",
@@ -1487,7 +2242,12 @@
       "B": 179,
       "A": 255
     },
-    "capital": "Dhaka"
+    "capital": "Dhaka",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Nepal",
@@ -1497,7 +2257,12 @@
       "B": 209,
       "A": 255
     },
-    "capital": "Kathmandu"
+    "capital": "Kathmandu",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Bhutan",
@@ -1507,7 +2272,12 @@
       "B": 120,
       "A": 255
     },
-    "capital": "Thimphu"
+    "capital": "Thimphu",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Myanmar",
@@ -1517,7 +2287,12 @@
       "B": 203,
       "A": 255
     },
-    "capital": "Naypyidaw"
+    "capital": "Naypyidaw",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Laos",
@@ -1527,7 +2302,12 @@
       "B": 109,
       "A": 255
     },
-    "capital": "Vientiane"
+    "capital": "Vientiane",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Thailand",
@@ -1537,7 +2317,12 @@
       "B": 96,
       "A": 255
     },
-    "capital": "Bangkok"
+    "capital": "Bangkok",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Cambodia",
@@ -1547,7 +2332,12 @@
       "B": 161,
       "A": 255
     },
-    "capital": "Phnom Penh"
+    "capital": "Phnom Penh",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Vietnam",
@@ -1557,7 +2347,12 @@
       "B": 141,
       "A": 255
     },
-    "capital": "Hanoi"
+    "capital": "Hanoi",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "North Korea",
@@ -1567,7 +2362,12 @@
       "B": 123,
       "A": 255
     },
-    "capital": "Pyongyang"
+    "capital": "Pyongyang",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "South Korea",
@@ -1577,7 +2377,12 @@
       "B": 185,
       "A": 255
     },
-    "capital": "Seoul"
+    "capital": "Seoul",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Taiwan",
@@ -1587,7 +2392,12 @@
       "B": 91,
       "A": 255
     },
-    "capital": "Taipei"
+    "capital": "Taipei",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "United Arab Emirates",
@@ -1597,7 +2407,12 @@
       "B": 74,
       "A": 255
     },
-    "capital": "Abu Dhabi"
+    "capital": "Abu Dhabi",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Slovakia",
@@ -1607,7 +2422,12 @@
       "B": 110,
       "A": 255
     },
-    "capital": "Bratislava"
+    "capital": "Bratislava",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Serbia",
@@ -1617,7 +2437,12 @@
       "B": 136,
       "A": 255
     },
-    "capital": "Belgrade"
+    "capital": "Belgrade",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Slovenija",
@@ -1627,7 +2452,12 @@
       "B": 209,
       "A": 255
     },
-    "capital": "Ljubljana"
+    "capital": "Ljubljana",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Tajikistan",
@@ -1637,7 +2467,12 @@
       "B": 173,
       "A": 255
     },
-    "capital": "Dushanbe"
+    "capital": "Dushanbe",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   },
   {
     "country": "Cyprus",
@@ -1647,6 +2482,13 @@
       "B": 176,
       "A": 255
     },
-    "capital": "Nicosia"
+    "capital": "Nicosia",
+    "capitalTilePosition" : {
+      "x" : 1000000000,
+      "y" : -1000000000,
+      "z" : 0
+    }
   }
 ]
+
+

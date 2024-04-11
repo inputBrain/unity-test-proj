@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml;
 using JetBrains.Annotations;
 using Models;
 using Newtonsoft.Json;
@@ -15,12 +16,12 @@ public class GetTileInfo : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Tile tile;
     public float globalCellSize;
-    
     private Dictionary<Vector3, TileInfo> TilesDict = new ();
-
     private readonly Dictionary<Color32, string> CountryDict = new Dictionary<Color32, string>();
-    //212, 184, 138
     public TextAsset countriesJson;
+    
+    private Dictionary<string, int> CountryHexagonCount = new Dictionary<string, int>();
+
   
     [Serializable]
     public class TileInfo
@@ -44,6 +45,8 @@ public class GetTileInfo : MonoBehaviour
         //cellSize.x *= globalCellSize;
         //cellSize.y *= globalCellSize;
         
+        int generatedHexagons = 0;
+        
         //TODO:
         // var spriteWidthInCells = spriteBounds.size.x / (cellSize.x * 0.8659766f);
         // var spriteHeightInCells = spriteBounds.size.y / (cellSize.y * 0.8659766f);
@@ -54,8 +57,8 @@ public class GetTileInfo : MonoBehaviour
         int countCellsByX = Mathf.CeilToInt(spriteWidthInCells);
         var countCellsByY = Mathf.CeilToInt(spriteHeightInCells);
 
-        Debug.Log("Количество занятых клеток по X: " + countCellsByX);
-        Debug.Log("Количество занятых клеток по Y: " + countCellsByY);
+        // Debug.Log("Количество занятых клеток по X: " + countCellsByX);
+        // Debug.Log("Количество занятых клеток по Y: " + countCellsByY);
         
         var offsetX = countCellsByX / 2;
         var offsetY = countCellsByY / 2;
@@ -85,9 +88,36 @@ public class GetTileInfo : MonoBehaviour
                     
                     tilemap.SetTransformMatrix(pos, Matrix4x4.Scale(new Vector3(scaledSizeX, scaledSizeY, 1)));
                     TilesDict.Add(pos, tileInfo);
+                    
+                    generatedHexagons++;
+                    
+                    if (CountryHexagonCount.ContainsKey(country))
+                    {
+                        CountryHexagonCount[country]++;
+                    }
+                    else
+                    {
+                        CountryHexagonCount.Add(country, 1);
+                    }
                 }
             }
         }
+        
+        // XmlDocument xmlDoc = new XmlDocument();
+        // XmlElement root = xmlDoc.CreateElement("CountryHexagonCounts");
+        // xmlDoc.AppendChild(root);
+        //
+        // foreach (var kvp in CountryHexagonCount.OrderBy(x => x.Key))
+        // {
+        //     XmlElement countryElement = xmlDoc.CreateElement("Country");
+        //     countryElement.SetAttribute("Name", kvp.Key);
+        //     countryElement.SetAttribute("HexagonCount", kvp.Value.ToString());
+        //     root.AppendChild(countryElement);
+        // }
+        //
+        // string filePath = "CountryHexagonCounts.xml";
+        // xmlDoc.Save(filePath);
+        Debug.Log("Total count: " + generatedHexagons);
     }
     
     private string TryGetCountry(Bounds spriteBounds, Vector3 tileWorldPos)

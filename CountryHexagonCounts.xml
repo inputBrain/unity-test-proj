@@ -1,0 +1,165 @@
+<CountryHexagonCounts>
+  <Country Name="Afghanistan" HexagonCount="247" />
+  <Country Name="Albania" HexagonCount="12" />
+  <Country Name="Algeria" HexagonCount="860" />
+  <Country Name="Angola" HexagonCount="421" />
+  <Country Name="Argentina" HexagonCount="1079" />
+  <Country Name="Armenia" HexagonCount="11" />
+  <Country Name="Australia" HexagonCount="2841" />
+  <Country Name="Austria" HexagonCount="34" />
+  <Country Name="Azerbaijan" HexagonCount="36" />
+  <Country Name="Bahrain" HexagonCount="3" />
+  <Country Name="Bangladesh" HexagonCount="44" />
+  <Country Name="Belarus" HexagonCount="94" />
+  <Country Name="Belgium" HexagonCount="14" />
+  <Country Name="Belize" HexagonCount="6" />
+  <Country Name="Benin" HexagonCount="38" />
+  <Country Name="Bhutan" HexagonCount="14" />
+  <Country Name="Bolivia" HexagonCount="376" />
+  <Country Name="Bosnia and Herzegovina" HexagonCount="19" />
+  <Country Name="Botswana" HexagonCount="209" />
+  <Country Name="Brazil" HexagonCount="2959" />
+  <Country Name="Brunei" HexagonCount="2" />
+  <Country Name="Bulragia" HexagonCount="42" />
+  <Country Name="Burkina Faso" HexagonCount="89" />
+  <Country Name="Burundi" HexagonCount="8" />
+  <Country Name="Cambodia" HexagonCount="63" />
+  <Country Name="Cameroon" HexagonCount="157" />
+  <Country Name="Canada" HexagonCount="5007" />
+  <Country Name="Central African Republic" HexagonCount="208" />
+  <Country Name="Chad" HexagonCount="446" />
+  <Country Name="Chile" HexagonCount="325" />
+  <Country Name="China" HexagonCount="3698" />
+  <Country Name="Colombia" HexagonCount="386" />
+  <Country Name="Costa Rica" HexagonCount="17" />
+  <Country Name="Croatia" HexagonCount="26" />
+  <Country Name="Cuba" HexagonCount="39" />
+  <Country Name="Cyprus" HexagonCount="2" />
+  <Country Name="Czech Republic" HexagonCount="31" />
+  <Country Name="Democratic Republic of the Congo" HexagonCount="788" />
+  <Country Name="Denmark" HexagonCount="20" />
+  <Country Name="Djibouti" HexagonCount="7" />
+  <Country Name="Dominican Republic" HexagonCount="17" />
+  <Country Name="Ecuador" HexagonCount="84" />
+  <Country Name="Eesti" HexagonCount="20" />
+  <Country Name="Egypt" HexagonCount="371" />
+  <Country Name="El Salvador" HexagonCount="8" />
+  <Country Name="Equatorial Guinea" HexagonCount="10" />
+  <Country Name="Eritrea" HexagonCount="40" />
+  <Country Name="Ethiopia" HexagonCount="386" />
+  <Country Name="Finland" HexagonCount="179" />
+  <Country Name="France" HexagonCount="242" />
+  <Country Name="French Gulana" HexagonCount="29" />
+  <Country Name="Gabon" HexagonCount="90" />
+  <Country Name="Georgia" HexagonCount="27" />
+  <Country Name="Germany" HexagonCount="158" />
+  <Country Name="Ghana" HexagonCount="84" />
+  <Country Name="Greece" HexagonCount="56" />
+  <Country Name="Greenland" HexagonCount="1465" />
+  <Country Name="Guatemala" HexagonCount="37" />
+  <Country Name="Guinea" HexagonCount="81" />
+  <Country Name="Guine-Bissau" HexagonCount="12" />
+  <Country Name="Guyana" HexagonCount="69" />
+  <Country Name="Honduras" HexagonCount="37" />
+  <Country Name="Hungary" HexagonCount="39" />
+  <Country Name="India" HexagonCount="1138" />
+  <Country Name="Indonesia" HexagonCount="624" />
+  <Country Name="Iran" HexagonCount="625" />
+  <Country Name="Iraq" HexagonCount="161" />
+  <Country Name="Ireland" HexagonCount="25" />
+  <Country Name="Israel" HexagonCount="9" />
+  <Country Name="Italy" HexagonCount="131" />
+  <Country Name="Ivory Coast" HexagonCount="109" />
+  <Country Name="Jamaica" HexagonCount="4" />
+  <Country Name="Japan" HexagonCount="166" />
+  <Country Name="Jordan" HexagonCount="31" />
+  <Country Name="Kazakhstan" HexagonCount="1175" />
+  <Country Name="Kenya" HexagonCount="195" />
+  <Country Name="Kosovo" HexagonCount="6" />
+  <Country Name="Kuwait" HexagonCount="5" />
+  <Country Name="Kyrgyzstan" HexagonCount="80" />
+  <Country Name="Laos" HexagonCount="80" />
+  <Country Name="Latvija" HexagonCount="30" />
+  <Country Name="Lebanon" HexagonCount="4" />
+  <Country Name="Lesotho" HexagonCount="10" />
+  <Country Name="Liberia" HexagonCount="35" />
+  <Country Name="Libya" HexagonCount="603" />
+  <Country Name="Lietuva" HexagonCount="29" />
+  <Country Name="Luxembourg" HexagonCount="1" />
+  <Country Name="Macedonia" HexagonCount="11" />
+  <Country Name="Madagascar" HexagonCount="213" />
+  <Country Name="Malawi" HexagonCount="35" />
+  <Country Name="Malaysia" HexagonCount="119" />
+  <Country Name="Mali" HexagonCount="433" />
+  <Country Name="Mauritania" HexagonCount="377" />
+  <Country Name="Mexico" HexagonCount="715" />
+  <Country Name="Moldova" HexagonCount="11" />
+  <Country Name="Mongolia" HexagonCount="663" />
+  <Country Name="Montenegro" HexagonCount="5" />
+  <Country Name="Morocco" HexagonCount="223" />
+  <Country Name="Mozambique" HexagonCount="274" />
+  <Country Name="Myanmar" HexagonCount="242" />
+  <Country Name="Namibia" HexagonCount="293" />
+  <Country Name="Nederland" HexagonCount="19" />
+  <Country Name="Nepal" HexagonCount="56" />
+  <Country Name="New Zealand" HexagonCount="107" />
+  <Country Name="Nicaragua" HexagonCount="108" />
+  <Country Name="Niger" HexagonCount="416" />
+  <Country Name="Nigeria" HexagonCount="312" />
+  <Country Name="North Korea" HexagonCount="52" />
+  <Country Name="Norway" HexagonCount="171" />
+  <Country Name="Oman" HexagonCount="109" />
+  <Country Name="Pakistan" HexagonCount="331" />
+  <Country Name="Panama" HexagonCount="26" />
+  <Country Name="Papua New Guinea" HexagonCount="160" />
+  <Country Name="Paraguay" HexagonCount="147" />
+  <Country Name="Peru" HexagonCount="454" />
+  <Country Name="Philippines" HexagonCount="98" />
+  <Country Name="Poland" HexagonCount="136" />
+  <Country Name="Port-au-Prince" HexagonCount="9" />
+  <Country Name="Portugal" HexagonCount="34" />
+  <Country Name="Republic of the Congo" HexagonCount="113" />
+  <Country Name="Romania" HexagonCount="100" />
+  <Country Name="Russia" HexagonCount="8575" />
+  <Country Name="Rwanda" HexagonCount="8" />
+  <Country Name="Saudi Arabia" HexagonCount="698" />
+  <Country Name="Schweiz" HexagonCount="18" />
+  <Country Name="Senegal" HexagonCount="68" />
+  <Country Name="Serbia" HexagonCount="33" />
+  <Country Name="Sierra Leone" HexagonCount="26" />
+  <Country Name="Slovakia" HexagonCount="24" />
+  <Country Name="Slovenija" HexagonCount="8" />
+  <Country Name="Somalia" HexagonCount="226" />
+  <Country Name="South Africa" HexagonCount="464" />
+  <Country Name="South Korea" HexagonCount="41" />
+  <Country Name="South Sudan" HexagonCount="218" />
+  <Country Name="Spain" HexagonCount="201" />
+  <Country Name="Sri-Lanka" HexagonCount="22" />
+  <Country Name="Sudan" HexagonCount="642" />
+  <Country Name="Suriname" HexagonCount="46" />
+  <Country Name="Swaziland" HexagonCount="6" />
+  <Country Name="Sweden" HexagonCount="232" />
+  <Country Name="Syria" HexagonCount="71" />
+  <Country Name="Taiwan" HexagonCount="12" />
+  <Country Name="Tajikistan" HexagonCount="57" />
+  <Country Name="Tanzania" HexagonCount="305" />
+  <Country Name="Thailand" HexagonCount="179" />
+  <Country Name="The Gambia" HexagonCount="2" />
+  <Country Name="Timor-Leste" HexagonCount="5" />
+  <Country Name="Togo" HexagonCount="21" />
+  <Country Name="Tunisia" HexagonCount="59" />
+  <Country Name="Turkey" HexagonCount="323" />
+  <Country Name="Turkmenistan" HexagonCount="193" />
+  <Country Name="Uganda" HexagonCount="75" />
+  <Country Name="Ukraine" HexagonCount="264" />
+  <Country Name="United Arab Emirates" HexagonCount="27" />
+  <Country Name="United Kingdom" HexagonCount="114" />
+  <Country Name="Uruguay" HexagonCount="66" />
+  <Country Name="USA" HexagonCount="3987" />
+  <Country Name="Uzbekistan" HexagonCount="187" />
+  <Country Name="Venezuela" HexagonCount="316" />
+  <Country Name="Vietnam" HexagonCount="115" />
+  <Country Name="Yemen" HexagonCount="157" />
+  <Country Name="Zambia" HexagonCount="258" />
+  <Country Name="Zimbabwe" HexagonCount="133" />
+</CountryHexagonCounts>
