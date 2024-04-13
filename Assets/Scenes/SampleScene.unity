@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0450910ad20f334458c333c896f9d23d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemapGrid: {fileID: 0}
+  gridTilemap: {fileID: 0}
 --- !u!1 &324424376
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +635,10 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 2257918572387723497, guid: 80b7d8b50d449d34991418539b7958fa, type: 3}
+      propertyPath: gridTilemap
+      value: 
+      objectReference: {fileID: 802105227}
     - target: {fileID: 2257918572387723497, guid: 80b7d8b50d449d34991418539b7958fa, type: 3}
       propertyPath: tilemapGrid
       value: 
