@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0450910ad20f334458c333c896f9d23d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridTilemap: {fileID: 0}
+  gridTilemap: {fileID: 1287254387}
 --- !u!1 &324424376
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &1287254388
 Grid:
   m_ObjectHideFlags: 0
@@ -630,6 +630,10 @@ PrefabInstance:
     - target: {fileID: 109350567799277214, guid: 80b7d8b50d449d34991418539b7958fa, type: 3}
       propertyPath: m_Name
       value: GridPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 109350567799277214, guid: 80b7d8b50d449d34991418539b7958fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2257918572387723497, guid: 80b7d8b50d449d34991418539b7958fa, type: 3}
       propertyPath: _camera
