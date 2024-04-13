@@ -41,8 +41,8 @@ public class GetTileInfo : MonoBehaviour
         Bounds spriteBounds = spriteRenderer.sprite.bounds;
         Vector3 cellSize = tilemap.cellSize;
         
-        var spriteWidthInCells = spriteBounds.size.x / (cellSize.x * 0.8659766f);
-        var spriteHeightInCells = spriteBounds.size.y / (cellSize.y * 0.8659766f);
+        var spriteWidthInCells = spriteBounds.size.x / (cellSize.x * cellSize.x);
+        var spriteHeightInCells = spriteBounds.size.y / (cellSize.y * cellSize.x);
         // var spriteWidthInCells = spriteBounds.size.x / (cellSize.x * 0.1262882f);
         // var spriteHeightInCells = spriteBounds.size.y / (cellSize.y * 0.1458333f);
         
