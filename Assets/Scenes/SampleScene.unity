@@ -494,7 +494,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 2.7300549
+  orthographic size: 12.01646
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -519,7 +519,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.86, y: 6.37, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -585,10 +585,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 287997579}
   camera: {fileID: 519420031}
-  color: []
   spriteRenderer: {fileID: 324424377}
   tile: {fileID: 11400000, guid: 057c4c9ce8114cc4e89a2e0cc86cdd05, type: 2}
-  globalCellSize: 0
   countriesJson: {fileID: 4900000, guid: d2d09be55a7365c43a1d5a9498986ce4, type: 3}
 --- !u!1 &1528708294
 GameObject:
