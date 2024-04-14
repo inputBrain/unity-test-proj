@@ -11,7 +11,7 @@ public class TilemapGenerator : MonoBehaviour
     public Tilemap tilemap;
     public SpriteRenderer spriteRenderer;
     public Tile tile;
-    private readonly Dictionary<Color32, string> CountryDict = new Dictionary<Color32, string>();
+    private readonly Dictionary<Color32, string> CountryDict = new();
     private CountryTileData _countryTileData;
     public TextAsset countriesJson;
     
@@ -38,6 +38,8 @@ public class TilemapGenerator : MonoBehaviour
 
     private void GenerateHexagons()
     {
+        var whiteColor = new Color(0.925490201f, 0.925490201f, 0.925490201f, 1);
+        
         Bounds spriteBounds = spriteRenderer.sprite.bounds;
         Vector3 cellSize = tilemap.cellSize;
         
@@ -58,13 +60,12 @@ public class TilemapGenerator : MonoBehaviour
         {
             for (int y = 0; y < countCellsByY; y++)
             {
-                // continue;
                 var pos = new Vector3Int(y - offsetY, x - offsetX, 0);
                 Vector3 tileWorldPos = tilemap.GetCellCenterWorld(pos);
                 
-                var isWhiteColor = IsColor(spriteBounds, tileWorldPos);
+                var isHexagonWhite = IsHexagonWhite(spriteBounds, tileWorldPos, whiteColor);
 
-                if (isWhiteColor)
+                if (isHexagonWhite)
                 {
                     var tileInfo = new TileInfoModel
                     {
@@ -84,25 +85,19 @@ public class TilemapGenerator : MonoBehaviour
         }
     }
     
-    private bool IsColor(Bounds spriteBounds, Vector3 tileWorldPos)
+    private bool IsHexagonWhite(Bounds spriteBounds, Vector3 tileWorldPos, Color whiteColor)
     {
-        Color color = TakeColorUnderTile(spriteBounds, tileWorldPos, spriteRenderer.sprite);
-        var whiteColor = new Color(0.925490201f, 0.925490201f, 0.925490201f, 1);
-        if (color != Color.clear)
+        var pixelCoord = WorldToPixelCoords(spriteBounds, tileWorldPos, spriteRenderer.sprite);
+        var colorTile = spriteRenderer.sprite.texture.GetPixel(pixelCoord.x, pixelCoord.y);
+        
+        if (colorTile != Color.clear)
         {
-            return color == whiteColor;
+            return colorTile == whiteColor;
 
         }
         return false;
     }
 
-
-    private Color TakeColorUnderTile(Bounds bounds, Vector3 position, Sprite map)
-    {
-        var pixelCoord = WorldToPixelCoords(bounds, position, map);
-        return map.texture.GetPixel(pixelCoord.x, pixelCoord.y);
-    }
-    
 
     private Vector2Int WorldToPixelCoords(Bounds bounds, Vector3 position, Sprite map)
     {
@@ -111,7 +106,8 @@ public class TilemapGenerator : MonoBehaviour
             Mathf.Clamp(Mathf.RoundToInt((position.y - bounds.min.y) / bounds.size.y * map.texture.height), 0, map.texture.height - 1)
         );
     }
-    
+
+
     [CanBeNull]
     private string GetCountryByColor(Color32 color)
     {
