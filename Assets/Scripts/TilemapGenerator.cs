@@ -41,10 +41,8 @@ public class TilemapGenerator : MonoBehaviour
         Bounds spriteBounds = spriteRenderer.sprite.bounds;
         Vector3 cellSize = tilemap.cellSize;
         
-        var spriteWidthInCells = spriteBounds.size.x / (cellSize.x * cellSize.x);
-        var spriteHeightInCells = spriteBounds.size.y / (cellSize.y * cellSize.x);
-        // var spriteWidthInCells = spriteBounds.size.x / (cellSize.x * 0.1262882f);
-        // var spriteHeightInCells = spriteBounds.size.y / (cellSize.y * 0.1458333f);
+        var spriteWidthInCells = spriteBounds.size.x / (cellSize.x * 0.8659766f);
+        var spriteHeightInCells = spriteBounds.size.y / (cellSize.x);
         
 
         int countCellsByX = Mathf.CeilToInt(spriteWidthInCells);
@@ -53,21 +51,24 @@ public class TilemapGenerator : MonoBehaviour
         var offsetX = countCellsByX / 2;
         var offsetY = countCellsByY / 2;
         
+        Debug.Log(countCellsByX);
+        Debug.Log(countCellsByY);
+        
         for (int x = 0; x < countCellsByX; x++)
         {
             for (int y = 0; y < countCellsByY; y++)
             {
+                // continue;
                 var pos = new Vector3Int(y - offsetY, x - offsetX, 0);
                 Vector3 tileWorldPos = tilemap.GetCellCenterWorld(pos);
                 
-                var country = TryGetCountry(spriteBounds, tileWorldPos);
+                var isWhiteColor = IsColor(spriteBounds, tileWorldPos);
 
-                if (country != null)
+                if (isWhiteColor)
                 {
                     var tileInfo = new TileInfoModel
                     {
-                        Country = country,
-                        isCapital = false,
+                        isOccupied = false
                     };
                     
                     tilemap.SetTile(pos, tile);
@@ -83,20 +84,18 @@ public class TilemapGenerator : MonoBehaviour
         }
     }
     
-    private string TryGetCountry(Bounds spriteBounds, Vector3 tileWorldPos)
+    private bool IsColor(Bounds spriteBounds, Vector3 tileWorldPos)
     {
-        var color = TakeColorUnderTile(spriteBounds, tileWorldPos, spriteRenderer.sprite);
+        Color color = TakeColorUnderTile(spriteBounds, tileWorldPos, spriteRenderer.sprite);
+        var whiteColor = new Color(0.925490201f, 0.925490201f, 0.925490201f, 1);
+        if (color != Color.clear)
+        {
+            return color == whiteColor;
 
-        var emptyColor = new Color32(0, 0, 0, 0);
-        if (color != emptyColor)
-        { 
-            var country = GetCountryByColor(color);
-            if (country != null)
-                return country;
         }
-        return null;
+        return false;
     }
-    
+
 
     private Color TakeColorUnderTile(Bounds bounds, Vector3 position, Sprite map)
     {

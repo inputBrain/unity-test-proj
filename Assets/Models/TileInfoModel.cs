@@ -7,5 +7,6 @@ namespace Models
     {
         public string Country;
         public bool isCapital;
+        public bool isOccupied;
     }
 }

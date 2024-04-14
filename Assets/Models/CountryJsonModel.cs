@@ -7,6 +7,6 @@ namespace Models
         public string Country;
         public Color32 Color;
         public string Capital;
-        public CapitalTilePosition CapitalTilePosition;
+        public Vector3 CapitalTilePosition;
     }
 }
