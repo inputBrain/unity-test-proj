@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using JetBrains.Annotations;
 using Models;
 using Newtonsoft.Json;
@@ -11,7 +12,8 @@ public class TilemapGenerator : MonoBehaviour
     public Tilemap tilemap;
     public SpriteRenderer spriteRenderer;
     public Tile tile;
-    private readonly Dictionary<Color32, string> CountryDict = new();
+    public Tile castleTile;
+    private readonly Dictionary<Color32, CountryJsonModel> CountryDict = new();
     private CountryTileData _countryTileData;
     public TextAsset countriesJson;
     
@@ -32,7 +34,7 @@ public class TilemapGenerator : MonoBehaviour
         
         foreach (var country in countries)
         {
-            CountryDict.Add(country.Color, country.Country);
+            CountryDict.Add(country.Color, country);
         }
     }
 
@@ -64,7 +66,7 @@ public class TilemapGenerator : MonoBehaviour
                 Vector3 tileWorldPos = tilemap.GetCellCenterWorld(pos);
                 
                 var isHexagonWhite = IsHexagonWhite(spriteBounds, tileWorldPos, whiteColor);
-
+        
                 if (isHexagonWhite)
                 {
                     var tileInfo = new TileInfoModel
@@ -82,6 +84,18 @@ public class TilemapGenerator : MonoBehaviour
                     _countryTileData.TilesDict.Add(pos, tileInfo);
                 }
             }
+        }
+
+        var countries = CountryDict.Select(x => x.Value).ToList();
+
+        foreach (var country in countries)
+        {
+            var posOnMapX = countCellsByX * country.CapitalTilePosition.x;
+            var posOnMapY = countCellsByY * country.CapitalTilePosition.y;
+            Vector3Int pos = new Vector3Int((int)posOnMapY - offsetY,(int)posOnMapX -  offsetX);
+
+            
+            tilemap.SetTile(pos, castleTile);
         }
     }
     
@@ -112,6 +126,6 @@ public class TilemapGenerator : MonoBehaviour
     private string GetCountryByColor(Color32 color)
     {
          CountryDict.TryGetValue(color, out var country);
-         return country;
+         return country.Country;
     }
 }
