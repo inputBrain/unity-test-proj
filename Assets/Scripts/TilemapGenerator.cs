@@ -90,12 +90,20 @@ public class TilemapGenerator : MonoBehaviour
 
         foreach (var country in countries)
         {
+
+
             var posOnMapX = countCellsByX * country.CapitalTilePosition.x;
             var posOnMapY = countCellsByY * country.CapitalTilePosition.y;
             Vector3Int pos = new Vector3Int((int)posOnMapY - offsetY,(int)posOnMapX -  offsetX);
-
             
-            tilemap.SetTile(pos, castleTile);
+            // Tile countryTile = Instantiate(tile);
+            // countryTile.color = country.Color;
+            
+            tilemap.SetTileFlags(pos, TileFlags.None);
+            tilemap.SetColor(pos, country.Color);
+            // tilemap.SetTile(pos, castleTile);
+
+
         }
     }
     
