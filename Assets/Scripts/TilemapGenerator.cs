@@ -10,6 +10,7 @@ using UnityEngine.Tilemaps;
 public class TilemapGenerator : MonoBehaviour
 {
     public Tilemap tilemap;
+    public Tilemap castleTilemap;
     public SpriteRenderer spriteRenderer;
     public Tile tile;
     public Tile castleTile;
@@ -90,22 +91,16 @@ public class TilemapGenerator : MonoBehaviour
 
         foreach (var country in countries)
         {
-
-
             var posOnMapX = countCellsByX * country.CapitalTilePosition.x;
             var posOnMapY = countCellsByY * country.CapitalTilePosition.y;
             Vector3Int pos = new Vector3Int((int)posOnMapY - offsetY,(int)posOnMapX -  offsetX);
             
-            // Tile countryTile = Instantiate(tile);
-            // countryTile.color = country.Color;
-            
             tilemap.SetTileFlags(pos, TileFlags.None);
             tilemap.SetColor(pos, country.Color);
-            // tilemap.SetTile(pos, castleTile);
-
-
+            
+            castleTilemap.SetTile(pos, castleTile);
         }
-    }
+    } 
     
     private bool IsHexagonWhite(Bounds spriteBounds, Vector3 tileWorldPos, Color whiteColor)
     {
