@@ -439,7 +439,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 80, y: 34.28}
+    oldSize: {x: 80, y: 34.296875}
     newSize: {x: 80, y: 34.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -555,7 +555,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 18.6
+  orthographic size: 1.5150177
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -580,7 +580,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -17.76, y: 2.34, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -664,6 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 287997579}
+  castleTilemap: {fileID: 1995414551}
   spriteRenderer: {fileID: 324424377}
   tile: {fileID: 11400000, guid: 057c4c9ce8114cc4e89a2e0cc86cdd05, type: 2}
   castleTile: {fileID: 11400000, guid: 20ce80bce94639a4785bc317695b557c, type: 2}
@@ -841,7 +842,7 @@ GameObject:
   - component: {fileID: 1995414551}
   - component: {fileID: 1995414550}
   m_Layer: 0
-  m_Name: Tilemap (1)
+  m_Name: Castle Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -29,9 +29,9 @@ namespace Services
                 var hitPosition = hit.point;
                 var gridPos = _tilemap.WorldToCell(hitPosition);
             
-                if (_countryTileData.TilesDict.TryGetValue(gridPos, out var tileInfo))
+                if (_countryTileData.CapitalsDict.TryGetValue(gridPos, out var countryName))
                 {
-                    Debug.Log($"Tile position: {gridPos}, Country: {tileInfo.Country}, isCapital: {tileInfo.isCapital}");
+                    Debug.Log($"{countryName}");
                 }
                 else
                 {

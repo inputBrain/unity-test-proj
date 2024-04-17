@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using JetBrains.Annotations;
 using Models;
@@ -91,14 +92,23 @@ public class TilemapGenerator : MonoBehaviour
 
         foreach (var country in countries)
         {
-            var posOnMapX = countCellsByX * country.CapitalTilePosition.x;
-            var posOnMapY = countCellsByY * country.CapitalTilePosition.y;
-            Vector3Int pos = new Vector3Int((int)posOnMapY - offsetY,(int)posOnMapX -  offsetX);
+            Vector3Int pos1 = new Vector3Int(country.CapitalTilePosition.x, country.CapitalTilePosition.y, 0);
+            tilemap.SetTileFlags(pos1, TileFlags.None);
+            tilemap.SetColor(pos1, Color.cyan);
             
-            tilemap.SetTileFlags(pos, TileFlags.None);
-            tilemap.SetColor(pos, country.Color);
+            _countryTileData.CapitalsDict.Add(pos1, country.Country);
             
-            castleTilemap.SetTile(pos, castleTile);
+            
+            // var posOnMapX = countCellsByX * country.CapitalTilePosition.x;
+            // var posOnMapY = countCellsByY * country.CapitalTilePosition.y;
+            // Vector3Int pos = new Vector3Int((int)posOnMapY - offsetY,(int)posOnMapX -  offsetX);
+            //
+            // tilemap.SetTileFlags(pos, TileFlags.None);
+            // tilemap.SetColor(pos, country.Color);
+            //
+            // castleTilemap.SetTile(pos, castleTile);
+            
+            
         }
     } 
     
