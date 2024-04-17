@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using JetBrains.Annotations;
 using Models;
 using Newtonsoft.Json;
 using Services;
@@ -23,8 +21,6 @@ public class TilemapGenerator : MonoBehaviour
     private void Start()
     {
         _countryTileData = GetComponent<CountryTileData>();
-        // CountryDict.Add(new Color32(26, 139, 113, 255), "USA");
-        // CountryDict.Add(new Color32(189, 215, 61, 255), "CANADA");
         LoadCountryColorsFromJson();
    
         GenerateHexagons();
@@ -71,7 +67,7 @@ public class TilemapGenerator : MonoBehaviour
         
                 if (isHexagonWhite)
                 {
-                    var tileInfo = new TileInfoModel
+                    var tileInfo = new CountryModel
                     {
                         isOccupied = false
                     };
@@ -94,21 +90,8 @@ public class TilemapGenerator : MonoBehaviour
         {
             Vector3Int pos1 = new Vector3Int(country.CapitalTilePosition.x, country.CapitalTilePosition.y, 0);
             tilemap.SetTileFlags(pos1, TileFlags.None);
-            tilemap.SetColor(pos1, Color.cyan);
-            
-            _countryTileData.CapitalsDict.Add(pos1, country.Country);
-            
-            
-            // var posOnMapX = countCellsByX * country.CapitalTilePosition.x;
-            // var posOnMapY = countCellsByY * country.CapitalTilePosition.y;
-            // Vector3Int pos = new Vector3Int((int)posOnMapY - offsetY,(int)posOnMapX -  offsetX);
-            //
-            // tilemap.SetTileFlags(pos, TileFlags.None);
-            // tilemap.SetColor(pos, country.Color);
-            //
-            // castleTilemap.SetTile(pos, castleTile);
-            
-            
+            tilemap.SetColor(pos1, country.Color);
+            castleTilemap.SetTile(pos1, castleTile);
         }
     } 
     
@@ -132,13 +115,5 @@ public class TilemapGenerator : MonoBehaviour
             Mathf.Clamp(Mathf.RoundToInt((position.x - bounds.min.x) / bounds.size.x * map.texture.width), 0, map.texture.width - 1),
             Mathf.Clamp(Mathf.RoundToInt((position.y - bounds.min.y) / bounds.size.y * map.texture.height), 0, map.texture.height - 1)
         );
-    }
-
-
-    [CanBeNull]
-    private string GetCountryByColor(Color32 color)
-    {
-         CountryDict.TryGetValue(color, out var country);
-         return country.Country;
     }
 }
