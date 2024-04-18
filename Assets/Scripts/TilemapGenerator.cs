@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Models;
@@ -69,7 +70,10 @@ public class TilemapGenerator : MonoBehaviour
                 {
                     var tileInfo = new CountryModel
                     {
-                        isOccupied = false
+                        isOccupied = false,
+                        isCapital = false,
+                        Country = string.Empty,
+                        Resources = ResourceModel.CreateEmpty()
                     };
                     
                     tilemap.SetTile(pos, tile);
@@ -92,6 +96,15 @@ public class TilemapGenerator : MonoBehaviour
             tilemap.SetTileFlags(pos1, TileFlags.None);
             tilemap.SetColor(pos1, country.Color);
             castleTilemap.SetTile(pos1, castleTile);
+            
+            var tileInfo = new CountryModel
+            {
+                isOccupied = true,
+                Country = country.Country,
+                Resources = ResourceModel.CreateEmpty()
+            };
+
+            _countryTileData.TilesDict[pos1] = tileInfo;
         }
     } 
     
