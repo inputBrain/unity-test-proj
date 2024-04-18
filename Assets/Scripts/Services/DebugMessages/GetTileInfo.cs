@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace Services
+namespace Services.DebugMessages
 {
     public class GetTileInfo : MonoBehaviour
     {
@@ -22,24 +22,6 @@ namespace Services
 
         private void Update()
         {
-            // if (Input.GetMouseButtonDown(0))
-            // {
-            //     var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //     var hit = Physics2D.GetRayIntersection(ray);
-            //     var hitPosition = hit.point;
-            //     var gridPos = _tilemap.WorldToCell(hitPosition);
-            //
-            //     if (_countryTileData.TilesDict.TryGetValue(gridPos, out var tileInfo))
-            //     {
-            //         Debug.Log($"Country: {tileInfo.Country}");
-            //     }
-            //     else
-            //     {
-            //         Debug.Log("No tile found at position: " + gridPos);
-            //     }
-            // }
-            
-            
             if (Input.GetMouseButtonDown(0))
             {
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -47,15 +29,33 @@ namespace Services
                 var hitPosition = hit.point;
                 var gridPos = _tilemap.WorldToCell(hitPosition);
             
-                if (_countryTileData.CapitalsDict.TryGetValue(gridPos, out var countryName))
+                if (_countryTileData.TilesDict.TryGetValue(gridPos, out var tileInfo))
                 {
-                    Debug.Log($"{countryName}");
+                    Debug.Log($"Country: {tileInfo.Country} Bronze: {tileInfo.Resources.Bronze}");
                 }
                 else
                 {
                     Debug.Log("No tile found at position: " + gridPos);
                 }
             }
+            
+            //
+            // if (Input.GetMouseButtonDown(0))
+            // {
+            //     var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //     var hit = Physics2D.GetRayIntersection(ray);
+            //     var hitPosition = hit.point;
+            //     var gridPos = _tilemap.WorldToCell(hitPosition);
+            //
+            //     if (_countryTileData.CapitalsDict.TryGetValue(gridPos, out var countryName))
+            //     {
+            //         Debug.Log($"{countryName}");
+            //     }
+            //     else
+            //     {
+            //         Debug.Log("No tile found at position: " + gridPos);
+            //     }
+            // }
         }
     }
 }
