@@ -1,6 +1,6 @@
 using System;
-using System.Collections.Generic;
 using JetBrains.Annotations;
+using UnityEngine;
 
 namespace Models
 {
@@ -9,6 +9,7 @@ namespace Models
     {
         [CanBeNull]
         public string Country;
+        public Color32 Color;
         public bool? isCapital;
         public bool? isOccupied;
         public ResourceModel Resources { get; set; }

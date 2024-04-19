@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class CountryTileData : MonoBehaviour
 {
-    public Dictionary<Vector3, CountryModel> TilesDict = new ();
+    public Dictionary<Vector3, CountryModel> TilesDict = new();
+    public List<string> testStrings = new();
 }

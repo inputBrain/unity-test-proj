@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEngine;
 
-public class DontDestroy : MonoBehaviour
+public class DontDestroy : Singleton<DontDestroy>
 {
     void Awake()
     {

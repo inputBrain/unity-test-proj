@@ -8,10 +8,8 @@ using UnityEngine.Tilemaps;
 public class TilemapGenerator : MonoBehaviour
 {
     public Tilemap tilemap;
-    public Tilemap castleTilemap;
     public SpriteRenderer spriteRenderer;
     public Tile tile;
-    public Tile castleTile;
     private readonly Dictionary<Color32, CountryJsonModel> CountryDict = new();
     private CountryTileData _countryTileData;
     public TextAsset countriesJson;
@@ -85,25 +83,7 @@ public class TilemapGenerator : MonoBehaviour
                 }
             }
         }
-
-        var countries = CountryDict.Select(x => x.Value).ToList();
-
-        foreach (var country in countries)
-        {
-            Vector3Int pos1 = new Vector3Int(country.CapitalTilePosition.x, country.CapitalTilePosition.y, 0);
-            tilemap.SetTileFlags(pos1, TileFlags.None);
-            tilemap.SetColor(pos1, country.Color);
-            castleTilemap.SetTile(pos1, castleTile);
-            
-            var tileInfo = new CountryModel
-            {
-                isOccupied = true,
-                Country = country.Country,
-                Resources = ResourceModel.CreateEmpty()
-            };
-
-            _countryTileData.TilesDict[pos1] = tileInfo;
-        }
+        _countryTileData.testStrings.Add("Hello");
     } 
     
     private bool IsHexagonWhite(Bounds spriteBounds, Vector3 tileWorldPos, Color whiteColor)
