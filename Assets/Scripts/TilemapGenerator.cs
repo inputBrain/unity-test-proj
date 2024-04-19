@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Models;
 using Newtonsoft.Json;
-using Services;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -128,5 +126,18 @@ public class TilemapGenerator : MonoBehaviour
             Mathf.Clamp(Mathf.RoundToInt((position.x - bounds.min.x) / bounds.size.x * map.texture.width), 0, map.texture.width - 1),
             Mathf.Clamp(Mathf.RoundToInt((position.y - bounds.min.y) / bounds.size.y * map.texture.height), 0, map.texture.height - 1)
         );
+    }
+    
+    
+    public Vector3 FindCountryTile(string countryName)
+    {
+        foreach (var tilePos in _countryTileData.TilesDict.Keys)
+        {
+            if (_countryTileData.TilesDict[tilePos].Country == countryName)
+            {
+                return tilePos;
+            }
+        }
+        return Vector3.zero; 
     }
 }
