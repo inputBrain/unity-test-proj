@@ -4,11 +4,11 @@ namespace Models
     {
         public int Bronze {get; set; }
 
-        public int Silver;
+        public int Silver {get; set; }
 
-        public int Gold;
+        public int Gold {get; set; }
 
-        public int DonatCrystal;
+        public int DonatCrystal {get; set; }
 
 
         public static ResourceModel CreateEmpty()
