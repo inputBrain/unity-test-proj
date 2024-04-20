@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Services.Helper
+namespace Services
 {
     public class GameMiddleware : MonoBehaviour
     {
