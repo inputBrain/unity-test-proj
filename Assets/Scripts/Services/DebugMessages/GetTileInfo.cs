@@ -10,13 +10,13 @@ namespace Services.DebugMessages
         [SerializeField]
         private GameObject gridTilemap;
         
-        private CountryTileData _countryTileData;
+        private CountryTileStorage _countryTileStorage;
         
         
         private void Start()
         {
             _tilemap = GetComponent<Tilemap>();
-            _countryTileData = gridTilemap.GetComponent<CountryTileData>();
+            _countryTileStorage = gridTilemap.GetComponent<CountryTileStorage>();
         }
 
 
@@ -29,9 +29,9 @@ namespace Services.DebugMessages
                 var hitPosition = hit.point;
                 var gridPos = _tilemap.WorldToCell(hitPosition);
             
-                if (_countryTileData.TilesDict.TryGetValue(gridPos, out var tileInfo))
+                if (_countryTileStorage.TilesData.TryGetValue(gridPos, out var tileInfo))
                 {
-                    Debug.Log($"Country: {tileInfo.Country} Bronze: {tileInfo.Resources.Bronze}");
+                    Debug.Log($"Country: {tileInfo.Country} Bronze: {tileInfo.Resources.CoinIncome}");
                 }
                 else
                 {

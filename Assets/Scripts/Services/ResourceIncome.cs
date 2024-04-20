@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Services
 {
     public class ResourceIncome : MonoBehaviour
     {
+        [FormerlySerializedAs("CountryTileData")]
         [SerializeField]
-        public CountryTileData CountryTileData;
+        public CountryTileStorage countryTileStorage;
         
 
         private  void Update()
@@ -22,9 +24,9 @@ namespace Services
         
         void BronzeIncome()
         {
-            foreach (var country in CountryTileData.TilesDict.Values)
+            foreach (var country in countryTileStorage.TilesData.Values)
             {
-                country.Resources.Bronze++;
+                country.Resources.CoinIncome++;
             }
         }
     }

@@ -10,28 +10,18 @@ public class TilemapGenerator : MonoBehaviour
     public Tilemap tilemap;
     public SpriteRenderer spriteRenderer;
     public Tile tile;
-    private readonly Dictionary<Color32, CountryJsonModel> CountryDict = new();
-    private CountryTileData _countryTileData;
-    public TextAsset countriesJson;
+ 
+    private CountryTileStorage _countryTileStorage;
     
     
     private void Start()
     {
-        _countryTileData = GetComponent<CountryTileData>();
-        LoadCountryColorsFromJson();
+        _countryTileStorage = GetComponent<CountryTileStorage>();
    
         GenerateHexagons();
     }
     
-    void LoadCountryColorsFromJson()
-    {
-        var countries = JsonConvert.DeserializeObject<List<CountryJsonModel>>(countriesJson.text);
-        
-        foreach (var country in countries)
-        {
-            CountryDict.Add(country.Color, country);
-        }
-    }
+  
 
     private void GenerateHexagons()
     {
@@ -79,11 +69,12 @@ public class TilemapGenerator : MonoBehaviour
                     var scaledSizeY = cellSize.y * (1f - spaceBetweenHexagons);
                     
                     tilemap.SetTransformMatrix(pos, Matrix4x4.Scale(new Vector3(scaledSizeX, scaledSizeY, 1)));
-                    _countryTileData.TilesDict.Add(pos, tileInfo);
+                    
+                    _countryTileStorage.tileCoordinateKeys.Add(pos);
+                    _countryTileStorage.countryModelValues.Add(tileInfo);
                 }
             }
         }
-        _countryTileData.testStrings.Add("Hello");
     } 
     
     private bool IsHexagonWhite(Bounds spriteBounds, Vector3 tileWorldPos, Color whiteColor)
@@ -111,9 +102,9 @@ public class TilemapGenerator : MonoBehaviour
     
     public Vector3 FindCountryTile(string countryName)
     {
-        foreach (var tilePos in _countryTileData.TilesDict.Keys)
+        foreach (var tilePos in _countryTileStorage.TilesData.Keys)
         {
-            if (_countryTileData.TilesDict[tilePos].Country == countryName)
+            if (_countryTileStorage.TilesData[tilePos].Country == countryName)
             {
                 return tilePos;
             }

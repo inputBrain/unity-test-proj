@@ -1,24 +1,25 @@
+using System;
+
 namespace Models
 {
+    [Serializable]
     public class ResourceModel
     {
-        public int Bronze {get; set; }
-
-        public int Silver {get; set; }
-
-        public int Gold {get; set; }
-
-        public int DonatCrystal {get; set; }
-
+        public int CoinIncome;
 
         public static ResourceModel CreateEmpty()
         {
             return new ResourceModel()
             {
-                Bronze = 0,
-                Silver = 0,
-                Gold = 0,
-                DonatCrystal = 0
+                CoinIncome = 0
+            };
+        }
+
+        public static ResourceModel CreateBeginResourcesForCastle()
+        {
+            return new ResourceModel()
+            {
+                CoinIncome = 10
             };
         }
     }

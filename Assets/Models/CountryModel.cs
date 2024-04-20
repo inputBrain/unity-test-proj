@@ -10,8 +10,9 @@ namespace Models
         [CanBeNull]
         public string Country;
         public Color32 Color;
-        public bool? isCapital;
-        public bool? isOccupied;
+        [SerializeField]
+        public bool isCapital;
+        public bool isOccupied;
         public ResourceModel Resources { get; set; }
     }
 }
