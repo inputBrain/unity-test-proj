@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using Services;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace MainMenu
@@ -18,7 +19,7 @@ namespace MainMenu
         public TextAsset countriesJson;
 
         [SerializeField]
-        private GameMiddleware _helper;
+        private GameMiddleware _middleware;
 
         
         void Start()
@@ -40,7 +41,7 @@ namespace MainMenu
 
         public void OnStartClick()
         {
-            _helper.SelectedCountry = countryDropdown.options[countryDropdown.value].text;
+            _middleware.SelectedCountry = countryDropdown.options[countryDropdown.value].text;
             SceneManager.LoadScene("GridMapScene");
         }
     }
