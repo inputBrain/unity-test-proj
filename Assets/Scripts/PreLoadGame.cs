@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using Models;
 using Newtonsoft.Json;
 using Services;
@@ -26,7 +25,7 @@ public class PreLoadGame : MonoBehaviour
         
         foreach (var country in countryTileData.TilesData)
         {
-            country.Value.Resources = ResourceModel.CreateEmpty();
+            country.Value.Resources = IncomeManager.CreateEmpty();
         }
         if (middleware != null)
         {
@@ -46,7 +45,7 @@ public class PreLoadGame : MonoBehaviour
                     isCapital = true,
                     Country = country.Value.Country,
                     Color = country.Value.Color,
-                    Resources = ResourceModel.CreateBeginResourcesForCastle()
+                    Resources = IncomeManager.CreateBeginResourcesForCastle()
                 };
 
                 countryTileData.TilesData[pos1] = tileInfo;

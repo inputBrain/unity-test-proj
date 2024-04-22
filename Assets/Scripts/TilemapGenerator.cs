@@ -1,7 +1,4 @@
-using System.Collections.Generic;
-using System.Linq;
 using Models;
-using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -59,7 +56,7 @@ public class TilemapGenerator : MonoBehaviour
                         isOccupied = false,
                         isCapital = false,
                         Country = string.Empty,
-                        Resources = ResourceModel.CreateEmpty()
+                        Resources = IncomeManager.CreateEmpty()
                     };
                     
                     tilemap.SetTile(pos, tile);

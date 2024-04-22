@@ -13,6 +13,6 @@ namespace Models
         [SerializeField]
         public bool isCapital;
         public bool isOccupied;
-        public ResourceModel Resources { get; set; }
+        public IncomeManager Resources { get; set; }
     }
 }
