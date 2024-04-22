@@ -206,6 +206,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countriesJson: {fileID: 4900000, guid: d2d09be55a7365c43a1d5a9498986ce4, type: 3}
   castleTile: {fileID: 11400000, guid: 20ce80bce94639a4785bc317695b557c, type: 2}
+--- !u!1839735485 &915003088 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 5709428274740104338, guid: 7a6e68713d3346c4c9e48ee2a1daee61, type: 3}
+  m_PrefabInstance: {fileID: 915003085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1055261661
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +223,7 @@ GameObject:
   - component: {fileID: 1055261663}
   - component: {fileID: 1055261662}
   - component: {fileID: 1055261665}
+  - component: {fileID: 1055261666}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -268,7 +274,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -343,6 +349,22 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1055261666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055261661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27fbc6bebabc3384cbfea3f38578cf52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1055261663}
+  tilemap: {fileID: 915003088}
+  cameraSize: 1.5
+  cameraSpeed: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
