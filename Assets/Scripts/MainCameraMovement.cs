@@ -3,7 +3,7 @@ using Services;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class PlayerMainCamera : Singleton<PlayerMainCamera>
+public class MainCameraMovement : Singleton<MainCameraMovement>
 {
         public Camera mainCamera;
         public Tilemap tilemap;
