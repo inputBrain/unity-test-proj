@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -10,13 +11,16 @@ namespace Services.DebugMessages
         [SerializeField]
         private GameObject gridTilemap;
         
-        private CountryTileStorage _countryTileStorage;
+        private HexagonTileStorage _hexagonTileStorage;
+
+        private BuildUpgradeHandler _buildUpgradeHandler;
         
         
         private void Start()
         {
             _tilemap = GetComponent<Tilemap>();
-            _countryTileStorage = gridTilemap.GetComponent<CountryTileStorage>();
+            _buildUpgradeHandler = gridTilemap.GetComponent<BuildUpgradeHandler>();
+            _hexagonTileStorage = gridTilemap.GetComponent<HexagonTileStorage>();
         }
 
 
@@ -29,13 +33,27 @@ namespace Services.DebugMessages
                 var hitPosition = hit.point;
                 var gridPos = _tilemap.WorldToCell(hitPosition);
             
-                if (_countryTileStorage.TilesData.TryGetValue(gridPos, out var tileInfo))
+                if (_hexagonTileStorage.TilesData.TryGetValue(gridPos, out var tileInfo))
                 {
-                    Debug.Log($"Country: {tileInfo.Country} Bronze: {tileInfo.Resources.CoinIncome}");
+                    Debug.Log($"Country: {tileInfo.Country}");
+                    //отрисовка
+
+                    if (!string.IsNullOrEmpty(tileInfo.Country))
+                    {
+                        _buildUpgradeHandler.IsEnabledPanel(true);
+                    }
+                    else
+                    {
+                        _buildUpgradeHandler.IsEnabledPanel(false);
+                        var ww = new List<string>(){"1", "2", ""};
+                    }
                 }
                 else
                 {
                     Debug.Log("No tile found at position: " + gridPos);
+                    //скрываем
+
+
                 }
             }
             

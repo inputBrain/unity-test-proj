@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Models;
+using Models.Capital;
 using Newtonsoft.Json;
 using Services;
 using UnityEngine;
@@ -17,38 +18,38 @@ public class PreLoadGame : MonoBehaviour
         LoadCountryColorsFromJson();
         
         var middleware = FindObjectOfType<GameMiddleware>();
-        var countryTileData = FindObjectOfType<CountryTileStorage>();
+        var hexagonTileStorage = FindObjectOfType<HexagonTileStorage>();
         var tilemap = GameObject.FindWithTag("baseTilemap").GetComponent<Tilemap>();
         var castleTilemap = GameObject.FindWithTag("castleTilemap").GetComponent<Tilemap>();
         
-        countryTileData.SerializeTilesData();
+        hexagonTileStorage.SerializeTilesData();
         
-        foreach (var country in countryTileData.TilesData)
-        {
-            country.Value.Resources = IncomeManager.CreateEmpty();
-        }
         if (middleware != null)
         {
             Debug.Log(middleware.SelectedCountry);
 
             foreach (var country in countryJson)
             {
-                Vector3Int pos1 = new Vector3Int(country.Value.CapitalTilePosition.x, country.Value.CapitalTilePosition.y, 0);
-                tilemap.SetTileFlags(pos1, TileFlags.None);
-                tilemap.SetColor(pos1, country.Value.Color);
+                var position = new Vector3Int(country.Value.CapitalTilePosition.x, country.Value.CapitalTilePosition.y, 0);
+                tilemap.SetTileFlags(position, TileFlags.None);
+                tilemap.SetColor(position, country.Value.Color);
                 
-                castleTilemap.SetTile(pos1, castleTile);
+                castleTilemap.SetTile(position, castleTile);
             
-                var tileInfo = new CountryModel
+                // var capitalModel = new CapitalModel
+                // {
+                //     Country = country.Value.Country,
+                //     Capital = country.Value.Capital,
+                //     Level = 1,
+                //     Color = country.Value.Color,
+                // };            
+                var capitalModel = new HexagonTileModel()
                 {
-                    isOccupied = true,
-                    isCapital = true,
                     Country = country.Value.Country,
                     Color = country.Value.Color,
-                    Resources = IncomeManager.CreateBeginResourcesForCastle()
                 };
 
-                countryTileData.TilesData[pos1] = tileInfo;
+                hexagonTileStorage.TilesData[position] = capitalModel;
             }
         }
 

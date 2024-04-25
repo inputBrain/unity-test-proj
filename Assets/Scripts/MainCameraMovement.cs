@@ -9,7 +9,7 @@ public class MainCameraMovement : Singleton<MainCameraMovement>
         public Tilemap tilemap;
         
         private GameMiddleware _middleware;
-        private CountryTileStorage _countryTileStorage;
+        private HexagonTileStorage _hexagonTileStorage;
         
         [SerializeField]
         public float cameraSize = 1.5f;
@@ -25,9 +25,9 @@ public class MainCameraMovement : Singleton<MainCameraMovement>
         public void Start()
         {
                 var middleware = FindObjectOfType<GameMiddleware>();
-                _countryTileStorage = FindObjectOfType<CountryTileStorage>();
+                _hexagonTileStorage = FindObjectOfType<HexagonTileStorage>();
 
-                var userCountry = _countryTileStorage.TilesData.FirstOrDefault(x => x.Value.Country == middleware.SelectedCountry);
+                var userCountry = _hexagonTileStorage.TilesData.FirstOrDefault(x => x.Value.Country == middleware.SelectedCountry);
                 
                 Vector3 tileWorldPosition = tilemap.GetCellCenterWorld(new Vector3Int((int)userCountry.Key.x, (int)userCountry.Key.y));
                 

@@ -8,12 +8,12 @@ public class TilemapGenerator : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Tile tile;
  
-    private CountryTileStorage _countryTileStorage;
+    private HexagonTileStorage _hexagonTileStorage;
     
     
     private void Start()
     {
-        _countryTileStorage = GetComponent<CountryTileStorage>();
+        _hexagonTileStorage = GetComponent<HexagonTileStorage>();
    
         GenerateHexagons();
     }
@@ -51,12 +51,10 @@ public class TilemapGenerator : MonoBehaviour
         
                 if (isHexagonWhite)
                 {
-                    var tileInfo = new CountryModel
+                    var tileInfo = new HexagonTileModel
                     {
                         isOccupied = false,
-                        isCapital = false,
                         Country = string.Empty,
-                        Resources = IncomeManager.CreateEmpty()
                     };
                     
                     tilemap.SetTile(pos, tile);
@@ -67,8 +65,8 @@ public class TilemapGenerator : MonoBehaviour
                     
                     tilemap.SetTransformMatrix(pos, Matrix4x4.Scale(new Vector3(scaledSizeX, scaledSizeY, 1)));
                     
-                    _countryTileStorage.tileCoordinateKeys.Add(pos);
-                    _countryTileStorage.countryModelValues.Add(tileInfo);
+                    _hexagonTileStorage.tileCoordinateKeys.Add(pos);
+                    _hexagonTileStorage.hexagonTileModelValues.Add(tileInfo);
                 }
             }
         }
@@ -99,9 +97,9 @@ public class TilemapGenerator : MonoBehaviour
     
     public Vector3 FindCountryTile(string countryName)
     {
-        foreach (var tilePos in _countryTileStorage.TilesData.Keys)
+        foreach (var tilePos in _hexagonTileStorage.TilesData.Keys)
         {
-            if (_countryTileStorage.TilesData[tilePos].Country == countryName)
+            if (_hexagonTileStorage.TilesData[tilePos].Country == countryName)
             {
                 return tilePos;
             }
