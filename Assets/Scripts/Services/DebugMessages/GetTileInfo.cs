@@ -39,19 +39,16 @@ namespace Services.DebugMessages
                     Debug.Log($"Country: {tileInfo.Name} Wood: {tileInfo.ResourceModel!.Wood}");
                     //отрисовка
 
-                    // if (!string.IsNullOrEmpty(tileInfo.Name))
-                    // {
-                    //     _buildUpgradeHandler.IsEnabledPanel(true);
-                    // }
-                    // else
-                    // {
-                    //     _buildUpgradeHandler.IsEnabledPanel(false);
-                    // }
+                    if (string.IsNullOrWhiteSpace(tileInfo.Name) == false)
+                    {
+                        _buildUpgradeHandler.IsEnabledPanel(true);
+                    }
                 }
                 else
                 {
                     Debug.Log("No tile found at position: " + gridPos);
                     //скрываем
+                    _buildUpgradeHandler.IsEnabledPanel(false);
 
 
                 }
