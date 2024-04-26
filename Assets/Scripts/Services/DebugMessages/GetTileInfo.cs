@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Storage;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -35,17 +36,16 @@ namespace Services.DebugMessages
             
                 if (_hexagonTileStorage.TilesData.TryGetValue(gridPos, out var tileInfo))
                 {
-                    Debug.Log($"Country: {tileInfo.Country}");
+                    Debug.Log($"Country: {tileInfo.Name} Wood: {tileInfo.ResourceModel!.Wood}");
                     //отрисовка
 
-                    if (!string.IsNullOrEmpty(tileInfo.Country))
+                    if (!string.IsNullOrEmpty(tileInfo.Name))
                     {
                         _buildUpgradeHandler.IsEnabledPanel(true);
                     }
                     else
                     {
                         _buildUpgradeHandler.IsEnabledPanel(false);
-                        var ww = new List<string>(){"1", "2", ""};
                     }
                 }
                 else
