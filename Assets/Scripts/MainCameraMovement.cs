@@ -89,11 +89,17 @@ public class MainCameraMovement : Singleton<MainCameraMovement>
 
         private void _mouseWheelScroll(float scrollDelta)
         {
+            var mousePosition = Input.mousePosition;
+            var scrollCenter = mainCamera.ScreenToWorldPoint(mousePosition);
+
             var newSize = mainCamera.orthographicSize - scrollDelta * zoomSpeed;
-                
-            newSize = Mathf.Max(newSize, 1f);
+            newSize = Mathf.Clamp(newSize, 1f, float.MaxValue);
 
             mainCamera.orthographicSize = newSize;
+
+            var delta = scrollCenter - mainCamera.ScreenToWorldPoint(mousePosition);
+
+            mainCamera.transform.position += delta;
         }
         
         
