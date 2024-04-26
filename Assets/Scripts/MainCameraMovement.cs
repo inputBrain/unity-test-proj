@@ -1,5 +1,6 @@
 using System.Linq;
 using Services;
+using Storage;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -10,6 +11,7 @@ public class MainCameraMovement : Singleton<MainCameraMovement>
         
         private GameMiddleware _middleware;
         private HexagonTileStorage _hexagonTileStorage;
+        public GameObject hexGO;
         
         [SerializeField]
         public float cameraSize = 1.5f;
@@ -25,9 +27,9 @@ public class MainCameraMovement : Singleton<MainCameraMovement>
         public void Start()
         {
                 var middleware = FindObjectOfType<GameMiddleware>();
-                _hexagonTileStorage = FindObjectOfType<HexagonTileStorage>();
+                _hexagonTileStorage = hexGO.GetComponent<HexagonTileStorage>();
 
-                var userCountry = _hexagonTileStorage.TilesData.FirstOrDefault(x => x.Value.Country == middleware.SelectedCountry);
+                var userCountry = _hexagonTileStorage.TilesData.FirstOrDefault(x => x.Value.Name == middleware.SelectedCountry);
                 
                 Vector3 tileWorldPosition = tilemap.GetCellCenterWorld(new Vector3Int((int)userCountry.Key.x, (int)userCountry.Key.y));
                 
