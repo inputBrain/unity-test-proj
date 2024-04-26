@@ -1048,7 +1048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6584272416957102292, guid: 7a6e68713d3346c4c9e48ee2a1daee61, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6584272416957102292, guid: 7a6e68713d3346c4c9e48ee2a1daee61, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1366,6 +1366,8 @@ GameObject:
   - component: {fileID: 1055261662}
   - component: {fileID: 1055261665}
   - component: {fileID: 1055261666}
+  - component: {fileID: 1055261667}
+  - component: {fileID: 1055261668}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1441,7 +1443,7 @@ Transform:
   m_GameObject: {fileID: 1055261661}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.75, y: 8.3, z: -10}
+  m_LocalPosition: {x: 1.75, y: 8.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1509,6 +1511,35 @@ MonoBehaviour:
   cameraSize: 1.5
   cameraSpeed: 2
   zoomSpeed: 5
+--- !u!114 &1055261667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055261661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997a203e906de904e9c994206bad7488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoothDrag: 1
+--- !u!114 &1055261668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055261661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f107157e70af97449864a93487ca6663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomMultiplier: 0.6
+  minZoom: 2
+  maxZoom: 8
+  smoothTime: 0.25
 --- !u!1 &1069187781
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,21 +40,15 @@ public class MainCameraMovement : Singleton<MainCameraMovement>
             targetPosition.z = mainCamera.transform.position.z; 
             mainCamera.transform.position = targetPosition;
 
-
             mainCamera.orthographicSize = cameraSize;
         }
 
 
         private void Update()
         {
-            if (Input.GetMouseButton(0))
-            {
-                _handleClickAndMove();
-            }
             
             var mousePosition = Input.mousePosition;
             var cameraPosition = mainCamera.transform.position;
-
 
             if (mousePosition.x <= 1)
             {
@@ -77,13 +71,6 @@ public class MainCameraMovement : Singleton<MainCameraMovement>
                 var targetPosition = cameraPosition + Vector3.up * (cameraSpeed * Time.deltaTime);
                 mainCamera.transform.position = targetPosition;
             }
-            
-            
-            var scrollDelta = Input.GetAxis("Mouse ScrollWheel");
-            if (scrollDelta != 0f)
-            {
-                _mouseWheelScroll(scrollDelta);
-            }
         }
 
 
@@ -101,7 +88,6 @@ public class MainCameraMovement : Singleton<MainCameraMovement>
 
             mainCamera.transform.position += delta;
         }
-        
         
         private void _handleClickAndMove()
         {
