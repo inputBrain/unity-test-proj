@@ -1,26 +1,47 @@
 using System;
+using System.Linq;
+using Models.Сonstruction;
+using Storage;
+using UnityEngine;
 
 namespace Models
 {
     [Serializable]
-    public class IncomeManager
+    public class IncomeManager : Singleton<IncomeManager>
     {
-        public int CoinIncome;
+        public ConstructionModel Construction;
+        private HexagonTileStorage _hexagonTileStorage;
 
-        public static IncomeManager CreateEmpty()
+
+        void Awake()
         {
-            return new IncomeManager()
-            {
-                CoinIncome = 0
-            };
+            _hexagonTileStorage = FindObjectOfType<HexagonTileStorage>();
         }
 
-        public static IncomeManager CreateBeginResourcesForCastle()
+
+        private void Update()
         {
-            return new IncomeManager()
+
+
+            if (Input.GetKeyDown(KeyCode.I))
             {
-                CoinIncome = 10
-            };
+                var countries = _hexagonTileStorage.TilesData.Values.Where(x => x.ConstructionModel != null && x.ResourceModel != null);
+
+                foreach (var country in countries)
+                {
+                    switch (country.ConstructionModel?.ProductionType)
+                    {
+                        case ProductionType.Sawmill:
+
+                            country.ResourceModel!.Wood += 10 * country.ConstructionModel.Level;
+
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                }
+            }
+            
         }
     }
 }
