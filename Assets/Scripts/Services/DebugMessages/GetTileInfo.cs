@@ -39,14 +39,14 @@ namespace Services.DebugMessages
                     Debug.Log($"Country: {tileInfo.Name} Wood: {tileInfo.ResourceModel!.Wood}");
                     //отрисовка
 
-                    if (!string.IsNullOrEmpty(tileInfo.Name))
-                    {
-                        _buildUpgradeHandler.IsEnabledPanel(true);
-                    }
-                    else
-                    {
-                        _buildUpgradeHandler.IsEnabledPanel(false);
-                    }
+                    // if (!string.IsNullOrEmpty(tileInfo.Name))
+                    // {
+                    //     _buildUpgradeHandler.IsEnabledPanel(true);
+                    // }
+                    // else
+                    // {
+                    //     _buildUpgradeHandler.IsEnabledPanel(false);
+                    // }
                 }
                 else
                 {
