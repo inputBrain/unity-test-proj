@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using Models;
-using Models.Capital;
+using Models.Country;
+using Models.Сonstruction;
 using Newtonsoft.Json;
 using Services;
+using Storage;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -18,7 +20,7 @@ public class PreLoadGame : MonoBehaviour
         LoadCountryColorsFromJson();
         
         var middleware = FindObjectOfType<GameMiddleware>();
-        var hexagonTileStorage = FindObjectOfType<HexagonTileStorage>();
+        var hexagonTileStorage = gameObject.GetComponent<HexagonTileStorage>();
         var tilemap = GameObject.FindWithTag("baseTilemap").GetComponent<Tilemap>();
         var castleTilemap = GameObject.FindWithTag("castleTilemap").GetComponent<Tilemap>();
         
@@ -36,20 +38,25 @@ public class PreLoadGame : MonoBehaviour
                 
                 castleTilemap.SetTile(position, castleTile);
             
-                // var capitalModel = new CapitalModel
-                // {
-                //     Country = country.Value.Country,
-                //     Capital = country.Value.Capital,
-                //     Level = 1,
-                //     Color = country.Value.Color,
-                // };            
-                var capitalModel = new HexagonTileModel()
+                var tileUnitModel = new CountryUnitModel()
                 {
-                    Country = country.Value.Country,
                     Color = country.Value.Color,
-                };
+                    Name = country.Value.Country,
+                    ResourceModel = new ResourceModel(),
+                    CapitalUnitModel = new CapitalUnitModel()
+                    {
+                        isCapital = true,
+                        CapitalName = country.Value.Capital
+                    },
+                    ConstructionModel = new ConstructionModel()
+                    {
+                        Level = 1,
+                        ProductionType = ProductionType.Sawmill
+                    }
+                };            
 
-                hexagonTileStorage.TilesData[position] = capitalModel;
+
+                hexagonTileStorage.TilesData[position] = tileUnitModel;
             }
         }
 
