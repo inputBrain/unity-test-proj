@@ -1,4 +1,7 @@
 using Models;
+using Models.Country;
+using Models.Сonstruction;
+using Storage;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -51,10 +54,9 @@ public class TilemapGenerator : MonoBehaviour
         
                 if (isHexagonWhite)
                 {
-                    var tileInfo = new HexagonTileModel
+                    var tileInfo = new CountryUnitModel()
                     {
-                        isOccupied = false,
-                        Country = string.Empty,
+                        Name = ""
                     };
                     
                     tilemap.SetTile(pos, tile);
@@ -99,7 +101,7 @@ public class TilemapGenerator : MonoBehaviour
     {
         foreach (var tilePos in _hexagonTileStorage.TilesData.Keys)
         {
-            if (_hexagonTileStorage.TilesData[tilePos].Country == countryName)
+            if (_hexagonTileStorage.TilesData[tilePos].Name == countryName)
             {
                 return tilePos;
             }
