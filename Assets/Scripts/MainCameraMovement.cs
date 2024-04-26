@@ -7,10 +7,9 @@ using UnityEngine.Tilemaps;
 public class MainCameraMovement : Singleton<MainCameraMovement>
 {
         public Camera mainCamera;
+        
         public Tilemap tilemap;
         
-        private GameMiddleware _middleware;
-        private HexagonTileStorage _hexagonTileStorage;
         public GameObject hexGO;
         
         [SerializeField]
@@ -18,32 +17,41 @@ public class MainCameraMovement : Singleton<MainCameraMovement>
         
         [SerializeField]
         public float cameraSpeed = 2f;
-
-
+        
         [SerializeField]
         public float zoomSpeed = 5f;
+
         
+        private GameMiddleware _middleware;
+        private HexagonTileStorage _hexagonTileStorage;
+        private Vector3 _lastMousePosition;
+
 
         public void Start()
         {
-                var middleware = FindObjectOfType<GameMiddleware>();
-                _hexagonTileStorage = hexGO.GetComponent<HexagonTileStorage>();
+            var middleware = FindObjectOfType<GameMiddleware>();
+            _hexagonTileStorage = hexGO.GetComponent<HexagonTileStorage>();
 
-                var userCountry = _hexagonTileStorage.TilesData.FirstOrDefault(x => x.Value.Name == middleware.SelectedCountry);
-                
-                Vector3 tileWorldPosition = tilemap.GetCellCenterWorld(new Vector3Int((int)userCountry.Key.x, (int)userCountry.Key.y));
-                
-                Vector3 targetPosition = tileWorldPosition;
-                targetPosition.z = mainCamera.transform.position.z; 
-                mainCamera.transform.position = targetPosition;
+            var userCountry = _hexagonTileStorage.TilesData.FirstOrDefault(x => x.Value.Name == middleware.SelectedCountry);
+            
+            var tileWorldPosition = tilemap.GetCellCenterWorld(new Vector3Int((int)userCountry.Key.x, (int)userCountry.Key.y));
+            
+            var targetPosition = tileWorldPosition;
+            targetPosition.z = mainCamera.transform.position.z; 
+            mainCamera.transform.position = targetPosition;
 
 
-                mainCamera.orthographicSize = cameraSize;
+            mainCamera.orthographicSize = cameraSize;
         }
 
 
         private void Update()
         {
+            if (Input.GetMouseButton(0))
+            {
+                _handleClickAndMove();
+            }
+            
             var mousePosition = Input.mousePosition;
             var cameraPosition = mainCamera.transform.position;
 
@@ -74,17 +82,32 @@ public class MainCameraMovement : Singleton<MainCameraMovement>
             var scrollDelta = Input.GetAxis("Mouse ScrollWheel");
             if (scrollDelta != 0f)
             {
-                MouseWheelScroll(scrollDelta);
+                _mouseWheelScroll(scrollDelta);
             }
         }
 
 
-        private void MouseWheelScroll(float scrollDelta)
+        private void _mouseWheelScroll(float scrollDelta)
         {
-            float newSize = mainCamera.orthographicSize - scrollDelta * zoomSpeed;
+            var newSize = mainCamera.orthographicSize - scrollDelta * zoomSpeed;
                 
             newSize = Mathf.Max(newSize, 1f);
 
             mainCamera.orthographicSize = newSize;
+        }
+        
+        
+        private void _handleClickAndMove()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                _lastMousePosition = Input.mousePosition;
+            }
+            else if (Input.GetMouseButton(0))
+            {
+                var delta = (Input.mousePosition - _lastMousePosition) * (cameraSpeed * Time.deltaTime);
+                mainCamera.transform.Translate(-delta.x, -delta.y, 0);
+                _lastMousePosition = Input.mousePosition;
+            }
         }
 }
