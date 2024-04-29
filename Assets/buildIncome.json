@@ -1,0 +1,82 @@
+{
+  "castle": {
+    "level_1" : {
+      "timeToUpgrade": 0,
+      "cost" : {},
+      "incomePerMinute": {
+        "wood": 20,
+        "stone": 20,
+        "steel": 5,
+        "bronze": 3,
+        "Silver" : 2,
+        "gold": 1,
+        "platinum": 0,
+        "influence": 2
+      }
+    },
+    "level_2" : {
+      "timeToUpgrade": 30,
+      "cost" : {
+        "influence" : 20
+      },
+      "incomePerMinute": {
+        "wood": 55,
+        "stone": 55,
+        "steel": 5,
+        "bronze": 3,
+        "Silver" : 2,
+        "gold": 1,
+        "platinum": 0,
+        "influence": 3
+      }
+    },
+    "level_3" : {
+      "timeToUpgrade": 60,
+      "cost" : {
+        "influence" : 30
+      },
+      "incomePerMinute": {
+        "wood": 70,
+        "stone": 70,
+        "steel": 5,
+        "bronze": 3,
+        "Silver" : 2,
+        "gold": 1,
+        "platinum": 0,
+        "influence": 3
+      }
+    },
+    "level_4" : {
+      "timeToUpgrade": 180,
+      "cost" : {
+        "influence" : 50
+      },
+      "incomePerMinute": {
+        "wood": 85,
+        "stone": 85,
+        "steel": 6,
+        "bronze": 5,
+        "Silver" : 3,
+        "gold": 1,
+        "platinum": 0,
+        "influence": 5
+      }
+    },
+    "level_5" : {
+      "timeToUpgrade": 3600,
+      "cost" : {
+        "influence" : 100
+      },
+      "incomePerMinute": {
+        "wood": 100,
+        "stone": 100,
+        "steel": 10,
+        "bronze": 10,
+        "Silver" : 10,
+        "gold": 5,
+        "platinum": 1,
+        "influence": 10
+      }
+    }
+  }
+}
