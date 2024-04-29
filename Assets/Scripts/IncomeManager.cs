@@ -1,0 +1,42 @@
+using System;
+using System.Linq;
+using Models.Country.Сonstruction;
+using Storage;
+using UnityEngine;
+
+public class IncomeManager : Singleton<IncomeManager>
+{
+    public ConstructionModel Construction;
+    private HexagonTileStorage _hexagonTileStorage;
+
+
+    void Awake()
+    {
+        _hexagonTileStorage = FindObjectOfType<HexagonTileStorage>();
+    }
+
+
+    private void Update()
+    {
+        
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            var countries = _hexagonTileStorage.TilesData.Values.Where(x => x.ConstructionModel != null && x.ResourceModel != null);
+
+            foreach (var country in countries)
+            {
+                switch (country.ConstructionModel?.ProductionType)
+                {
+                    case ProductionType.Sawmill:
+
+                        country.ResourceModel!.Wood += 10 * country.ConstructionModel.Level;
+
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+            
+    }
+}

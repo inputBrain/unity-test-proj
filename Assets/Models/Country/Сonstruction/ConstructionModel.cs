@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Models.Сonstruction
+namespace Models.Country.Сonstruction
 {
     public class ConstructionModel
     {

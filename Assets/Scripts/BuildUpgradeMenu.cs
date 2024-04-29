@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BuildUpgradeHandler : Singleton<BuildUpgradeHandler>
+public class BuildUpgradeMenu : Singleton<BuildUpgradeMenu>
 {
     public RectTransform upgradePanel;
 

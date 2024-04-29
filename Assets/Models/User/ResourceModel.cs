@@ -1,4 +1,4 @@
-namespace Models
+namespace Models.User
 {
     public class ResourceModel
     {

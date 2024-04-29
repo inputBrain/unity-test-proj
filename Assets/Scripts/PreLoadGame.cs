@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using Models;
 using Models.Country;
-using Models.Сonstruction;
+using Models.Country.Сonstruction;
+using Models.User;
 using Newtonsoft.Json;
 using Services;
 using Storage;
@@ -51,7 +52,7 @@ public class PreLoadGame : MonoBehaviour
                     ConstructionModel = new ConstructionModel()
                     {
                         Level = 1,
-                        ProductionType = ProductionType.Sawmill
+                        ProductionType = ProductionType.Influence
                     }
                 };            
 

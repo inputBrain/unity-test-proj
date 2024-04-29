@@ -14,13 +14,13 @@ namespace Services.DebugMessages
         
         private HexagonTileStorage _hexagonTileStorage;
 
-        private BuildUpgradeHandler _buildUpgradeHandler;
+        private BuildUpgradeMenu _buildUpgradeMenu;
         
         
         private void Start()
         {
             _tilemap = GetComponent<Tilemap>();
-            _buildUpgradeHandler = gridTilemap.GetComponent<BuildUpgradeHandler>();
+            _buildUpgradeMenu = gridTilemap.GetComponent<BuildUpgradeMenu>();
             _hexagonTileStorage = gridTilemap.GetComponent<HexagonTileStorage>();
         }
 
@@ -41,14 +41,14 @@ namespace Services.DebugMessages
 
                     if (string.IsNullOrWhiteSpace(tileInfo.Name) == false)
                     {
-                        _buildUpgradeHandler.IsEnabledPanel(true);
+                        _buildUpgradeMenu.IsEnabledPanel(true);
                     }
                 }
                 else
                 {
                     Debug.Log("No tile found at position: " + gridPos);
                     //скрываем
-                    _buildUpgradeHandler.IsEnabledPanel(false);
+                    _buildUpgradeMenu.IsEnabledPanel(false);
 
 
                 }
