@@ -984,6 +984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 847230675}
   - component: {fileID: 847230674}
+  - component: {fileID: 847230676}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1018,6 +1019,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &847230676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847230673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca125e4296764d93a0f52052360f3c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourcesPanel: {fileID: 1419029591}
+  wood: {fileID: 168892074}
+  stone: {fileID: 302080565}
+  steel: {fileID: 765080426}
+  bronze: {fileID: 723982774}
+  silver: {fileID: 1069187783}
+  gold: {fileID: 1042292874}
+  platinum: {fileID: 1973318830}
+  influence: {fileID: 954568085}
+  donatCrystal: {fileID: 1437242921}
 --- !u!1001 &866971169
 PrefabInstance:
   m_ObjectHideFlags: 0
