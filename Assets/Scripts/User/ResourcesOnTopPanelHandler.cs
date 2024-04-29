@@ -42,7 +42,7 @@ namespace User
             {
                 Id = 1,
                 Username = "Alex11919291",
-                ResourceModel = new ResourceModel()
+                TotalResourceModel = new TotalResourceModel()
                 {
                     Wood = 100,
                     Stone = 100,
@@ -60,17 +60,17 @@ namespace User
 
         private void _updateResourceTexts()
         {
-            if (_userModel != null && _userModel.ResourceModel != null)
+            if (_userModel != null && _userModel.TotalResourceModel != null)
             {
-                wood.text = _userModel.ResourceModel.Wood.ToString();
-                stone.text = _userModel.ResourceModel.Stone.ToString();
-                steel.text = _userModel.ResourceModel.Steel.ToString();
-                bronze.text = _userModel.ResourceModel.Bronze.ToString();
-                silver.text = _userModel.ResourceModel.Silver.ToString();
-                gold.text = _userModel.ResourceModel.Gold.ToString();
-                platinum.text = _userModel.ResourceModel.Platinum.ToString();
-                influence.text = _userModel.ResourceModel.Influence.ToString();
-                donatCrystal.text = _userModel.ResourceModel.DonatCrystal.ToString();
+                wood.text = _userModel.TotalResourceModel.Wood.ToString();
+                stone.text = _userModel.TotalResourceModel.Stone.ToString();
+                steel.text = _userModel.TotalResourceModel.Steel.ToString();
+                bronze.text = _userModel.TotalResourceModel.Bronze.ToString();
+                silver.text = _userModel.TotalResourceModel.Silver.ToString();
+                gold.text = _userModel.TotalResourceModel.Gold.ToString();
+                platinum.text = _userModel.TotalResourceModel.Platinum.ToString();
+                influence.text = _userModel.TotalResourceModel.Influence.ToString();
+                donatCrystal.text = _userModel.TotalResourceModel.DonatCrystal.ToString();
             }
             else
             {

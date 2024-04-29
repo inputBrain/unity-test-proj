@@ -21,7 +21,7 @@ public class IncomeManager : Singleton<IncomeManager>
         
         if (Input.GetKeyDown(KeyCode.I))
         {
-            var countries = _hexagonTileStorage.TilesData.Values.Where(x => x.ConstructionModel != null && x.ResourceModel != null);
+            var countries = _hexagonTileStorage.TilesData.Values.Where(x => x.ConstructionModel != null && x.TotalResourceModel != null);
 
             foreach (var country in countries)
             {
@@ -29,7 +29,7 @@ public class IncomeManager : Singleton<IncomeManager>
                 {
                     case ProductionType.Sawmill:
 
-                        country.ResourceModel!.Wood += 10 * country.ConstructionModel.Level;
+                        country.TotalResourceModel!.Wood += 10 * country.ConstructionModel.Level;
 
                         break;
                     default:

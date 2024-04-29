@@ -1,6 +1,6 @@
 namespace Models.User
 {
-    public class ResourceModel
+    public class TotalResourceModel
     {
         public int Wood { get; set; }
     

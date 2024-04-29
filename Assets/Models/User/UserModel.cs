@@ -6,6 +6,6 @@ namespace Models.User
         
         public string Username { get; set; }
         
-        public ResourceModel ResourceModel { get; set; }
+        public TotalResourceModel TotalResourceModel { get; set; }
     }
 }

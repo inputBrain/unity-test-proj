@@ -12,7 +12,7 @@ namespace Models.Country
         public string Name { get; set; }
         
         [CanBeNull]
-        public ResourceModel ResourceModel { get; set; }
+        public TotalResourceModel TotalResourceModel { get; set; }
         
         [CanBeNull]
         public CapitalUnitModel CapitalUnitModel { get; set; }

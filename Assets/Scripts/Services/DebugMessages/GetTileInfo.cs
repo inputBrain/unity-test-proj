@@ -36,7 +36,7 @@ namespace Services.DebugMessages
             
                 if (_hexagonTileStorage.TilesData.TryGetValue(gridPos, out var tileInfo))
                 {
-                    Debug.Log($"Country: {tileInfo.Name} Wood: {tileInfo.ResourceModel!.Wood}");
+                    Debug.Log($"Country: {tileInfo.Name} Wood: {tileInfo.TotalResourceModel!.Wood}");
                     //отрисовка
 
                     if (string.IsNullOrWhiteSpace(tileInfo.Name) == false)

@@ -43,7 +43,7 @@ public class PreLoadGame : MonoBehaviour
                 {
                     Color = country.Value.Color,
                     Name = country.Value.Country,
-                    ResourceModel = new ResourceModel(),
+                    TotalResourceModel = new TotalResourceModel(),
                     CapitalUnitModel = new CapitalUnitModel()
                     {
                         isCapital = true,
@@ -52,7 +52,7 @@ public class PreLoadGame : MonoBehaviour
                     ConstructionModel = new ConstructionModel()
                     {
                         Level = 1,
-                        ProductionType = ProductionType.Influence
+                        ProductionType = ProductionType.Castle
                     }
                 };            
 
