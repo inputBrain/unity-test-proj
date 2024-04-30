@@ -1,3 +1,4 @@
+using System.Linq;
 using Models.User;
 using UnityEngine;
 using UnityEngine.UI;
@@ -111,10 +112,21 @@ namespace User
         
         private static void UpdateResource(ref Text resourceText, int income)
         {
-            var parsedResource = int.Parse(resourceText.text);
-            
+            int parsedResource;
+            if (resourceText.text.Contains('+'))
+            {
+                var indexOfPlus = resourceText.text.IndexOf('+');
+                var preparedResource = resourceText.text[..indexOfPlus];
+                parsedResource = int.Parse(preparedResource);
+            }
+            else
+            {
+                parsedResource = int.Parse(resourceText.text);
+            }
+
             var totalAmount = parsedResource + income;
-            resourceText.text = totalAmount.ToString();
+            resourceText.text = $"{totalAmount}+{income}";
+
         }
     }
 }

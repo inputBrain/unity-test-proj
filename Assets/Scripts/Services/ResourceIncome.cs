@@ -19,7 +19,7 @@ namespace Services
             _resourcesOnTopPanelHandler = FindObjectOfType<ResourcesOnTopPanelHandler>();
             _loadCountryCost();
             
-            InvokeRepeating(nameof(AddResources), 0f, 10f);
+            InvokeRepeating(nameof(AddResources), 0f, 1f);
         }
 
         private void AddResources()
