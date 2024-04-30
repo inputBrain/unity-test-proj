@@ -44,14 +44,14 @@ namespace User
                 Username = "Alex11919291",
                 TotalResourceModel = new TotalResourceModel()
                 {
-                    Wood = 100,
-                    Stone = 100,
-                    Steel = 100,
-                    Bronze = 100,
-                    Silver = 100,
-                    Gold = 100,
-                    Platinum = 100,
-                    Influence = 100,
+                    Wood = 0,
+                    Stone = 0,
+                    Steel = 0,
+                    Bronze = 0,
+                    Silver = 0,
+                    Gold = 0,
+                    Platinum = 0,
+                    Influence = 10,
                     DonatCrystal = 50000,
                 }
             };
@@ -76,6 +76,45 @@ namespace User
             {
                 Debug.LogWarning("ResourceModel is not set for UserModel.");
             }
+        }
+
+
+        public void UpdateResourceTexts(
+            int woodIncome,
+            int stoneIncome,
+            int steelIncome,
+            int bronzeIncome,
+            int silverIncome,
+            int goldIncome,
+            int platinumIncome,
+            int influenceIncome
+        )
+        {
+            if (_userModel != null && _userModel.TotalResourceModel != null)
+            {
+                UpdateResource(ref wood, woodIncome);
+                UpdateResource(ref stone, stoneIncome);
+                UpdateResource(ref steel, steelIncome);
+                UpdateResource(ref bronze, bronzeIncome);
+                UpdateResource(ref silver, silverIncome);
+                UpdateResource(ref gold, goldIncome);
+                UpdateResource(ref platinum, platinumIncome);
+                UpdateResource(ref influence, influenceIncome);
+            }
+            else
+            {
+                Debug.LogWarning("ResourceModel is not set for UserModel.");
+            }
+        }
+        
+        
+        
+        private static void UpdateResource(ref Text resourceText, int income)
+        {
+            var parsedResource = int.Parse(resourceText.text);
+            
+            var totalAmount = parsedResource + income;
+            resourceText.text = totalAmount.ToString();
         }
     }
 }
