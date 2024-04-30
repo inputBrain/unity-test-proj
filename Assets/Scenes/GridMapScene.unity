@@ -985,6 +985,7 @@ GameObject:
   - component: {fileID: 847230675}
   - component: {fileID: 847230674}
   - component: {fileID: 847230676}
+  - component: {fileID: 847230677}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1041,6 +1042,19 @@ MonoBehaviour:
   platinum: {fileID: 1973318830}
   influence: {fileID: 954568085}
   donatCrystal: {fileID: 1437242921}
+--- !u!114 &847230677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847230673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da35cb58528a48be9c169e1f61508533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildIncomeJson: {fileID: 4900000, guid: 1640211d6f394757a7c0a7d6484dede9, type: 3}
 --- !u!1001 &866971169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1057,6 +1071,18 @@ PrefabInstance:
       propertyPath: upgradePanel
       value: 
       objectReference: {fileID: 1035946279}
+    - target: {fileID: 2420919533296896273, guid: 7a6e68713d3346c4c9e48ee2a1daee61, type: 3}
+      propertyPath: upgradeButton
+      value: 
+      objectReference: {fileID: 1388973920}
+    - target: {fileID: 2420919533296896273, guid: 7a6e68713d3346c4c9e48ee2a1daee61, type: 3}
+      propertyPath: influenceImage
+      value: 
+      objectReference: {fileID: 521091368}
+    - target: {fileID: 2420919533296896273, guid: 7a6e68713d3346c4c9e48ee2a1daee61, type: 3}
+      propertyPath: buildIncomeJson
+      value: 
+      objectReference: {fileID: 4900000, guid: 1640211d6f394757a7c0a7d6484dede9, type: 3}
     - target: {fileID: 2664554953951108367, guid: 7a6e68713d3346c4c9e48ee2a1daee61, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1873,7 +1899,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1388973922}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 866971170}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1388973922
 MonoBehaviour:
   m_ObjectHideFlags: 0
