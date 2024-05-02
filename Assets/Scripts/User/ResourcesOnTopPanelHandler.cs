@@ -128,5 +128,24 @@ namespace User
             resourceText.text = $"{totalAmount}+{income}";
 
         }
+        
+        
+        public void CaptureTerritory(int hexagonCellCount = 1)
+        {
+            int parsedResource;
+            if (influence.text.Contains('+'))
+            {
+                var indexOfPlus = influence.text.IndexOf('+');
+                var preparedResource = influence.text[..indexOfPlus];
+                parsedResource = int.Parse(preparedResource);
+            }
+            else
+            {
+                parsedResource = int.Parse(influence.text);
+            }
+
+            // var totalAmount = parsedResource + income;
+            // influence.text = $"{totalAmount}+{income}";
+        }
     }
 }
