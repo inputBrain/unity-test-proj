@@ -12,7 +12,6 @@ public class TileMapPathfinder : MonoBehaviour
     public int maxStepsPathFinding = 5000;
 
     public Tilemap map;
-    public Tile defaultTile;
     public Camera cam;
     
     void Start()
@@ -42,7 +41,7 @@ public class TileMapPathfinder : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ClearTiles();
+            // ClearTiles();
 
             float startTime = Time.realtimeSinceStartup;
 
@@ -59,19 +58,16 @@ public class TileMapPathfinder : MonoBehaviour
         map.ClearAllTiles();
 
         Vector3Int _start = new Vector3Int(this._start.Coord.x, this._start.Coord.y, 0);
-        map.SetTile(_start, defaultTile);
         map.SetTileFlags(_start, TileFlags.None);
         map.SetColor(_start, Color.green);
 
         Vector3Int _end = new Vector3Int(this._end.Coord.x, this._end.Coord.y, 0);
-        map.SetTile(_end, defaultTile);
         map.SetTileFlags(_end, TileFlags.None);
         map.SetColor(_end, Color.red);
 
         foreach (int2 o in _obstacles.Keys)
         {
             Vector3Int obstacle = new Vector3Int(o.x, o.y, 0);
-            map.SetTile(obstacle, defaultTile);
             map.SetTileFlags(obstacle, TileFlags.None);
             map.SetColor(obstacle, Color.black);
         }
@@ -86,7 +82,6 @@ public class TileMapPathfinder : MonoBehaviour
         if (!_obstacles.ContainsKey(coord) && !coord.Equals(_end.Coord))
         {
             _start.Coord = coord;
-            map.SetTile(mouseCell, defaultTile);
             map.SetTileFlags(mouseCell, TileFlags.None);
             map.SetColor(mouseCell, Color.green);
         }
@@ -101,7 +96,6 @@ public class TileMapPathfinder : MonoBehaviour
         if (!_obstacles.ContainsKey(coord) && !coord.Equals(_start.Coord))
         {
             _end.Coord = coord;
-            map.SetTile(mouseCell, defaultTile);
             map.SetTileFlags(mouseCell, TileFlags.None);
             map.SetColor(mouseCell, Color.red);
         }
@@ -122,7 +116,6 @@ public class TileMapPathfinder : MonoBehaviour
         else if (!coord.Equals(_start.Coord) && !coord.Equals(_end.Coord))
         {
             _obstacles.Add(coord, true);
-            map.SetTile(mouseCell, defaultTile);
             map.SetTileFlags(mouseCell, TileFlags.None);
             map.SetColor(mouseCell, Color.black);
         }
@@ -162,9 +155,8 @@ public class TileMapPathfinder : MonoBehaviour
             if (_start.Coord.Equals(nodeArray[i].Coord) ||
                 _end.Coord.Equals(nodeArray[i].Coord) ||
                 isObstacle.ContainsKey(nodeArray[i].Coord)) continue;
-            map.SetTile(currentNode, defaultTile);
             map.SetTileFlags(currentNode, TileFlags.None);
-            map.SetColor(currentNode, Color.white);
+            map.SetColor(currentNode, Color.magenta);
         }
         
         if (nodes.ContainsKey(_end.Coord))
@@ -176,7 +168,6 @@ public class TileMapPathfinder : MonoBehaviour
                 currentCoord = nodes[currentCoord].Parent;
                 Vector3Int currentTile = new(currentCoord.x, currentCoord.y, 0);
 
-                map.SetTile(currentTile, defaultTile);
                 map.SetTileFlags(currentTile, TileFlags.None);
                 map.SetColor(currentTile, Color.green);
             }
