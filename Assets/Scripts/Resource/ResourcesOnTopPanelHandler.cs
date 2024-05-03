@@ -1,9 +1,8 @@
-using System.Linq;
 using Models.User;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace User
+namespace Resource
 {
     public class ResourcesOnTopPanelHandler : Singleton<ResourcesOnTopPanelHandler>
     {
@@ -130,7 +129,7 @@ namespace User
         }
         
         
-        public void CaptureTerritory(int hexagonCellCount = 1)
+        public void UpdateInfluenceByCaptureTerritory(int hexagonCellCount = 1)
         {
             int parsedResource;
             if (influence.text.Contains('+'))
@@ -143,9 +142,14 @@ namespace User
             {
                 parsedResource = int.Parse(influence.text);
             }
-
-            // var totalAmount = parsedResource + income;
-            // influence.text = $"{totalAmount}+{income}";
+            
+            var updatedTotalInfluence = parsedResource - (75 * hexagonCellCount);
+            if (updatedTotalInfluence <= 0)
+            {
+                return;
+            }
+            
+            influence.text = updatedTotalInfluence.ToString();
         }
     }
 }

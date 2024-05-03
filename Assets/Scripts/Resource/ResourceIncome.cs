@@ -3,9 +3,8 @@ using System.Linq;
 using Models.API.BuildIncome;
 using Newtonsoft.Json;
 using UnityEngine;
-using User;
 
-namespace Services
+namespace Resource
 {
     public class ResourceIncome : Singleton<ResourceIncome>
     {

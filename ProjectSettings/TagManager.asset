@@ -6,6 +6,7 @@ TagManager:
   tags:
   - castleTilemap
   - baseTilemap
+  - capturePanel
   layers:
   - Default
   - TransparentFX
