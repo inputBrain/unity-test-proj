@@ -1,10 +1,9 @@
 using System.Collections;
-using Storage;
-using Unity.Collections;
-using Unity.Jobs;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Unity.Mathematics;
+using Unity.Jobs;
+using Unity.Collections;
 
 public class TileMapPathfinder : MonoBehaviour
 {
@@ -13,18 +12,10 @@ public class TileMapPathfinder : MonoBehaviour
     public int maxStepsPathFinding = 5000;
 
     public Tilemap map;
-    public Tile defaultTile;
     public Camera cam;
-    
-    public float tileSizeX;
-    public float tileSizeY;
-    public float spaceBetweenTiles;
-
-    public HexagonTileStorage TileStorage;
     
     void Start()
     {
-        TileStorage = FindObjectOfType<HexagonTileStorage>();
         _obstacles = new Hashtable();
         _start = new Node { Coord = int2.zero, Parent = int2.zero, GScore = int.MaxValue, HScore = int.MaxValue };
         _end = new Node { Coord = int2.zero, Parent = int2.zero, GScore = int.MaxValue, HScore = int.MaxValue };
@@ -50,7 +41,7 @@ public class TileMapPathfinder : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ClearTiles();
+            // ClearTiles();
 
             float startTime = Time.realtimeSinceStartup;
 
@@ -66,22 +57,19 @@ public class TileMapPathfinder : MonoBehaviour
     {
         map.ClearAllTiles();
 
-        Vector3Int _startPos = new Vector3Int(_start.Coord.x * (int)tileSizeX + (int)spaceBetweenTiles, _start.Coord.y * (int)tileSizeY + (int)spaceBetweenTiles, 0);
+        Vector3Int _start = new Vector3Int(this._start.Coord.x, this._start.Coord.y, 0);
+        map.SetTileFlags(_start, TileFlags.None);
+        map.SetColor(_start, Color.green);
 
-        map.SetTileFlags(_startPos, TileFlags.None);
-        map.SetColor(_startPos, Color.green);
-
-        Vector3Int _endPos = new Vector3Int(_end.Coord.x * (int)tileSizeX + (int)spaceBetweenTiles, _end.Coord.y * (int)tileSizeY + (int)spaceBetweenTiles, 0);
-
-        map.SetTileFlags(_endPos, TileFlags.None);
-        map.SetColor(_endPos, Color.red);
+        Vector3Int _end = new Vector3Int(this._end.Coord.x, this._end.Coord.y, 0);
+        map.SetTileFlags(_end, TileFlags.None);
+        map.SetColor(_end, Color.red);
 
         foreach (int2 o in _obstacles.Keys)
         {
-            Vector3Int obstaclePos = new Vector3Int(o.x * (int)tileSizeX + (int)spaceBetweenTiles, o.y * (int)tileSizeY + (int)spaceBetweenTiles, 0);
-
-            map.SetTileFlags(obstaclePos, TileFlags.None);
-            map.SetColor(obstaclePos, Color.black);
+            Vector3Int obstacle = new Vector3Int(o.x, o.y, 0);
+            map.SetTileFlags(obstacle, TileFlags.None);
+            map.SetColor(obstacle, Color.black);
         }
     }
 
@@ -89,19 +77,13 @@ public class TileMapPathfinder : MonoBehaviour
     {
         Vector3 mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int mouseCell = map.WorldToCell(mouseWorldPos);
-
-        int2 coord = new int2 { 
-            x = Mathf.RoundToInt(mouseCell.x / tileSizeX),
-            y = Mathf.RoundToInt(mouseCell.y / tileSizeY)
-        };
+        int2 coord = new int2 { x = mouseCell.x, y = mouseCell.y };
 
         if (!_obstacles.ContainsKey(coord) && !coord.Equals(_end.Coord))
         {
             _start.Coord = coord;
-            Vector3Int tilePos = new Vector3Int((int) (coord.x * tileSizeX + spaceBetweenTiles), (int) (coord.y * tileSizeY + spaceBetweenTiles), 0);
-
-            map.SetTileFlags(tilePos, TileFlags.None);
-            map.SetColor(tilePos, Color.green);
+            map.SetTileFlags(mouseCell, TileFlags.None);
+            map.SetColor(mouseCell, Color.green);
         }
     }
 
@@ -109,49 +91,33 @@ public class TileMapPathfinder : MonoBehaviour
     {
         Vector3 mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int mouseCell = map.WorldToCell(mouseWorldPos);
-
-
-        int2 coord = new int2 { 
-            x = Mathf.RoundToInt(mouseCell.x / tileSizeX),
-            y = Mathf.RoundToInt(mouseCell.y / tileSizeY)
-        };
+        int2 coord = new int2 { x = mouseCell.x, y = mouseCell.y };
 
         if (!_obstacles.ContainsKey(coord) && !coord.Equals(_start.Coord))
         {
             _end.Coord = coord;
-            Vector3Int tilePos = new Vector3Int((int) (coord.x * tileSizeX), (int) (coord.y * tileSizeY), 0);
-
-            map.SetTileFlags(tilePos, TileFlags.None);
-            map.SetColor(tilePos, Color.red);
+            map.SetTileFlags(mouseCell, TileFlags.None);
+            map.SetColor(mouseCell, Color.red);
         }
+
     }
 
     void PlaceObstacle()
     {
         Vector3 mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int mouseCell = map.WorldToCell(mouseWorldPos);
-
-        // Учитываем размеры тайлов и отступы
-        int2 coord = new int2 { 
-            x = Mathf.RoundToInt(mouseCell.x / tileSizeX),
-            y = Mathf.RoundToInt(mouseCell.y / tileSizeY)
-        };
+        int2 coord = new int2 { x = mouseCell.x, y = mouseCell.y };
 
         if (_obstacles.ContainsKey(coord))
         {
-            // Учитываем размеры тайлов и отступы
-            Vector3Int tilePos = new Vector3Int((int) (coord.x * tileSizeX), (int) (coord.y * tileSizeY), 0);
-
+            map.SetTile(mouseCell, null);
             _obstacles.Remove(coord);
         }
         else if (!coord.Equals(_start.Coord) && !coord.Equals(_end.Coord))
         {
             _obstacles.Add(coord, true);
-            // Учитываем размеры тайлов и отступы
-            Vector3Int tilePos = new Vector3Int((int) (coord.x * tileSizeX), (int) (coord.y * tileSizeY), 0);
-
-            map.SetTileFlags(tilePos, TileFlags.None);
-            map.SetColor(tilePos, Color.black);
+            map.SetTileFlags(mouseCell, TileFlags.None);
+            map.SetColor(mouseCell, Color.black);
         }
     }
 
@@ -180,6 +146,19 @@ public class TileMapPathfinder : MonoBehaviour
 
         JobHandle handle = aStar.Schedule();
         handle.Complete();
+        
+        NativeArray<Node> nodeArray = nodes.GetValueArray(Allocator.TempJob);
+        for (int i = 0; i < nodeArray.Length; i++)
+        {
+            Vector3Int currentNode = new(nodeArray[i].Coord.x, nodeArray[i].Coord.y, 0);
+
+            if (_start.Coord.Equals(nodeArray[i].Coord) ||
+                _end.Coord.Equals(nodeArray[i].Coord) ||
+                isObstacle.ContainsKey(nodeArray[i].Coord)) continue;
+            map.SetTileFlags(currentNode, TileFlags.None);
+            map.SetColor(currentNode, Color.magenta);
+        }
+        
         if (nodes.ContainsKey(_end.Coord))
         {
             int2 currentCoord = _end.Coord;
@@ -189,12 +168,12 @@ public class TileMapPathfinder : MonoBehaviour
                 currentCoord = nodes[currentCoord].Parent;
                 Vector3Int currentTile = new(currentCoord.x, currentCoord.y, 0);
 
-
                 map.SetTileFlags(currentTile, TileFlags.None);
                 map.SetColor(currentTile, Color.green);
             }
         }
 
+        nodeArray.Dispose();
         nodes.Dispose();
         openSet.Dispose();
         isObstacle.Dispose();
@@ -220,6 +199,7 @@ public class TileMapPathfinder : MonoBehaviour
             current.HScore = HexDistance(current.Coord, End.Coord);
             OpenSet.TryAdd(current.Coord, current);
 
+            // Смещения для соседей в гексагональной сетке flat-top
             Offsets[0] = new int2(0, 1);
             Offsets[1] = new int2(1, 0);
             Offsets[2] = new int2(1, -1);
@@ -240,7 +220,7 @@ public class TileMapPathfinder : MonoBehaviour
 
                     if (Nodes.ContainsKey(neighborCoord) ||
                         IsObstacle.ContainsKey(neighborCoord)) continue;
-            
+                    
                     Node neighbour = new()
                     {
                         Coord = neighborCoord,

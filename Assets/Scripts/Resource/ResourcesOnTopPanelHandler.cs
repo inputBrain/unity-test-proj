@@ -128,7 +128,7 @@ namespace Resource
 
         }
         
-        
+
         public void UpdateInfluenceByCaptureTerritory(int hexagonCellCount = 1)
         {
             int parsedResource;
@@ -144,7 +144,7 @@ namespace Resource
             }
             
             var updatedTotalInfluence = parsedResource - (75 * hexagonCellCount);
-            if (updatedTotalInfluence <= 0)
+            if (updatedTotalInfluence < 0)
             {
                 return;
             }
