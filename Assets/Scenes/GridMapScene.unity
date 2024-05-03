@@ -1088,6 +1088,7 @@ GameObject:
   - component: {fileID: 847230674}
   - component: {fileID: 847230676}
   - component: {fileID: 847230677}
+  - component: {fileID: 847230678}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1157,6 +1158,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildIncomeJson: {fileID: 4900000, guid: 1640211d6f394757a7c0a7d6484dede9, type: 3}
+--- !u!114 &847230678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847230673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bef9d049cd4d1885da8c2afaac2fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStepsPathFinding: 5000
+  map: {fileID: 866971171}
+  defaultTile: {fileID: 11400000, guid: 057c4c9ce8114cc4e89a2e0cc86cdd05, type: 2}
+  cam: {fileID: 1055261663}
+  tileSizeX: 0.1262882
+  tileSizeY: 0.1458333
+  spaceBetweenTiles: 0.05
 --- !u!1 &854521529
 GameObject:
   m_ObjectHideFlags: 0

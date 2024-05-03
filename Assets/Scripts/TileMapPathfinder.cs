@@ -1,4 +1,5 @@
 using System.Collections;
+using Storage;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
@@ -18,9 +19,12 @@ public class TileMapPathfinder : MonoBehaviour
     public float tileSizeX;
     public float tileSizeY;
     public float spaceBetweenTiles;
+
+    public HexagonTileStorage TileStorage;
     
     void Start()
     {
+        TileStorage = FindObjectOfType<HexagonTileStorage>();
         _obstacles = new Hashtable();
         _start = new Node { Coord = int2.zero, Parent = int2.zero, GScore = int.MaxValue, HScore = int.MaxValue };
         _end = new Node { Coord = int2.zero, Parent = int2.zero, GScore = int.MaxValue, HScore = int.MaxValue };
@@ -62,23 +66,20 @@ public class TileMapPathfinder : MonoBehaviour
     {
         map.ClearAllTiles();
 
-        // Учитываем размеры тайлов и отступы для стартового тайла
         Vector3Int _startPos = new Vector3Int(_start.Coord.x * (int)tileSizeX + (int)spaceBetweenTiles, _start.Coord.y * (int)tileSizeY + (int)spaceBetweenTiles, 0);
-        map.SetTile(_startPos, defaultTile);
+
         map.SetTileFlags(_startPos, TileFlags.None);
         map.SetColor(_startPos, Color.green);
 
-        // Учитываем размеры тайлов и отступы для конечного тайла
         Vector3Int _endPos = new Vector3Int(_end.Coord.x * (int)tileSizeX + (int)spaceBetweenTiles, _end.Coord.y * (int)tileSizeY + (int)spaceBetweenTiles, 0);
-        map.SetTile(_endPos, defaultTile);
+
         map.SetTileFlags(_endPos, TileFlags.None);
         map.SetColor(_endPos, Color.red);
 
         foreach (int2 o in _obstacles.Keys)
         {
-            // Учитываем размеры тайлов и отступы для препятствий
             Vector3Int obstaclePos = new Vector3Int(o.x * (int)tileSizeX + (int)spaceBetweenTiles, o.y * (int)tileSizeY + (int)spaceBetweenTiles, 0);
-            map.SetTile(obstaclePos, defaultTile);
+
             map.SetTileFlags(obstaclePos, TileFlags.None);
             map.SetColor(obstaclePos, Color.black);
         }
@@ -97,8 +98,8 @@ public class TileMapPathfinder : MonoBehaviour
         if (!_obstacles.ContainsKey(coord) && !coord.Equals(_end.Coord))
         {
             _start.Coord = coord;
-            Vector3Int tilePos = new Vector3Int((int) (coord.x * tileSizeX), (int) (coord.y * tileSizeY), 0);
-            map.SetTile(tilePos, defaultTile);
+            Vector3Int tilePos = new Vector3Int((int) (coord.x * tileSizeX + spaceBetweenTiles), (int) (coord.y * tileSizeY + spaceBetweenTiles), 0);
+
             map.SetTileFlags(tilePos, TileFlags.None);
             map.SetColor(tilePos, Color.green);
         }
@@ -109,7 +110,7 @@ public class TileMapPathfinder : MonoBehaviour
         Vector3 mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int mouseCell = map.WorldToCell(mouseWorldPos);
 
-        // Учитываем размеры тайлов и отступы
+
         int2 coord = new int2 { 
             x = Mathf.RoundToInt(mouseCell.x / tileSizeX),
             y = Mathf.RoundToInt(mouseCell.y / tileSizeY)
@@ -118,9 +119,8 @@ public class TileMapPathfinder : MonoBehaviour
         if (!_obstacles.ContainsKey(coord) && !coord.Equals(_start.Coord))
         {
             _end.Coord = coord;
-            // Учитываем размеры тайлов и отступы
             Vector3Int tilePos = new Vector3Int((int) (coord.x * tileSizeX), (int) (coord.y * tileSizeY), 0);
-            map.SetTile(tilePos, defaultTile);
+
             map.SetTileFlags(tilePos, TileFlags.None);
             map.SetColor(tilePos, Color.red);
         }
@@ -141,7 +141,7 @@ public class TileMapPathfinder : MonoBehaviour
         {
             // Учитываем размеры тайлов и отступы
             Vector3Int tilePos = new Vector3Int((int) (coord.x * tileSizeX), (int) (coord.y * tileSizeY), 0);
-            map.SetTile(tilePos, null);
+
             _obstacles.Remove(coord);
         }
         else if (!coord.Equals(_start.Coord) && !coord.Equals(_end.Coord))
@@ -149,7 +149,7 @@ public class TileMapPathfinder : MonoBehaviour
             _obstacles.Add(coord, true);
             // Учитываем размеры тайлов и отступы
             Vector3Int tilePos = new Vector3Int((int) (coord.x * tileSizeX), (int) (coord.y * tileSizeY), 0);
-            map.SetTile(tilePos, defaultTile);
+
             map.SetTileFlags(tilePos, TileFlags.None);
             map.SetColor(tilePos, Color.black);
         }
@@ -180,20 +180,6 @@ public class TileMapPathfinder : MonoBehaviour
 
         JobHandle handle = aStar.Schedule();
         handle.Complete();
-        
-        NativeArray<Node> nodeArray = nodes.GetValueArray(Allocator.TempJob);
-        for (int i = 0; i < nodeArray.Length; i++)
-        {
-            Vector3Int currentNode = new Vector3Int(nodeArray[i].Coord.x * (int)tileSizeX + (int)spaceBetweenTiles, nodeArray[i].Coord.y * (int)tileSizeY + (int)spaceBetweenTiles, 0);
-
-            if (_start.Coord.Equals(nodeArray[i].Coord) ||
-                _end.Coord.Equals(nodeArray[i].Coord) ||
-                isObstacle.ContainsKey(nodeArray[i].Coord)) continue;
-            map.SetTile(currentNode, defaultTile);
-            map.SetTileFlags(currentNode, TileFlags.None);
-            map.SetColor(currentNode, Color.white);
-        }
-        
         if (nodes.ContainsKey(_end.Coord))
         {
             int2 currentCoord = _end.Coord;
@@ -203,13 +189,12 @@ public class TileMapPathfinder : MonoBehaviour
                 currentCoord = nodes[currentCoord].Parent;
                 Vector3Int currentTile = new(currentCoord.x, currentCoord.y, 0);
 
-                map.SetTile(currentTile, defaultTile);
+
                 map.SetTileFlags(currentTile, TileFlags.None);
                 map.SetColor(currentTile, Color.green);
             }
         }
 
-        nodeArray.Dispose();
         nodes.Dispose();
         openSet.Dispose();
         isObstacle.Dispose();
@@ -235,7 +220,6 @@ public class TileMapPathfinder : MonoBehaviour
             current.HScore = HexDistance(current.Coord, End.Coord);
             OpenSet.TryAdd(current.Coord, current);
 
-            // Смещения для соседей в гексагональной сетке flat-top
             Offsets[0] = new int2(0, 1);
             Offsets[1] = new int2(1, 0);
             Offsets[2] = new int2(1, -1);
