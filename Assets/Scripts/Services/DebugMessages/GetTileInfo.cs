@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Const;
 using Storage;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -9,25 +10,25 @@ namespace Services.DebugMessages
     public class GetTileInfo : MonoBehaviour
     {
         private Tilemap _tilemap;
-        
-        [SerializeField]
-        private GameObject gridTilemap;
-        
+
+        private Camera _camera;
+
         private HexagonTileStorage _hexagonTileStorage;
 
         private BuildUpgradeMenu _buildUpgradeMenu;
-        
-        [SerializeField]
-        public Vector3Int gridPos;
+
+        [SerializeField] public Vector3Int gridPos;
 
         public bool isGetInfo;
-        
+
+        private ComponentShareService ComponentShareService => FindObjectOfType<ComponentShareService>();
         
         private void Start()
         {
-            _tilemap = GetComponent<Tilemap>();
-            _buildUpgradeMenu = gridTilemap.GetComponent<BuildUpgradeMenu>();
-            _hexagonTileStorage = gridTilemap.GetComponent<HexagonTileStorage>();
+            _camera = ComponentShareService.GetComponentByTypeAndTag<Camera>(Constants.MAIN_CAMERA);
+            _tilemap = ComponentShareService.GetComponentByTypeAndTag<Tilemap>(Constants.BASE_TILEMAP);
+            _buildUpgradeMenu = ComponentShareService.GetComponentByType<BuildUpgradeMenu>();
+            _hexagonTileStorage = ComponentShareService.GetComponentByType<HexagonTileStorage>();
         }
 
 
@@ -35,9 +36,10 @@ namespace Services.DebugMessages
         {
             if (Input.GetMouseButtonDown(0))
             {
-                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                var ray = _camera.ScreenPointToRay(Input.mousePosition);
                 var hit = Physics2D.GetRayIntersection(ray);
                 var hitPosition = hit.point;
+
                 gridPos = _tilemap.WorldToCell(hitPosition);
 
                 if (isGetInfo)
@@ -45,7 +47,6 @@ namespace Services.DebugMessages
                     if (_hexagonTileStorage.TilesData.TryGetValue(gridPos, out var tileInfo))
                     {
                         Debug.Log($"Country: {tileInfo.Name} Wood: {tileInfo.TotalResourceModel!.Wood}");
-                        //отрисовка
 
                         if (string.IsNullOrWhiteSpace(tileInfo.Name) == false)
                         {
@@ -55,31 +56,10 @@ namespace Services.DebugMessages
                     else
                     {
                         Debug.Log("No tile found at position: " + gridPos);
-                        //скрываем
                         _buildUpgradeMenu.IsEnabledPanel(false);
-                        
                     }
                 }
-              
             }
-            
-            //
-            // if (Input.GetMouseButtonDown(0))
-            // {
-            //     var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //     var hit = Physics2D.GetRayIntersection(ray);
-            //     var hitPosition = hit.point;
-            //     var gridPos = _tilemap.WorldToCell(hitPosition);
-            //
-            //     if (_countryTileData.CapitalsDict.TryGetValue(gridPos, out var countryName))
-            //     {
-            //         Debug.Log($"{countryName}");
-            //     }
-            //     else
-            //     {
-            //         Debug.Log("No tile found at position: " + gridPos);
-            //     }
-            // }
         }
     }
 }

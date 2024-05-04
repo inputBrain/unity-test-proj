@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Const;
 using Models;
 using Models.Country;
 using Models.Country.Сonstruction;
@@ -16,26 +17,28 @@ public class PreLoadGame : MonoBehaviour
     public TextAsset countriesJson;
     public Tile castleTile;
     
+    private ComponentShareService ComponentShareService => FindObjectOfType<ComponentShareService>();
+    
     private void Awake()
     {
         LoadCountryColorsFromJson();
         
-        var middleware = FindObjectOfType<GameMiddleware>();
-        var hexagonTileStorage = gameObject.GetComponent<HexagonTileStorage>();
-        var tilemap = GameObject.FindWithTag("baseTilemap").GetComponent<Tilemap>();
-        var castleTilemap = GameObject.FindWithTag("castleTilemap").GetComponent<Tilemap>();
+        var middleware = ComponentShareService.GetComponentByType<GameMiddleware>();
+        var hexagonTileStorage = ComponentShareService.GetComponentByType<HexagonTileStorage>();
+        var baseTilemap = ComponentShareService.GetComponentByTypeAndTag<Tilemap>(Constants.BASE_TILEMAP);
+        var castleTilemap =ComponentShareService.GetComponentByTypeAndTag<Tilemap>(Constants.CASTLE_TILEMAP);
         
         hexagonTileStorage.SerializeTilesData();
         
         if (middleware != null)
         {
             Debug.Log(middleware.SelectedCountry);
-
+        
             foreach (var country in countryJson)
             {
                 var position = new Vector3Int(country.Value.CapitalTilePosition.x, country.Value.CapitalTilePosition.y, 0);
-                tilemap.SetTileFlags(position, TileFlags.None);
-                tilemap.SetColor(position, country.Value.Color);
+                baseTilemap.SetTileFlags(position, TileFlags.None);
+                baseTilemap.SetColor(position, country.Value.Color);
                 
                 castleTilemap.SetTile(position, castleTile);
             
@@ -55,13 +58,11 @@ public class PreLoadGame : MonoBehaviour
                         ProductionType = ProductionType.Castle
                     }
                 };            
-
-
+        
+        
                 hexagonTileStorage.TilesData[position] = tileUnitModel;
             }
         }
-
-      
     }
     
     void LoadCountryColorsFromJson()
