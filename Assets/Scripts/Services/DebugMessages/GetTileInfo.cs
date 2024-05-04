@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Storage;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 
 namespace Services.DebugMessages
@@ -15,6 +16,11 @@ namespace Services.DebugMessages
         private HexagonTileStorage _hexagonTileStorage;
 
         private BuildUpgradeMenu _buildUpgradeMenu;
+        
+        [SerializeField]
+        public Vector3Int gridPos;
+
+        public bool isGetInfo;
         
         
         private void Start()
@@ -32,26 +38,29 @@ namespace Services.DebugMessages
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 var hit = Physics2D.GetRayIntersection(ray);
                 var hitPosition = hit.point;
-                var gridPos = _tilemap.WorldToCell(hitPosition);
-            
-                if (_hexagonTileStorage.TilesData.TryGetValue(gridPos, out var tileInfo))
-                {
-                    Debug.Log($"Country: {tileInfo.Name} Wood: {tileInfo.TotalResourceModel!.Wood}");
-                    //отрисовка
+                gridPos = _tilemap.WorldToCell(hitPosition);
 
-                    if (string.IsNullOrWhiteSpace(tileInfo.Name) == false)
+                if (isGetInfo)
+                {
+                    if (_hexagonTileStorage.TilesData.TryGetValue(gridPos, out var tileInfo))
                     {
-                        _buildUpgradeMenu.IsEnabledPanel(true);
+                        Debug.Log($"Country: {tileInfo.Name} Wood: {tileInfo.TotalResourceModel!.Wood}");
+                        //отрисовка
+
+                        if (string.IsNullOrWhiteSpace(tileInfo.Name) == false)
+                        {
+                            _buildUpgradeMenu.IsEnabledPanel(true);
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("No tile found at position: " + gridPos);
+                        //скрываем
+                        _buildUpgradeMenu.IsEnabledPanel(false);
+                        
                     }
                 }
-                else
-                {
-                    Debug.Log("No tile found at position: " + gridPos);
-                    //скрываем
-                    _buildUpgradeMenu.IsEnabledPanel(false);
-
-
-                }
+              
             }
             
             //
