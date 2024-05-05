@@ -9,6 +9,7 @@ using Services;
 using Services.DebugMessages;
 using Storage;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using Debug = UnityEngine.Debug;
 using Object = UnityEngine.Object;
@@ -20,22 +21,30 @@ public class ComponentShareService : Singleton<ComponentShareService>
 
     void Awake()
     {
-        RegisterComponent<CaptureTerritory>();
-        RegisterComponent<MainMenu.MainMenu>();
-        RegisterComponent<ResourcesOnTopPanelHandler>();
-        RegisterComponent<GetNormalPos>();
-        RegisterComponent<GetTileInfo>();
-        RegisterComponent<GameMiddleware>();
-        RegisterComponent<BuildUpgradeMenu>();
-        RegisterComponent<IncomeManager>();
-        RegisterComponent<TileMapPathfinder>();
-
-        
-        RegisterComponent<HexagonTileStorage>();
-        RegisterComponent<ResourceIncome>();
-        
-        RegisterComponentWithTag<Camera>(Constants.MAIN_CAMERA);
-        RegisterComponentWithTag<Tilemap>(Constants.BASE_TILEMAP);
+        var currentSceneName = SceneManager.GetActiveScene().name;
+        switch (currentSceneName)
+        {
+            case "MainScene":
+                RegisterComponent<MainMenu.MainMenu>();
+                break;
+            case "GridMapScene":
+                RegisterComponent<CaptureTerritory>();
+                RegisterComponent<ResourcesOnTopPanelHandler>();
+                RegisterComponent<GetNormalPos>();
+                RegisterComponent<GetTileInfo>();
+                RegisterComponent<GameMiddleware>();
+                RegisterComponent<BuildUpgradeMenu>();
+                RegisterComponent<IncomeManager>();
+                RegisterComponent<TileMapPathfinder>();
+                RegisterComponent<HexagonTileStorage>();
+                RegisterComponent<ResourceIncome>();
+                RegisterComponentWithTag<Camera>(Constants.MAIN_CAMERA);
+                RegisterComponentWithTag<Tilemap>(Constants.BASE_TILEMAP);
+                break;
+            default:
+                Debug.LogWarning("Unknown scene name: " + currentSceneName);
+                break;
+        }
     }
 
     public T GetComponentByType<T>() where T : class
