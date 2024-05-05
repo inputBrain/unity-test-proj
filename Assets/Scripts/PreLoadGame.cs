@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Const;
 using Models;
 using Models.Country;
@@ -12,35 +13,44 @@ using UnityEngine.Tilemaps;
 
 public class PreLoadGame : MonoBehaviour
 {
+    private Camera _camera;
+    private readonly Dictionary<Color32, CountryJsonModel> _countryJson = new();
+
+    private GameMiddleware _middleware;
+    private HexagonTileStorage _hexagonTileStorage;
+    private Tilemap _baseTilemap;
+    private Tilemap _castleTilemap;
     
-    private readonly Dictionary<Color32, CountryJsonModel> countryJson = new();
     public TextAsset countriesJson;
     public Tile castleTile;
     
     private ComponentShareService ComponentShareService => FindObjectOfType<ComponentShareService>();
     
-    private void Awake()
+    private void Start()
     {
         LoadCountryColorsFromJson();
         
-        var middleware = ComponentShareService.GetComponentByType<GameMiddleware>();
-        var hexagonTileStorage = ComponentShareService.GetComponentByType<HexagonTileStorage>();
-        var baseTilemap = ComponentShareService.GetComponentByTypeAndTag<Tilemap>(Constants.BASE_TILEMAP);
-        var castleTilemap =ComponentShareService.GetComponentByTypeAndTag<Tilemap>(Constants.CASTLE_TILEMAP);
+        _middleware = ComponentShareService.GetComponentByType<GameMiddleware>();
+        _hexagonTileStorage = ComponentShareService.GetComponentByType<HexagonTileStorage>();
+        _baseTilemap = ComponentShareService.GetComponentByTypeAndTag<Tilemap>(Constants.BASE_TILEMAP);
+        _castleTilemap =ComponentShareService.GetComponentByTypeAndTag<Tilemap>(Constants.CASTLE_TILEMAP);
+        _camera = ComponentShareService.GetComponentByTypeAndTag<Camera>(Constants.MAIN_CAMERA);
         
-        hexagonTileStorage.SerializeTilesData();
-        
-        if (middleware != null)
+        _hexagonTileStorage.SerializeTilesData();
+         InitCameraPosition();
+       
+
+        if (_middleware != null)
         {
-            Debug.Log(middleware.SelectedCountry);
+            Debug.Log(_middleware.SelectedCountry);
         
-            foreach (var country in countryJson)
+            foreach (var country in _countryJson)
             {
                 var position = new Vector3Int(country.Value.CapitalTilePosition.x, country.Value.CapitalTilePosition.y, 0);
-                baseTilemap.SetTileFlags(position, TileFlags.None);
-                baseTilemap.SetColor(position, country.Value.Color);
+                _baseTilemap.SetTileFlags(position, TileFlags.None);
+                _baseTilemap.SetColor(position, country.Value.Color);
                 
-                castleTilemap.SetTile(position, castleTile);
+                _castleTilemap.SetTile(position, castleTile);
             
                 var tileUnitModel = new CountryUnitModel()
                 {
@@ -60,18 +70,29 @@ public class PreLoadGame : MonoBehaviour
                 };            
         
         
-                hexagonTileStorage.TilesData[position] = tileUnitModel;
+                _hexagonTileStorage.TilesData[position] = tileUnitModel;
             }
         }
     }
-    
+    private void InitCameraPosition()
+    {
+        var userCountry = _hexagonTileStorage.TilesData.FirstOrDefault(x => x.Value.Name == _middleware.SelectedCountry);
+
+        var tileWorldPosition = _baseTilemap.GetCellCenterWorld(new Vector3Int((int)userCountry.Key.x, (int)userCountry.Key.y));
+
+        var targetPosition = tileWorldPosition;
+        targetPosition.z = _camera.transform.position.z; 
+
+        _camera.transform.position = targetPosition;
+    }
+
     void LoadCountryColorsFromJson()
     {
         var countries = JsonConvert.DeserializeObject<List<CountryJsonModel>>(countriesJson.text);
         
         foreach (var country in countries)
         {
-            countryJson.Add(country.Color, country);
+            _countryJson.Add(country.Color, country);
         }
     }
 }

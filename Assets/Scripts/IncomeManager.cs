@@ -9,10 +9,12 @@ public class IncomeManager : Singleton<IncomeManager>
     public ConstructionModel Construction;
     private HexagonTileStorage _hexagonTileStorage;
 
-
+    private ComponentShareService ComponentShareService => FindObjectOfType<ComponentShareService>();
+    
+    
     void Awake()
     {
-        _hexagonTileStorage = FindObjectOfType<HexagonTileStorage>();
+        _hexagonTileStorage = ComponentShareService.GetComponentByType<HexagonTileStorage>();
     }
 
 

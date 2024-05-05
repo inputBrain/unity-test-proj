@@ -8,6 +8,8 @@ namespace Resource
 {
     public class ResourceIncome : Singleton<ResourceIncome>
     {
+        private ComponentShareService ComponentShareService => FindObjectOfType<ComponentShareService>();
+
         public TextAsset buildIncomeJson;
         private IncomeApiModel _castleIncome { get; set; } = new();
         private ResourcesOnTopPanelHandler _resourcesOnTopPanelHandler;
@@ -15,7 +17,7 @@ namespace Resource
 
         void Awake()
         {
-            _resourcesOnTopPanelHandler = FindObjectOfType<ResourcesOnTopPanelHandler>();
+            _resourcesOnTopPanelHandler = ComponentShareService.GetComponentByType<ResourcesOnTopPanelHandler>();
             _loadCountryCost();
             
             InvokeRepeating(nameof(AddResources), 0f, 1f);

@@ -295,7 +295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &148082948
 Transform:
   m_ObjectHideFlags: 0
@@ -56378,11 +56378,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1034540741526318231, guid: 7a6e68713d3346c4c9e48ee2a1daee61, type: 3}
   m_PrefabInstance: {fileID: 866971169}
   m_PrefabAsset: {fileID: 0}
---- !u!1839735485 &866971171 stripped
-Tilemap:
-  m_CorrespondingSourceObject: {fileID: 781318917770654977, guid: 7a6e68713d3346c4c9e48ee2a1daee61, type: 3}
-  m_PrefabInstance: {fileID: 866971169}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &941311115
 GameObject:
   m_ObjectHideFlags: 0
@@ -56907,14 +56902,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055261661}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27fbc6bebabc3384cbfea3f38578cf52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1055261663}
-  tilemap: {fileID: 866971171}
-  hexGO: {fileID: 866971170}
   cameraSize: 1.5
   cameraSpeed: 2
   zoomSpeed: 5
@@ -57194,7 +57186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1279299637
 Transform:
   m_ObjectHideFlags: 0
@@ -57223,8 +57215,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxStepsPathFinding: 5000
-  map: {fileID: 866971171}
-  cam: {fileID: 1055261663}
 --- !u!1 &1333006134
 GameObject:
   m_ObjectHideFlags: 0
@@ -58671,7 +58661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2080325542
 Transform:
   m_ObjectHideFlags: 0

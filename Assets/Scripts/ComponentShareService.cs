@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Const;
+using Gameplay;
+using Resource;
+using Services;
 using Services.DebugMessages;
 using Storage;
 using UnityEngine;
@@ -17,9 +20,19 @@ public class ComponentShareService : Singleton<ComponentShareService>
 
     void Awake()
     {
-        RegisterComponent<HexagonTileStorage>();
+        RegisterComponent<CaptureTerritory>();
+        RegisterComponent<MainMenu.MainMenu>();
+        RegisterComponent<ResourcesOnTopPanelHandler>();
+        RegisterComponent<GetNormalPos>();
         RegisterComponent<GetTileInfo>();
+        RegisterComponent<GameMiddleware>();
         RegisterComponent<BuildUpgradeMenu>();
+        RegisterComponent<IncomeManager>();
+        RegisterComponent<TileMapPathfinder>();
+
+        
+        RegisterComponent<HexagonTileStorage>();
+        RegisterComponent<ResourceIncome>();
         
         RegisterComponentWithTag<Camera>(Constants.MAIN_CAMERA);
         RegisterComponentWithTag<Tilemap>(Constants.BASE_TILEMAP);
@@ -33,7 +46,7 @@ public class ComponentShareService : Singleton<ComponentShareService>
             return (T)component;
         }
      
-        Debug.LogWarning($"Component of type {typeof(T)} is null! Called from {GetCallingClassName()}");
+        Debug.LogError($"Component of type {typeof(T)} is null! Called from {GetCallingClassName()}");
         return null;
     }
 
@@ -53,7 +66,7 @@ public class ComponentShareService : Singleton<ComponentShareService>
             }
         }
     
-        Debug.LogWarning($"Component of type {typeof(T)} with tag {tag} is null! Called from {GetCallingClassName()}");
+        Debug.LogError($"Component of type {typeof(T)} with tag {tag} is null! Called from {GetCallingClassName()}");
     
         return null;
     }
@@ -67,7 +80,7 @@ public class ComponentShareService : Singleton<ComponentShareService>
         }
         else
         {
-            Debug.LogError($"Component of type {typeof(T)} not found in current Scene!");
+            Debug.LogWarning($"Component of type {typeof(T)} not found in current Scene!");
         }
     }
     
@@ -80,7 +93,7 @@ public class ComponentShareService : Singleton<ComponentShareService>
         }
         else
         {
-            Debug.LogError($"Component of type {typeof(T)} with tag {tag} not found in current Scene!");
+            Debug.LogWarning($"Component of type {typeof(T)} with tag {tag} not found in current Scene!");
         }
     }
 }

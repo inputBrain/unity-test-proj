@@ -1,21 +1,29 @@
 using System.Collections;
+using Const;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Unity.Mathematics;
 using Unity.Jobs;
 using Unity.Collections;
+using UnityEngine.Serialization;
 
 public class TileMapPathfinder : MonoBehaviour
 {
+    private ComponentShareService ComponentShareService => FindObjectOfType<ComponentShareService>();
+    
     Hashtable _obstacles;
     Node _start, _end; 
     public int maxStepsPathFinding = 5000;
 
-    public Tilemap map;
-    public Camera cam;
+
+    private Tilemap _tilemap;
+    private Camera _camera;
     
     void Start()
     {
+        _camera = ComponentShareService.GetComponentByTypeAndTag<Camera>(Constants.MAIN_CAMERA);
+        _tilemap = ComponentShareService.GetComponentByTypeAndTag<Tilemap>(Constants.BASE_TILEMAP);
+
         _obstacles = new Hashtable();
         _start = new Node { Coord = int2.zero, Parent = int2.zero, GScore = int.MaxValue, HScore = int.MaxValue };
         _end = new Node { Coord = int2.zero, Parent = int2.zero, GScore = int.MaxValue, HScore = int.MaxValue };
@@ -55,69 +63,69 @@ public class TileMapPathfinder : MonoBehaviour
 
     void ClearTiles()
     {
-        map.ClearAllTiles();
+        _tilemap.ClearAllTiles();
 
         Vector3Int _start = new Vector3Int(this._start.Coord.x, this._start.Coord.y, 0);
-        map.SetTileFlags(_start, TileFlags.None);
-        map.SetColor(_start, Color.green);
+        _tilemap.SetTileFlags(_start, TileFlags.None);
+        _tilemap.SetColor(_start, Color.green);
 
         Vector3Int _end = new Vector3Int(this._end.Coord.x, this._end.Coord.y, 0);
-        map.SetTileFlags(_end, TileFlags.None);
-        map.SetColor(_end, Color.red);
+        _tilemap.SetTileFlags(_end, TileFlags.None);
+        _tilemap.SetColor(_end, Color.red);
 
         foreach (int2 o in _obstacles.Keys)
         {
             Vector3Int obstacle = new Vector3Int(o.x, o.y, 0);
-            map.SetTileFlags(obstacle, TileFlags.None);
-            map.SetColor(obstacle, Color.black);
+            _tilemap.SetTileFlags(obstacle, TileFlags.None);
+            _tilemap.SetColor(obstacle, Color.black);
         }
     }
 
     void PlaceStart()
     {
-        Vector3 mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
-        Vector3Int mouseCell = map.WorldToCell(mouseWorldPos);
+        Vector3 mouseWorldPos = _camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3Int mouseCell = _tilemap.WorldToCell(mouseWorldPos);
         int2 coord = new int2 { x = mouseCell.x, y = mouseCell.y };
 
         if (!_obstacles.ContainsKey(coord) && !coord.Equals(_end.Coord))
         {
             _start.Coord = coord;
-            map.SetTileFlags(mouseCell, TileFlags.None);
-            map.SetColor(mouseCell, Color.green);
+            _tilemap.SetTileFlags(mouseCell, TileFlags.None);
+            _tilemap.SetColor(mouseCell, Color.green);
         }
     }
 
     void PlaceEnd()
     {
-        Vector3 mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
-        Vector3Int mouseCell = map.WorldToCell(mouseWorldPos);
+        Vector3 mouseWorldPos = _camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3Int mouseCell = _tilemap.WorldToCell(mouseWorldPos);
         int2 coord = new int2 { x = mouseCell.x, y = mouseCell.y };
 
         if (!_obstacles.ContainsKey(coord) && !coord.Equals(_start.Coord))
         {
             _end.Coord = coord;
-            map.SetTileFlags(mouseCell, TileFlags.None);
-            map.SetColor(mouseCell, Color.red);
+            _tilemap.SetTileFlags(mouseCell, TileFlags.None);
+            _tilemap.SetColor(mouseCell, Color.red);
         }
 
     }
 
     void PlaceObstacle()
     {
-        Vector3 mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
-        Vector3Int mouseCell = map.WorldToCell(mouseWorldPos);
+        Vector3 mouseWorldPos = _camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3Int mouseCell = _tilemap.WorldToCell(mouseWorldPos);
         int2 coord = new int2 { x = mouseCell.x, y = mouseCell.y };
 
         if (_obstacles.ContainsKey(coord))
         {
-            map.SetTile(mouseCell, null);
+            _tilemap.SetTile(mouseCell, null);
             _obstacles.Remove(coord);
         }
         else if (!coord.Equals(_start.Coord) && !coord.Equals(_end.Coord))
         {
             _obstacles.Add(coord, true);
-            map.SetTileFlags(mouseCell, TileFlags.None);
-            map.SetColor(mouseCell, Color.black);
+            _tilemap.SetTileFlags(mouseCell, TileFlags.None);
+            _tilemap.SetColor(mouseCell, Color.black);
         }
     }
 
@@ -155,8 +163,8 @@ public class TileMapPathfinder : MonoBehaviour
             if (_start.Coord.Equals(nodeArray[i].Coord) ||
                 _end.Coord.Equals(nodeArray[i].Coord) ||
                 isObstacle.ContainsKey(nodeArray[i].Coord)) continue;
-            map.SetTileFlags(currentNode, TileFlags.None);
-            map.SetColor(currentNode, Color.magenta);
+            _tilemap.SetTileFlags(currentNode, TileFlags.None);
+            _tilemap.SetColor(currentNode, Color.magenta);
         }
         
         if (nodes.ContainsKey(_end.Coord))
@@ -168,8 +176,8 @@ public class TileMapPathfinder : MonoBehaviour
                 currentCoord = nodes[currentCoord].Parent;
                 Vector3Int currentTile = new(currentCoord.x, currentCoord.y, 0);
 
-                map.SetTileFlags(currentTile, TileFlags.None);
-                map.SetColor(currentTile, Color.green);
+                _tilemap.SetTileFlags(currentTile, TileFlags.None);
+                _tilemap.SetColor(currentTile, Color.green);
             }
         }
 
