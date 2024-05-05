@@ -19,7 +19,6 @@ public class PreLoadGame : MonoBehaviour
     private GameMiddleware _middleware;
     private HexagonTileStorage _hexagonTileStorage;
     private Tilemap _baseTilemap;
-    private Tilemap _castleTilemap;
     
     public TextAsset countriesJson;
     public Tile castleTile;
@@ -33,7 +32,6 @@ public class PreLoadGame : MonoBehaviour
         _middleware = ComponentShareService.GetComponentByType<GameMiddleware>();
         _hexagonTileStorage = ComponentShareService.GetComponentByType<HexagonTileStorage>();
         _baseTilemap = ComponentShareService.GetComponentByTypeAndTag<Tilemap>(Constants.BASE_TILEMAP);
-        _castleTilemap =ComponentShareService.GetComponentByTypeAndTag<Tilemap>(Constants.CASTLE_TILEMAP);
         _camera = ComponentShareService.GetComponentByTypeAndTag<Camera>(Constants.MAIN_CAMERA);
         
         _hexagonTileStorage.SerializeTilesData();
@@ -50,7 +48,7 @@ public class PreLoadGame : MonoBehaviour
                 _baseTilemap.SetTileFlags(position, TileFlags.None);
                 _baseTilemap.SetColor(position, country.Value.Color);
                 
-                _castleTilemap.SetTile(position, castleTile);
+                _baseTilemap.SetTile(new Vector3Int(position.x, position.y, 1), castleTile);
             
                 var tileUnitModel = new CountryUnitModel()
                 {

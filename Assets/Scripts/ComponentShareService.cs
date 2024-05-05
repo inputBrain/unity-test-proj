@@ -36,7 +36,6 @@ public class ComponentShareService : Singleton<ComponentShareService>
         
         RegisterComponentWithTag<Camera>(Constants.MAIN_CAMERA);
         RegisterComponentWithTag<Tilemap>(Constants.BASE_TILEMAP);
-        RegisterComponentWithTag<Tilemap>(Constants.CASTLE_TILEMAP);
     }
 
     public T GetComponentByType<T>() where T : class
@@ -86,12 +85,12 @@ public class ComponentShareService : Singleton<ComponentShareService>
     
     private void RegisterComponentWithTag<T>(string tag) where T : Object
     {
-        T component = GameObject.FindGameObjectWithTag(tag).GetComponent<T>();
-        if (component != null)
+        try
         {
+            T component = GameObject.FindGameObjectWithTag(tag).GetComponent<T>();
             _componentsWithTag.Add(tag, component);
         }
-        else
+        catch (Exception e)
         {
             Debug.LogWarning($"Component of type {typeof(T)} with tag {tag} not found in current Scene!");
         }
