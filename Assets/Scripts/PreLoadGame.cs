@@ -35,7 +35,7 @@ public class PreLoadGame : MonoBehaviour
         _camera = ComponentShareService.GetComponentByTypeAndTag<Camera>(Constants.MAIN_CAMERA);
         
         _hexagonTileStorage.SerializeTilesData();
-         InitCameraPosition();
+         // InitCameraPosition();
        
 
         if (_middleware != null)
@@ -72,17 +72,17 @@ public class PreLoadGame : MonoBehaviour
             }
         }
     }
-    private void InitCameraPosition()
-    {
-        var userCountry = _hexagonTileStorage.TilesData.FirstOrDefault(x => x.Value.Name == _middleware.SelectedCountry);
-
-        var tileWorldPosition = _baseTilemap.GetCellCenterWorld(new Vector3Int((int)userCountry.Key.x, (int)userCountry.Key.y));
-
-        var targetPosition = tileWorldPosition;
-        targetPosition.z = _camera.transform.position.z; 
-
-        _camera.transform.position = targetPosition;
-    }
+    // private void InitCameraPosition()
+    // {
+    //     var userCountry = _hexagonTileStorage.TilesData.FirstOrDefault(x => x.Value.Name == _middleware.SelectedCountry);
+    //
+    //     var tileWorldPosition = _baseTilemap.GetCellCenterWorld(new Vector3Int((int)userCountry.Key.x, (int)userCountry.Key.y));
+    //
+    //     var targetPosition = tileWorldPosition;
+    //     targetPosition.z = _camera.transform.position.z; 
+    //
+    //     _camera.transform.position = targetPosition;
+    // }
 
     void LoadCountryColorsFromJson()
     {
