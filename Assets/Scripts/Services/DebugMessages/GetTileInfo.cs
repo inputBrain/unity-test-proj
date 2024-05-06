@@ -15,7 +15,7 @@ namespace Services.DebugMessages
 
         private HexagonTileStorage _hexagonTileStorage;
 
-        private BuildUpgradeMenu _buildUpgradeMenu;
+        // private BuildUpgradeMenu _buildUpgradeMenu;
 
         [SerializeField] public Vector3Int gridPos;
 
@@ -27,7 +27,7 @@ namespace Services.DebugMessages
         {
             _camera = ComponentShareService.GetComponentByTypeAndTag<Camera>(Constants.MAIN_CAMERA);
             _tilemap = ComponentShareService.GetComponentByTypeAndTag<Tilemap>(Constants.BASE_TILEMAP);
-            _buildUpgradeMenu = ComponentShareService.GetComponentByType<BuildUpgradeMenu>();
+            // _buildUpgradeMenu = ComponentShareService.GetComponentByType<BuildUpgradeMenu>();
             _hexagonTileStorage = ComponentShareService.GetComponentByType<HexagonTileStorage>();
         }
 
@@ -50,13 +50,13 @@ namespace Services.DebugMessages
 
                         if (string.IsNullOrWhiteSpace(tileInfo.Name) == false)
                         {
-                            _buildUpgradeMenu.IsEnabledPanel(true);
+                            // _buildUpgradeMenu.IsEnabledPanel(true);
                         }
                     }
                     else
                     {
                         Debug.Log("No tile found at position: " + gridPos);
-                        _buildUpgradeMenu.IsEnabledPanel(false);
+                        // _buildUpgradeMenu.IsEnabledPanel(false);
                     }
                 }
             }
