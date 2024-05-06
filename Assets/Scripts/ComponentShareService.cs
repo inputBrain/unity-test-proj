@@ -41,6 +41,12 @@ public class ComponentShareService : Singleton<ComponentShareService>
                 RegisterComponentWithTag<Camera>(Constants.MAIN_CAMERA);
                 RegisterComponentWithTag<Tilemap>(Constants.BASE_TILEMAP);
                 break;
+            case "GeneratorMapScene":
+                RegisterComponent<GetTileInfo>();
+                RegisterComponent<HexagonTileStorage>();
+                RegisterComponentWithTag<Camera>(Constants.MAIN_CAMERA);
+                RegisterComponentWithTag<Tilemap>(Constants.BASE_TILEMAP);
+                break;
             default:
                 Debug.LogWarning("Unknown scene name: " + currentSceneName);
                 break;
@@ -101,7 +107,7 @@ public class ComponentShareService : Singleton<ComponentShareService>
         }
         catch (Exception e)
         {
-            Debug.LogWarning($"Component of type {typeof(T)} with tag {tag} not found in current Scene!");
+            Debug.LogWarning($"Component of type {typeof(T)} with tag {tag} not found in current Scene!\n -- Exception message: {e.Message} --");
         }
     }
 }
