@@ -1,4 +1,3 @@
-using Models;
 using Models.Country;
 using Storage;
 using UnityEngine;
@@ -11,29 +10,29 @@ public class TilemapGenerator : MonoBehaviour
     public Tile tile;
  
     private HexagonTileStorage _hexagonTileStorage;
-    
-    
+    private ComponentShareService ComponentShareService => FindObjectOfType<ComponentShareService>();
+
+
     private void Start()
     {
-        _hexagonTileStorage = GetComponent<HexagonTileStorage>();
-   
+        _hexagonTileStorage = ComponentShareService.GetComponentByType<HexagonTileStorage>();
+
         GenerateHexagons();
     }
-    
-  
+
 
     private void GenerateHexagons()
     {
         var whiteColor = new Color(0.925490201f, 0.925490201f, 0.925490201f, 1);
         
-        Bounds spriteBounds = spriteRenderer.sprite.bounds;
-        Vector3 cellSize = tilemap.cellSize;
+        var spriteBounds = spriteRenderer.sprite.bounds;
+        var cellSize = tilemap.cellSize;
         
         var spriteWidthInCells = spriteBounds.size.x / (cellSize.x * 0.8659766f);
         var spriteHeightInCells = spriteBounds.size.y / (cellSize.x);
         
 
-        int countCellsByX = Mathf.CeilToInt(spriteWidthInCells);
+        var countCellsByX = Mathf.CeilToInt(spriteWidthInCells);
         var countCellsByY = Mathf.CeilToInt(spriteHeightInCells);
         
         var offsetX = countCellsByX / 2;
@@ -42,9 +41,9 @@ public class TilemapGenerator : MonoBehaviour
         Debug.Log(countCellsByX);
         Debug.Log(countCellsByY);
         
-        for (int x = 0; x < countCellsByX; x++)
+        for (var x = 0; x < countCellsByX; x++)
         {
-            for (int y = 0; y < countCellsByY; y++)
+            for (var y = 0; y < countCellsByY; y++)
             {
                 var pos = new Vector3Int(y - offsetY, x - offsetX, 0);
                 Vector3 tileWorldPos = tilemap.GetCellCenterWorld(pos);
@@ -73,6 +72,7 @@ public class TilemapGenerator : MonoBehaviour
         }
     } 
     
+
     private bool IsHexagonWhite(Bounds spriteBounds, Vector3 tileWorldPos, Color whiteColor)
     {
         var pixelCoord = WorldToPixelCoords(spriteBounds, tileWorldPos, spriteRenderer.sprite);
