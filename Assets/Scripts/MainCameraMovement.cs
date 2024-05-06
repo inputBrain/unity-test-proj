@@ -10,9 +10,10 @@ public class MainCameraMovement : Singleton<MainCameraMovement>
      private ComponentShareService ComponentShareService => FindObjectOfType<ComponentShareService>();
      
         private Camera _camera;
-        private GameMiddleware _middleware;
-        private HexagonTileStorage _hexagonTileStorage;
-        private Vector3 _lastMousePosition;
+        
+        private Tilemap _tilemap;
+        
+        public GameObject hexGO;
         
         [SerializeField]
         public float cameraSize = 1.5f;
@@ -23,10 +24,28 @@ public class MainCameraMovement : Singleton<MainCameraMovement>
         [SerializeField]
         public float zoomSpeed = 5f;
 
+        
+        private GameMiddleware _middleware;
+        private HexagonTileStorage _hexagonTileStorage;
+        private Vector3 _lastMousePosition;
 
         public void Start()
         {
             _camera = ComponentShareService.GetComponentByTypeAndTag<Camera>(Constants.MAIN_CAMERA);
+            _tilemap = ComponentShareService.GetComponentByTypeAndTag<Tilemap>(Constants.BASE_TILEMAP);
+            
+            var middleware = FindObjectOfType<GameMiddleware>();
+            _hexagonTileStorage = hexGO.GetComponent<HexagonTileStorage>();
+
+            var userCountry = _hexagonTileStorage.TilesData.FirstOrDefault(x => x.Value.Name == middleware.SelectedCountry);
+            
+            var tileWorldPosition = _tilemap.GetCellCenterWorld(new Vector3Int((int)userCountry.Key.x, (int)userCountry.Key.y));
+            
+            var targetPosition = tileWorldPosition;
+            targetPosition.z = _camera.transform.position.z; 
+            _camera.transform.position = targetPosition;
+
+
             _camera.orthographicSize = cameraSize;
         }
 
